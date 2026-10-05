@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Как устроен электромобиль: батарея, инвертор, мотор — Отсечка</title>
+<meta name="description" content="Что на самом деле прячется под полом и капотом электромобиля — как батарея, инвертор и электромотор превращают киловатт-часы в движение и почему такой машине не нужна коробка передач.">
+<link rel="canonical" href="https://otsechka.example/articles/ev-how-it-works.html">
+<meta property="og:site_name" content="Отсечка">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Как устроен электромобиль: батарея, инвертор, мотор">
+<meta property="og:description" content="Что на самом деле прячется под полом и капотом электромобиля — как батарея, инвертор и электромотор превращают киловатт-часы в движение и почему такой машине не нужна коробка передач.">
+<meta property="og:url" content="https://otsechka.example/articles/ev-how-it-works.html">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary">
+<meta property="article:published_time" content="2026-01-11">
+<meta name="theme-color" content="#14171c">
+<link rel="alternate" type="application/rss+xml" title="Отсечка" href="../rss.xml">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Unbounded:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Unbounded:wght@500;600;700;800&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/style.css">
+<script>try{var t=localStorage.getItem('otsechka-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Как устроен электромобиль: батарея, инвертор, мотор","description":"Что на самом деле прячется под полом и капотом электромобиля — как батарея, инвертор и электромотор превращают киловатт-часы в движение и почему такой машине не нужна коробка передач.","url":"https://otsechka.example/articles/ev-how-it-works.html","datePublished":"2026-01-11","dateModified":"2026-01-11","inLanguage":"ru","articleSection":"Электро","keywords":"электромобиль, батарея, устройство, электромотор","wordCount":966,"image":"https://otsechka.example/assets/covers/ev-how-it-works.svg","author":{"@type":"Organization","name":"Редакция «Отсечка»","url":"https://otsechka.example/"},"publisher":{"@type":"Organization","name":"Отсечка","url":"https://otsechka.example/"},"mainEntityOfPage":"https://otsechka.example/articles/ev-how-it-works.html"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://otsechka.example/"},{"@type":"ListItem","position":2,"name":"Электро","item":"https://otsechka.example/category/electric.html"},{"@type":"ListItem","position":3,"name":"Как устроен электромобиль: батарея, инвертор, мотор"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="masthead">
+  <div class="masthead__row wrap">
+    <a class="wordmark" href="../index.html" aria-label="Отсечка: на главную">ОТСЕЧКА<span class="wordmark__rpm" aria-hidden="true">×1000 об/мин</span></a>
+    <div class="masthead__tools">
+      <a class="tool" href="../archive.html">Все статьи</a>
+      <a class="tool" href="../about.html">О журнале</a>
+      <button class="tool tool--theme" type="button" id="theme-toggle">Тема</button>
+    </div>
+  </div>
+  <nav class="catnav wrap" aria-label="Рубрики"><a href="../category/history.html">История</a><a href="../category/tech.html">Устройство</a><a href="../category/electric.html">Электро</a><a href="../category/service.html">Обслуживание</a><a href="../category/driving.html">Вождение</a><a href="../category/buying.html">Покупка</a><a href="../category/motorsport.html">Автоспорт</a><a href="../category/culture.html">Культура</a></nav>
+  <div class="revbar revbar--progress" aria-hidden="true"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="amber"></i><i class="amber"></i><i class="amber"></i><i class="amber"></i><i class="red"></i><i class="red"></i><i class="red"></i><i class="red"></i></div>
+</header>
+<main id="main">
+  <article class="post">
+    <header class="post__head wrap">
+      <p class="meta"><a class="chip chip--electric" href="../category/electric.html">Электро</a><span class="mono">№ 003</span></p>
+      <h1 class="post__title">Как устроен электромобиль: батарея, инвертор, мотор</h1>
+      <p class="post__lede">Что на самом деле прячется под полом и капотом электромобиля — как батарея, инвертор и электромотор превращают киловатт-часы в движение и почему такой машине не нужна коробка передач.</p>
+      <p class="post__byline mono"><time datetime="2026-01-11">11 января 2026</time><span>5 мин чтения</span><span>966 слов</span></p>
+    </header>
+    <figure class="post__cover wrap" aria-hidden="true"><svg viewBox="0 0 1200 750" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Обложка статьи, рубрика «Электро»" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="750" fill="#1C5548"/><rect x="70" y="110" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.22" stroke="#B9EBD9" stroke-width="3"/><rect x="202" y="110" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.22" stroke="#B9EBD9" stroke-width="3"/><rect x="334" y="110" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.22" stroke="#B9EBD9" stroke-width="3"/><rect x="466" y="110" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.22" stroke="#B9EBD9" stroke-width="3"/><rect x="598" y="110" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.22" stroke="#B9EBD9" stroke-width="3"/><rect x="730" y="110" width="118" height="120" rx="10" fill="none" opacity="0.5" stroke="#B9EBD9" stroke-width="3"/><rect x="862" y="110" width="118" height="120" rx="10" fill="none" opacity="0.5" stroke="#B9EBD9" stroke-width="3"/><rect x="994" y="110" width="118" height="120" rx="10" fill="none" opacity="0.5" stroke="#B9EBD9" stroke-width="3"/><rect x="70" y="244" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.28" stroke="#B9EBD9" stroke-width="3"/><rect x="202" y="244" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.28" stroke="#B9EBD9" stroke-width="3"/><rect x="334" y="244" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.28" stroke="#B9EBD9" stroke-width="3"/><rect x="466" y="244" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.28" stroke="#B9EBD9" stroke-width="3"/><rect x="598" y="244" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.28" stroke="#B9EBD9" stroke-width="3"/><rect x="730" y="244" width="118" height="120" rx="10" fill="none" opacity="0.5" stroke="#B9EBD9" stroke-width="3"/><rect x="862" y="244" width="118" height="120" rx="10" fill="none" opacity="0.5" stroke="#B9EBD9" stroke-width="3"/><rect x="994" y="244" width="118" height="120" rx="10" fill="none" opacity="0.5" stroke="#B9EBD9" stroke-width="3"/><rect x="70" y="378" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.34" stroke="#B9EBD9" stroke-width="3"/><rect x="202" y="378" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.34" stroke="#B9EBD9" stroke-width="3"/><rect x="334" y="378" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.34" stroke="#B9EBD9" stroke-width="3"/><rect x="466" y="378" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.34" stroke="#B9EBD9" stroke-width="3"/><rect x="598" y="378" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.34" stroke="#B9EBD9" stroke-width="3"/><rect x="730" y="378" width="118" height="120" rx="10" fill="none" opacity="0.5" stroke="#B9EBD9" stroke-width="3"/><rect x="862" y="378" width="118" height="120" rx="10" fill="none" opacity="0.5" stroke="#B9EBD9" stroke-width="3"/><rect x="994" y="378" width="118" height="120" rx="10" fill="none" opacity="0.5" stroke="#B9EBD9" stroke-width="3"/><rect x="70" y="512" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.40" stroke="#B9EBD9" stroke-width="3"/><rect x="202" y="512" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.40" stroke="#B9EBD9" stroke-width="3"/><rect x="334" y="512" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.40" stroke="#B9EBD9" stroke-width="3"/><rect x="466" y="512" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.40" stroke="#B9EBD9" stroke-width="3"/><rect x="598" y="512" width="118" height="120" rx="10" fill="#B9EBD9" opacity="0.40" stroke="#B9EBD9" stroke-width="3"/><rect x="730" y="512" width="118" height="120" rx="10" fill="none" opacity="0.5" stroke="#B9EBD9" stroke-width="3"/><rect x="862" y="512" width="118" height="120" rx="10" fill="none" opacity="0.5" stroke="#B9EBD9" stroke-width="3"/><rect x="994" y="512" width="118" height="120" rx="10" fill="none" opacity="0.5" stroke="#B9EBD9" stroke-width="3"/><path d="M541 60 L391 420 L521 420 L451 700 L711 300 L571 300 L651 60 Z" fill="#FFC21A" opacity="0.95"/><text x="1152" y="706" text-anchor="end" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="40" font-weight="600" fill="#B9EBD9">№ 003</text></svg></figure>
+    <div class="post__layout wrap">
+      <aside class="post__side"><p class="label">Паспорт темы</p><dl class="spec"><div><dt>КПД электромотора</dt><dd>≈90–97%</dd></div><div><dt>Напряжение батареи</dt><dd>≈400 или 800 В</dd></div><div><dt>Ёмкость батарей</dt><dd>≈40–100+ кВт·ч</dd></div><div><dt>Коробка передач</dt><dd>обычно 1 ступень</dd></div></dl><nav class="toc" aria-label="Содержание"><p class="label">Содержание</p><ol><li><a href="#sec-1" data-toc="sec-1">Три главных узла</a></li><li><a href="#sec-2" data-toc="sec-2">Батарея — топливный бак</a></li><li><a href="#sec-3" data-toc="sec-3">Инвертор — дирижёр</a></li><li><a href="#sec-4" data-toc="sec-4">Мотор — мускулы</a></li><li><a href="#sec-5" data-toc="sec-5">Рекуперация — торможение мотором</a></li><li><a href="#sec-6" data-toc="sec-6">Что ещё на борту</a></li><li><a href="#sec-7" data-toc="sec-7">Проще, чем кажется</a></li></ol></nav></aside>
+      <div class="prose">
+<p>Открыв капот бензиновой машины, вы увидите плотную сборку из сотен деталей: блок цилиндров, ремни, патрубки, коллекторы. У электромобиля под капотом часто оказывается багажник. Вся главная механика спряталась в днище и между колёсами, а деталей, которые двигаются и изнашиваются, стало в разы меньше. Разберём, из чего состоит электромобиль и как энергия из розетки превращается в движение.</p>
+<h2 id="sec-1">Три главных узла</h2>
+<p>Упрощённо силовая установка электромобиля — это цепочка из трёх элементов:</p>
+<ol><li><strong>Тяговая батарея</strong> хранит энергию в виде постоянного тока.</li><li><strong>Инвертор</strong> превращает постоянный ток в переменный нужной частоты и силы.</li><li><strong>Электромотор</strong> превращает переменный ток во вращение колёс.</li></ol>
+<p>Вокруг этой цепочки работают помощники: бортовое зарядное устройство, преобразователь для питания 12-вольтовой сети, системы охлаждения и нагрева, блоки управления. Но сердце машины — именно эти три узла.</p>
+<p>Ключевое отличие от машины с ДВС — путь энергии. В бензиновом автомобиле химическая энергия топлива сначала превращается в тепло, потом в движение поршней, затем во вращение коленвала, которое проходит через коробку передач. На каждом этапе есть потери, и в итоге до колёс доходит лишь малая часть энергии из бака. В электромобиле энергия остаётся электрической почти до самого колеса, и превращается в механическую только в моторе. Поэтому от батареи до колёс обычно доходит около 80–90% энергии.</p>
+<h2 id="sec-2">Батарея — топливный бак</h2>
+<p>Тяговая батарея — самая крупная, тяжёлая и дорогая часть электромобиля. Обычно она занимает почти весь пол между осями, что опускает центр тяжести и делает машину устойчивой в поворотах.</p>
+<p>Батарея собрана из сотен или тысяч <strong>ячеек</strong> — элементов размером от пальчиковой батарейки до толстой книги. Ячейки объединяют в модули, а модули — в пакет. Последовательное соединение повышает напряжение, параллельное — ёмкость. У большинства машин рабочее напряжение около 400 В, а у ряда новых моделей — около 800 В, что позволяет быстрее заряжаться и использовать более тонкие кабели.</p>
+<p>Ёмкость измеряют в киловатт-часах. Компактному городскому автомобилю хватает 40–50 кВт·ч, большим седанам и кроссоверам ставят 80–100 кВт·ч и больше. Грубо говоря, один киловатт-час позволяет проехать от 5 до 7 км в зависимости от машины, скорости и погоды.</p>
+<p>За здоровьем ячеек следит <strong>система управления батареей</strong> (BMS). Она контролирует напряжение каждой группы ячеек, температуру, ток, выравнивает заряд между ячейками и не даёт батарее перегреться или переразрядиться. Батарея любит комфортную температуру — примерно от 20 до 40 °C, — поэтому у неё есть собственная система жидкостного охлаждения и подогрева.</p>
+<h2 id="sec-3">Инвертор — дирижёр</h2>
+<p>Батарея отдаёт постоянный ток, а большинство тяговых моторов работают на трёхфазном переменном. Инвертор переключает ток тысячи раз в секунду с помощью мощных полупроводниковых ключей и «собирает» из постоянного напряжения синусоиду нужной частоты.</p>
+<p>Частота определяет скорость вращения мотора, а амплитуда тока — крутящий момент. Когда водитель нажимает педаль «газа», он фактически отправляет инвертору запрос на определённый момент, а электроника мгновенно его выполняет. Отсюда знаменитый отклик электромобилей: между нажатием и тягой нет ни турбоямы, ни переключения передач.</p>
+<p>Всё больше машин используют в инверторах транзисторы на основе <strong>карбида кремния</strong> вместо обычного кремния. Они меньше греются и теряют меньше энергии, что прибавляет несколько процентов к запасу хода.</p>
+<h2 id="sec-4">Мотор — мускулы</h2>
+<p>Электромотор устроен удивительно просто. Неподвижная часть — <strong>статор</strong> — содержит медные обмотки, по которым инвертор пускает ток. Обмотки создают вращающееся магнитное поле, и оно увлекает за собой подвижную часть — <strong>ротор</strong>.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Таблица: Тип мотора, Как устроен ротор, Особенности"><table><thead><tr><th scope="col">Тип мотора</th><th scope="col">Как устроен ротор</th><th scope="col">Особенности</th></tr></thead><tbody><tr><td>Синхронный с постоянными магнитами</td><td>Магниты из редкоземельных сплавов</td><td>Высокий КПД, компактность</td></tr><tr><td>Асинхронный (индукционный)</td><td>Короткозамкнутая «беличья клетка»</td><td>Дешевле, не нужны редкие металлы</td></tr><tr><td>С независимым возбуждением</td><td>Обмотки, питаемые током</td><td>Без магнитов, гибкое управление</td></tr></tbody></table></div>
+<p>Большинство современных электромобилей используют синхронные моторы с постоянными магнитами: у них самый высокий КПД на обычных режимах. Асинхронные моторы прославила первая Tesla Model S, а моторы с возбуждением ротора используют, например, Renault и BMW, чтобы обойтись без редкоземельных металлов.</p>
+<p>КПД электромотора огромен — 90–97% в зависимости от режима, тогда как лучшие бензиновые двигатели с трудом доходят до 40%. Почти вся энергия идёт в дело, а не в нагрев радиатора.</p>
+<p>Ещё одно достоинство электромотора — долговечность. В нём нет поршней, клапанов, ремня ГРМ и масла, которое нужно менять каждые 10–15 тысяч километров. Изнашиваются в основном подшипники ротора, а при нормальной эксплуатации мотор нередко переживает остальной автомобиль. Чаще всего проблемы связаны не с самим мотором, а с уплотнениями редуктора или электроникой вокруг него.</p>
+<aside class="callout callout--fact"><p class="callout__label">Факт</p><p>электромотор выдаёт максимальный крутящий момент практически с нулевых оборотов и спокойно раскручивается до 15–20 тысяч об/мин. Поэтому электромобилю хватает одноступенчатого редуктора: ему не нужно переключать передачи, чтобы оставаться в рабочем диапазоне.</p></aside>
+<h3>Редуктор и привод</h3>
+<p>Между мотором и колёсами обычно стоит простой понижающий редуктор с одним передаточным числом и дифференциал. Всё вместе с мотором и инвертором часто объединяют в единый компактный блок — его называют электрическим мостом или e-axle.</p>
+<p>Полный привод у электромобилей устроен проще, чем у машин с ДВС: на каждую ось ставят свой мотор, а карданный вал не нужен. Электроника мгновенно перераспределяет момент между осями, а у некоторых моделей с тремя или четырьмя моторами — и между отдельными колёсами.</p>
+<h2 id="sec-5">Рекуперация — торможение мотором</h2>
+<p>Электромотор умеет работать и как генератор. Когда водитель отпускает педаль, инвертор переключает режим, и колёса начинают крутить мотор, который вырабатывает ток и заряжает батарею. Машина при этом замедляется.</p>
+<ul><li>В городе рекуперация возвращает заметную часть энергии, которая иначе ушла бы в нагрев тормозных дисков.</li><li>Многие машины позволяют ездить «одной педалью»: отпустил — и автомобиль плавно тормозит почти до остановки.</li><li>Фрикционные тормоза при этом изнашиваются гораздо медленнее.</li></ul>
+<h2 id="sec-6">Что ещё на борту</h2>
+<p>Помимо главной цепочки, в электромобиле есть <strong>бортовое зарядное устройство</strong>, которое превращает переменный ток из розетки или настенной станции в постоянный для батареи. Есть DC/DC-преобразователь, понижающий высокое напряжение до привычных 12 вольт для фар, мультимедиа и блоков управления. И есть сложная система терморегулирования, а у многих моделей — <strong>тепловой насос</strong>, который экономит энергию на отоплении салона.</p>
+<h2 id="sec-7">Проще, чем кажется</h2>
+<p>Электромобиль — это не «компьютер на колёсах», а очень логичная машина. Батарея хранит энергию, инвертор управляет её потоком, мотор превращает её в движение, а рекуперация возвращает часть обратно. Деталей, которые требуют замены масла, ремней и свечей, почти нет. Понимая эту простую схему, легче разобраться в характеристиках конкретной модели: ёмкость батареи подскажет запас хода, напряжение — скорость зарядки, а тип мотора — инженерную философию производителя.</p>
+        <p class="tags"><span class="tag">#электромобиль</span><span class="tag">#батарея</span><span class="tag">#устройство</span><span class="tag">#электромотор</span></p>
+      </div>
+    </div>
+    <nav class="pager wrap" aria-label="Соседние статьи рубрики">
+      <span></span>
+      <a class="pager__link pager__link--next" href="../articles/hybrid-types.html"><span class="label">Новее в рубрике →</span><span class="pager__title">Гибриды: мягкий, полный, подключаемый — в чём разница</span></a>
+    </nav>
+  </article>
+  <section class="wrap related" aria-labelledby="related-title">
+    <h2 id="related-title" class="section-title">Ещё из рубрики «Электро»</h2>
+    <div class="grid grid--3"><article class="card">
+  <a class="card__media" href="../articles/ev-home-charging.html" tabindex="-1" aria-hidden="true"><img src="../assets/covers/ev-home-charging.svg" width="1200" height="750" alt="" loading="lazy" decoding="async"></a>
+  <div class="card__body">
+    <p class="meta"><a class="chip chip--electric" href="../category/electric.html">Электро</a><span class="mono">5 мин</span></p>
+    <h3 class="card__title"><a href="../articles/ev-home-charging.html">Домашняя зарядка: что нужно знать перед установкой</a></h3>
+    <p class="card__excerpt">Домашняя розетка — лучший друг владельца электромобиля, но установка зарядной станции требует расчёта мощности, правильной проводки и защиты. Рассказываем, с чего начать.</p>
+  </div>
+</article><article class="card">
+  <a class="card__media" href="../articles/hybrid-types.html" tabindex="-1" aria-hidden="true"><img src="../assets/covers/hybrid-types.svg" width="1200" height="750" alt="" loading="lazy" decoding="async"></a>
+  <div class="card__body">
+    <p class="meta"><a class="chip chip--electric" href="../category/electric.html">Электро</a><span class="mono">5 мин</span></p>
+    <h3 class="card__title"><a href="../articles/hybrid-types.html">Гибриды: мягкий, полный, подключаемый — в чём разница</a></h3>
+    <p class="card__excerpt">Слово «гибрид» на шильдике может означать что угодно — от скромного стартер-генератора до машины, которая неделю ездит без бензина. Разбираем три главные схемы.</p>
+  </div>
+</article><article class="card">
+  <a class="card__media" href="../articles/ev-batteries-chemistry.html" tabindex="-1" aria-hidden="true"><img src="../assets/covers/ev-batteries-chemistry.svg" width="1200" height="750" alt="" loading="lazy" decoding="async"></a>
+  <div class="card__body">
+    <p class="meta"><a class="chip chip--electric" href="../category/electric.html">Электро</a><span class="mono">5 мин</span></p>
+    <h3 class="card__title"><a href="../articles/ev-batteries-chemistry.html">Литий-ионные батареи: NMC, LFP и что будет дальше</a></h3>
+    <p class="card__excerpt">Почему одни электромобили советуют заряжать до 80%, а другие до 100%, чем никель-марганец-кобальтовые ячейки отличаются от литий-железо-фосфатных и чего ждать от натрия и твёрдого электролита.</p>
+  </div>
+</article></div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p class="wordmark wordmark--small">ОТСЕЧКА</p>
+      <p class="footer__text">Журнал об автомобилях: история, устройство, вождение и культура. Пишем о машинах так, чтобы было понятно с первого раза и интересно до последнего абзаца.</p>
+    </div>
+    <div>
+      <p class="label">Рубрики</p>
+      <ul class="footer__list"><li><a href="../category/history.html">История</a> <span class="mono">13</span></li><li><a href="../category/tech.html">Устройство</a> <span class="mono">13</span></li><li><a href="../category/electric.html">Электро</a> <span class="mono">12</span></li><li><a href="../category/service.html">Обслуживание</a> <span class="mono">13</span></li><li><a href="../category/driving.html">Вождение</a> <span class="mono">13</span></li><li><a href="../category/buying.html">Покупка</a> <span class="mono">12</span></li><li><a href="../category/motorsport.html">Автоспорт</a> <span class="mono">12</span></li><li><a href="../category/culture.html">Культура</a> <span class="mono">12</span></li></ul>
+    </div>
+    <div>
+      <p class="label">Одометр журнала</p>
+      <p class="odometer mono" role="img" aria-label="100 статей"><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span></p>
+      <p class="footer__text">100 статей · 8 рубрик · ≈94 тыс. слов</p>
+    </div>
+  </div>
+  <p class="wrap footer__fine">© 2026 «Отсечка». Тексты носят информационный характер: при ремонте и обслуживании сверяйтесь с руководством по эксплуатации своего автомобиля.</p>
+</footer>
+<script src="../assets/client.js" defer></script>
+</body>
+</html>

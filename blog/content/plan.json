@@ -1,0 +1,602 @@
+[
+ {
+  "category": "history",
+  "slug": "ford-model-t",
+  "title": "Ford Model T: как конвейер посадил мир за руль",
+  "date": "2026-05-27"
+ },
+ {
+  "category": "history",
+  "slug": "vw-beetle",
+  "title": "Volkswagen Käfer: долгая жизнь «Жука»",
+  "date": "2026-02-23"
+ },
+ {
+  "category": "history",
+  "slug": "mini-1959",
+  "title": "Mini 1959 года: революция поперёк кузова",
+  "date": "2026-01-22"
+ },
+ {
+  "category": "history",
+  "slug": "citroen-ds",
+  "title": "Citroën DS: богиня на гидропневматике",
+  "date": "2026-07-12"
+ },
+ {
+  "category": "history",
+  "slug": "gaz-21-volga",
+  "title": "ГАЗ-21 «Волга»: символ советской мечты",
+  "date": "2026-05-05"
+ },
+ {
+  "category": "history",
+  "slug": "vaz-2101",
+  "title": "ВАЗ-2101: как «Копейка» стала народной",
+  "date": "2026-07-23"
+ },
+ {
+  "category": "history",
+  "slug": "niva-vaz-2121",
+  "title": "«Нива»: внедорожник, опередивший эпоху кроссоверов",
+  "date": "2026-08-22"
+ },
+ {
+  "category": "history",
+  "slug": "toyota-production-system",
+  "title": "Производственная система Toyota и японское чудо",
+  "date": "2026-06-28"
+ },
+ {
+  "category": "history",
+  "slug": "oil-crisis-1973",
+  "title": "Нефтяной кризис 1973 года и рождение экономичных машин",
+  "date": "2026-08-14"
+ },
+ {
+  "category": "history",
+  "slug": "ford-mustang-pony-car",
+  "title": "Ford Mustang и рождение класса пони-каров",
+  "date": "2026-07-26"
+ },
+ {
+  "category": "history",
+  "slug": "land-rover-series",
+  "title": "Land Rover Series: внедорожник, нарисованный на песке",
+  "date": "2026-08-05"
+ },
+ {
+  "category": "history",
+  "slug": "porsche-911-evolution",
+  "title": "Porsche 911: шесть десятилетий одной формы",
+  "date": "2026-08-30"
+ },
+ {
+  "category": "history",
+  "slug": "benz-patent-motorwagen",
+  "title": "Benz Patent-Motorwagen и поездка Берты Бенц",
+  "date": "2026-09-10"
+ },
+ {
+  "category": "tech",
+  "slug": "how-ice-works",
+  "title": "Как работает двигатель внутреннего сгорания: четыре такта простыми словами",
+  "date": "2026-03-25"
+ },
+ {
+  "category": "tech",
+  "slug": "turbocharging",
+  "title": "Турбонаддув: откуда берутся лишние лошадиные силы",
+  "date": "2026-01-08"
+ },
+ {
+  "category": "tech",
+  "slug": "automatic-transmissions",
+  "title": "Автомат, вариатор или робот: чем отличаются коробки передач",
+  "date": "2026-09-21"
+ },
+ {
+  "category": "tech",
+  "slug": "dual-clutch",
+  "title": "Как устроен робот с двумя сцеплениями",
+  "date": "2026-04-21"
+ },
+ {
+  "category": "tech",
+  "slug": "all-wheel-drive",
+  "title": "Полный привод: подключаемый, постоянный и всё между ними",
+  "date": "2026-03-06"
+ },
+ {
+  "category": "tech",
+  "slug": "suspension-types",
+  "title": "Подвеска автомобиля: от торсионов до пневмобаллонов",
+  "date": "2026-03-09"
+ },
+ {
+  "category": "tech",
+  "slug": "abs-esp",
+  "title": "ABS, ESP и другие электронные помощники: что они делают на самом деле",
+  "date": "2026-07-01"
+ },
+ {
+  "category": "tech",
+  "slug": "direct-injection",
+  "title": "Непосредственный впрыск: плюсы, минусы и нагар",
+  "date": "2026-03-23"
+ },
+ {
+  "category": "tech",
+  "slug": "brakes-explained",
+  "title": "Тормоза: диски, барабаны, суппорты и тормозная жидкость",
+  "date": "2026-04-27"
+ },
+ {
+  "category": "tech",
+  "slug": "aerodynamics",
+  "title": "Аэродинамика: почему форма кузова экономит топливо",
+  "date": "2026-09-26"
+ },
+ {
+  "category": "tech",
+  "slug": "adas-levels",
+  "title": "Уровни автономности от 0 до 5: где мы сейчас",
+  "date": "2026-09-02"
+ },
+ {
+  "category": "tech",
+  "slug": "diesel-engines",
+  "title": "Дизель: как он работает и почему его любят тягачи",
+  "date": "2026-04-19"
+ },
+ {
+  "category": "tech",
+  "slug": "rotary-engine",
+  "title": "Роторный двигатель Ванкеля: красивая инженерная идея",
+  "date": "2026-09-04"
+ },
+ {
+  "category": "electric",
+  "slug": "ev-how-it-works",
+  "title": "Как устроен электромобиль: батарея, инвертор, мотор",
+  "date": "2026-01-11"
+ },
+ {
+  "category": "electric",
+  "slug": "ev-batteries-chemistry",
+  "title": "Литий-ионные батареи: NMC, LFP и что будет дальше",
+  "date": "2026-03-31"
+ },
+ {
+  "category": "electric",
+  "slug": "ev-charging-types",
+  "title": "Зарядка электромобиля: AC, DC, разъёмы и мощности",
+  "date": "2026-06-26"
+ },
+ {
+  "category": "electric",
+  "slug": "ev-winter",
+  "title": "Электромобиль зимой: куда уходит запас хода",
+  "date": "2026-09-15"
+ },
+ {
+  "category": "electric",
+  "slug": "hybrid-types",
+  "title": "Гибриды: мягкий, полный, подключаемый — в чём разница",
+  "date": "2026-01-16"
+ },
+ {
+  "category": "electric",
+  "slug": "regenerative-braking",
+  "title": "Рекуперация: как электромобиль заряжается при торможении",
+  "date": "2026-07-31"
+ },
+ {
+  "category": "electric",
+  "slug": "ev-battery-degradation",
+  "title": "Деградация батареи: мифы и реальность",
+  "date": "2026-02-26"
+ },
+ {
+  "category": "electric",
+  "slug": "ev-total-cost",
+  "title": "Сколько на самом деле стоит владение электромобилем",
+  "date": "2026-05-21"
+ },
+ {
+  "category": "electric",
+  "slug": "hydrogen-cars",
+  "title": "Водородные автомобили: топливные элементы против батарей",
+  "date": "2026-08-16"
+ },
+ {
+  "category": "electric",
+  "slug": "ev-home-charging",
+  "title": "Домашняя зарядка: что нужно знать перед установкой",
+  "date": "2026-01-19"
+ },
+ {
+  "category": "electric",
+  "slug": "ev-used-buying",
+  "title": "Как выбрать подержанный электромобиль",
+  "date": "2026-09-12"
+ },
+ {
+  "category": "electric",
+  "slug": "ev-myths",
+  "title": "Десять популярных мифов об электромобилях",
+  "date": "2026-04-24"
+ },
+ {
+  "category": "service",
+  "slug": "oil-change",
+  "title": "Моторное масло: вязкость, допуски и интервалы замены",
+  "date": "2026-06-15"
+ },
+ {
+  "category": "service",
+  "slug": "tires-guide",
+  "title": "Как читать маркировку шин и выбирать резину",
+  "date": "2026-07-20"
+ },
+ {
+  "category": "service",
+  "slug": "winter-tires",
+  "title": "Шипы или липучка: выбираем зимние шины",
+  "date": "2026-01-27"
+ },
+ {
+  "category": "service",
+  "slug": "car-battery-care",
+  "title": "Аккумулятор: как продлить жизнь и не остаться без запуска",
+  "date": "2026-05-16"
+ },
+ {
+  "category": "service",
+  "slug": "timing-belt",
+  "title": "Ремень или цепь ГРМ: когда менять и чем грозит обрыв",
+  "date": "2026-01-25"
+ },
+ {
+  "category": "service",
+  "slug": "brake-pads-check",
+  "title": "Когда менять тормозные колодки и диски",
+  "date": "2026-09-18"
+ },
+ {
+  "category": "service",
+  "slug": "coolant-system",
+  "title": "Система охлаждения: антифриз, термостат и перегрев",
+  "date": "2026-03-12"
+ },
+ {
+  "category": "service",
+  "slug": "dashboard-warning-lights",
+  "title": "Сигнальные лампы на приборной панели: что срочно, а что подождёт",
+  "date": "2026-01-14"
+ },
+ {
+  "category": "service",
+  "slug": "car-wash-paint-care",
+  "title": "Уход за кузовом: мойка, полировка и защита ЛКП",
+  "date": "2026-09-23"
+ },
+ {
+  "category": "service",
+  "slug": "spark-plugs",
+  "title": "Свечи зажигания: признаки износа и правильная замена",
+  "date": "2026-07-04"
+ },
+ {
+  "category": "service",
+  "slug": "cabin-filter-ac",
+  "title": "Кондиционер и салонный фильтр: обслуживание без переплат",
+  "date": "2026-02-10"
+ },
+ {
+  "category": "service",
+  "slug": "diy-maintenance",
+  "title": "Что можно обслуживать самому, а что лучше доверить сервису",
+  "date": "2026-09-29"
+ },
+ {
+  "category": "service",
+  "slug": "car-storage",
+  "title": "Как подготовить машину к долгой стоянке",
+  "date": "2026-04-11"
+ },
+ {
+  "category": "driving",
+  "slug": "winter-driving",
+  "title": "Зимнее вождение: базовые приёмы на скользкой дороге",
+  "date": "2026-03-17"
+ },
+ {
+  "category": "driving",
+  "slug": "skid-control",
+  "title": "Занос: как его распознать и что делать",
+  "date": "2026-06-12"
+ },
+ {
+  "category": "driving",
+  "slug": "fuel-economy-driving",
+  "title": "Экономичное вождение: десять привычек, которые снижают расход",
+  "date": "2026-07-17"
+ },
+ {
+  "category": "driving",
+  "slug": "long-trip-prep",
+  "title": "Подготовка к дальней поездке: чек-лист водителя",
+  "date": "2026-03-04"
+ },
+ {
+  "category": "driving",
+  "slug": "night-driving",
+  "title": "Езда ночью: свет, усталость и внимание",
+  "date": "2026-02-04"
+ },
+ {
+  "category": "driving",
+  "slug": "rain-aquaplaning",
+  "title": "Аквапланирование: почему машина «всплывает» и как этого избежать",
+  "date": "2026-08-03"
+ },
+ {
+  "category": "driving",
+  "slug": "child-seats",
+  "title": "Детские автокресла: группы, ISOFIX и типичные ошибки",
+  "date": "2026-02-02"
+ },
+ {
+  "category": "driving",
+  "slug": "driver-fatigue",
+  "title": "Усталость за рулём: опасность, которую недооценивают",
+  "date": "2026-05-30"
+ },
+ {
+  "category": "driving",
+  "slug": "parking-skills",
+  "title": "Парковка задним ходом и параллельная парковка без стресса",
+  "date": "2026-06-18"
+ },
+ {
+  "category": "driving",
+  "slug": "manual-transmission-tips",
+  "title": "Механическая коробка: как ездить плавно и беречь сцепление",
+  "date": "2026-06-01"
+ },
+ {
+  "category": "driving",
+  "slug": "offroad-basics",
+  "title": "Бездорожье для новичка: как не застрять и выбраться",
+  "date": "2026-04-16"
+ },
+ {
+  "category": "driving",
+  "slug": "towing-trailer",
+  "title": "Езда с прицепом: нагрузка, сцепка и манёвры",
+  "date": "2026-05-08"
+ },
+ {
+  "category": "driving",
+  "slug": "defensive-driving",
+  "title": "Защитное вождение: как предугадать ошибки других",
+  "date": "2026-02-07"
+ },
+ {
+  "category": "buying",
+  "slug": "used-car-inspection",
+  "title": "Осмотр подержанного автомобиля: пошаговая инструкция",
+  "date": "2026-02-13"
+ },
+ {
+  "category": "buying",
+  "slug": "vin-check",
+  "title": "VIN-номер: что можно узнать о машине по 17 символам",
+  "date": "2026-03-01"
+ },
+ {
+  "category": "buying",
+  "slug": "new-vs-used",
+  "title": "Новый или с пробегом: что выгоднее на дистанции",
+  "date": "2026-01-06"
+ },
+ {
+  "category": "buying",
+  "slug": "car-loan-leasing",
+  "title": "Кредит, лизинг или подписка: как платить за машину",
+  "date": "2026-04-02"
+ },
+ {
+  "category": "buying",
+  "slug": "depreciation",
+  "title": "Амортизация: какие машины теряют в цене быстрее",
+  "date": "2026-04-05"
+ },
+ {
+  "category": "buying",
+  "slug": "test-drive-guide",
+  "title": "Как правильно проводить тест-драйв перед покупкой",
+  "date": "2026-06-09"
+ },
+ {
+  "category": "buying",
+  "slug": "body-types-guide",
+  "title": "Седан, хэтчбек, универсал, кроссовер: какой кузов выбрать",
+  "date": "2026-04-08"
+ },
+ {
+  "category": "buying",
+  "slug": "selling-car",
+  "title": "Как продать машину быстро и без потерь",
+  "date": "2026-08-08"
+ },
+ {
+  "category": "buying",
+  "slug": "insurance-basics",
+  "title": "Автострахование: как устроены полисы и от чего зависит цена",
+  "date": "2026-05-13"
+ },
+ {
+  "category": "buying",
+  "slug": "odometer-fraud",
+  "title": "Скрученный пробег: как распознать обман",
+  "date": "2026-05-02"
+ },
+ {
+  "category": "buying",
+  "slug": "first-car",
+  "title": "Первая машина: на что смотреть начинающему водителю",
+  "date": "2026-08-11"
+ },
+ {
+  "category": "buying",
+  "slug": "cost-of-ownership",
+  "title": "Полная стоимость владения: считаем расходы честно",
+  "date": "2026-02-18"
+ },
+ {
+  "category": "motorsport",
+  "slug": "formula1-basics",
+  "title": "Формула-1 для начинающих: правила, команды, стратегия",
+  "date": "2026-08-24"
+ },
+ {
+  "category": "motorsport",
+  "slug": "le-mans-24",
+  "title": "24 часа Ле-Мана: гонка на выносливость",
+  "date": "2026-04-13"
+ },
+ {
+  "category": "motorsport",
+  "slug": "dakar-rally",
+  "title": "Ралли «Дакар»: от Парижа до Саудовской Аравии",
+  "date": "2026-03-14"
+ },
+ {
+  "category": "motorsport",
+  "slug": "kamaz-master",
+  "title": "«КАМАЗ-мастер»: как российские грузовики покорили «Дакар»",
+  "date": "2026-06-04"
+ },
+ {
+  "category": "motorsport",
+  "slug": "group-b-rally",
+  "title": "Группа B: самая безумная эпоха ралли",
+  "date": "2026-07-09"
+ },
+ {
+  "category": "motorsport",
+  "slug": "ayrton-senna",
+  "title": "Айртон Сенна: гонщик, ставший легендой",
+  "date": "2026-01-30"
+ },
+ {
+  "category": "motorsport",
+  "slug": "nurburgring",
+  "title": "Нюрбургринг: «Зелёный ад» и время круга",
+  "date": "2026-05-24"
+ },
+ {
+  "category": "motorsport",
+  "slug": "karting-start",
+  "title": "Картинг: с чего начинается путь гонщика",
+  "date": "2026-02-15"
+ },
+ {
+  "category": "motorsport",
+  "slug": "drifting",
+  "title": "Дрифт: от японских перевалов до чемпионатов",
+  "date": "2026-06-23"
+ },
+ {
+  "category": "motorsport",
+  "slug": "f1-tech-road-cars",
+  "title": "Технологии автоспорта, которые пришли в обычные машины",
+  "date": "2026-08-27"
+ },
+ {
+  "category": "motorsport",
+  "slug": "indianapolis-500",
+  "title": "Indianapolis 500: самая быстрая овальная гонка",
+  "date": "2026-07-15"
+ },
+ {
+  "category": "motorsport",
+  "slug": "track-day",
+  "title": "Трек-дэй: как впервые выехать на гоночную трассу",
+  "date": "2026-03-20"
+ },
+ {
+  "category": "culture",
+  "slug": "car-design-process",
+  "title": "Как рождается дизайн автомобиля: от эскиза до пластилиновой модели",
+  "date": "2026-07-28"
+ },
+ {
+  "category": "culture",
+  "slug": "italian-coachbuilders",
+  "title": "Pininfarina, Bertone, Italdesign: итальянские кузовные ателье",
+  "date": "2026-06-20"
+ },
+ {
+  "category": "culture",
+  "slug": "cars-in-cinema",
+  "title": "Знаменитые автомобили в кино",
+  "date": "2026-04-30"
+ },
+ {
+  "category": "culture",
+  "slug": "jdm-culture",
+  "title": "JDM: как японские машины стали культом",
+  "date": "2026-09-07"
+ },
+ {
+  "category": "culture",
+  "slug": "car-colors",
+  "title": "Цвет автомобиля: история, мода и практичность",
+  "date": "2026-03-28"
+ },
+ {
+  "category": "culture",
+  "slug": "classic-car-restoration",
+  "title": "Реставрация классики: с чего начать и сколько стоит",
+  "date": "2026-05-19"
+ },
+ {
+  "category": "culture",
+  "slug": "car-sound-design",
+  "title": "Звук мотора: как инженеры настраивают голос автомобиля",
+  "date": "2026-07-07"
+ },
+ {
+  "category": "culture",
+  "slug": "soviet-concept-cars",
+  "title": "Советские концепт-кары, которые не пошли в серию",
+  "date": "2026-05-10"
+ },
+ {
+  "category": "culture",
+  "slug": "car-logos-history",
+  "title": "История автомобильных эмблем",
+  "date": "2026-02-21"
+ },
+ {
+  "category": "culture",
+  "slug": "scale-models",
+  "title": "Масштабные модели: коллекционирование машин в миниатюре",
+  "date": "2026-08-19"
+ },
+ {
+  "category": "culture",
+  "slug": "road-trip-routes",
+  "title": "Великие дороги мира: маршруты для автопутешествий",
+  "date": "2026-10-02"
+ },
+ {
+  "category": "culture",
+  "slug": "future-of-cars",
+  "title": "Каким будет автомобиль через 20 лет",
+  "date": "2026-06-07"
+ }
+]

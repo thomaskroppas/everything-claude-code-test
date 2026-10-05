@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Как устроен робот с двумя сцеплениями — Отсечка</title>
+<meta name="description" content="Две коробки в одном корпусе, заранее включённая следующая передача и переключение за доли секунды. Разбираем устройство преселективного робота, разницу сухих и мокрых сцеплений и правила эксплуатации.">
+<link rel="canonical" href="https://otsechka.example/articles/dual-clutch.html">
+<meta property="og:site_name" content="Отсечка">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Как устроен робот с двумя сцеплениями">
+<meta property="og:description" content="Две коробки в одном корпусе, заранее включённая следующая передача и переключение за доли секунды. Разбираем устройство преселективного робота, разницу сухих и мокрых сцеплений и правила эксплуатации.">
+<meta property="og:url" content="https://otsechka.example/articles/dual-clutch.html">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary">
+<meta property="article:published_time" content="2026-04-21">
+<meta name="theme-color" content="#14171c">
+<link rel="alternate" type="application/rss+xml" title="Отсечка" href="../rss.xml">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Unbounded:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Unbounded:wght@500;600;700;800&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/style.css">
+<script>try{var t=localStorage.getItem('otsechka-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Как устроен робот с двумя сцеплениями","description":"Две коробки в одном корпусе, заранее включённая следующая передача и переключение за доли секунды. Разбираем устройство преселективного робота, разницу сухих и мокрых сцеплений и правила эксплуатации.","url":"https://otsechka.example/articles/dual-clutch.html","datePublished":"2026-04-21","dateModified":"2026-04-21","inLanguage":"ru","articleSection":"Устройство","keywords":"техника, трансмиссия, dsg, робот","wordCount":902,"image":"https://otsechka.example/assets/covers/dual-clutch.svg","author":{"@type":"Organization","name":"Редакция «Отсечка»","url":"https://otsechka.example/"},"publisher":{"@type":"Organization","name":"Отсечка","url":"https://otsechka.example/"},"mainEntityOfPage":"https://otsechka.example/articles/dual-clutch.html"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://otsechka.example/"},{"@type":"ListItem","position":2,"name":"Устройство","item":"https://otsechka.example/category/tech.html"},{"@type":"ListItem","position":3,"name":"Как устроен робот с двумя сцеплениями"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержанию</a>
+<header class="masthead">
+  <div class="masthead__row wrap">
+    <a class="wordmark" href="../index.html" aria-label="Отсечка: на главную">ОТСЕЧКА<span class="wordmark__rpm" aria-hidden="true">×1000 об/мин</span></a>
+    <div class="masthead__tools">
+      <a class="tool" href="../archive.html">Все статьи</a>
+      <a class="tool" href="../about.html">О журнале</a>
+      <button class="tool tool--theme" type="button" id="theme-toggle">Тема</button>
+    </div>
+  </div>
+  <nav class="catnav wrap" aria-label="Рубрики"><a href="../category/history.html">История</a><a href="../category/tech.html">Устройство</a><a href="../category/electric.html">Электро</a><a href="../category/service.html">Обслуживание</a><a href="../category/driving.html">Вождение</a><a href="../category/buying.html">Покупка</a><a href="../category/motorsport.html">Автоспорт</a><a href="../category/culture.html">Культура</a></nav>
+  <div class="revbar revbar--progress" aria-hidden="true"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="amber"></i><i class="amber"></i><i class="amber"></i><i class="amber"></i><i class="red"></i><i class="red"></i><i class="red"></i><i class="red"></i></div>
+</header>
+<main id="main">
+  <article class="post">
+    <header class="post__head wrap">
+      <p class="meta"><a class="chip chip--tech" href="../category/tech.html">Устройство</a><span class="mono">№ 040</span></p>
+      <h1 class="post__title">Как устроен робот с двумя сцеплениями</h1>
+      <p class="post__lede">Две коробки в одном корпусе, заранее включённая следующая передача и переключение за доли секунды. Разбираем устройство преселективного робота, разницу сухих и мокрых сцеплений и правила эксплуатации.</p>
+      <p class="post__byline mono"><time datetime="2026-04-21">21 апреля 2026</time><span>5 мин чтения</span><span>902 слов</span></p>
+    </header>
+    <figure class="post__cover wrap" aria-hidden="true"><svg viewBox="0 0 1200 750" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Обложка статьи, рубрика «Устройство»" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="750" fill="#21405A"/><path d="M488.5 383.0L514.9 410.6L482.0 429.9L500.0 463.5L463.2 473.3L471.5 510.5L433.3 510.0L431.2 548.1L394.7 537.3L382.4 573.4L350.1 553.2L328.5 584.6L302.9 556.4L273.6 580.9L256.5 546.8L221.8 562.4L214.5 525.0L176.8 530.7L179.9 492.7L142.1 488.0L155.4 452.3L120.2 437.6L142.6 406.7L112.7 383.0L142.6 359.4L120.2 328.5L155.4 313.8L142.1 278.1L179.9 273.4L176.8 235.4L214.5 241.1L221.8 203.7L256.5 219.3L273.6 185.2L302.9 209.7L328.5 181.5L350.1 212.9L382.4 192.7L394.7 228.8L431.2 218.0L433.3 256.1L471.5 255.5L463.2 292.8L500.0 302.6L482.0 336.2L514.9 355.5L488.5 383.0Z" fill="none" stroke="#BFD9EE" stroke-width="4" opacity="0.6"/><circle cx="314" cy="383" r="50" fill="none" stroke="#BFD9EE" stroke-width="3" opacity="0.5"/><path d="M791.3 425.6L810.0 455.9L781.1 476.7L786.9 511.9L752.2 520.0L744.0 554.7L708.9 549.0L688.1 577.9L657.8 559.1L627.5 577.9L606.7 549.0L571.6 554.7L563.4 520.0L528.7 511.9L534.5 476.7L505.6 455.9L524.3 425.6L505.6 395.3L534.5 374.5L528.7 339.4L563.4 331.2L571.6 296.6L606.7 302.3L627.5 273.4L657.8 292.1L688.1 273.4L708.9 302.3L744.0 296.6L752.2 331.2L786.9 339.4L781.1 374.5L810.0 395.3L791.3 425.6Z" fill="none" stroke="#BFD9EE" stroke-width="4" opacity="0.6"/><circle cx="657" cy="425" r="38" fill="none" stroke="#BFD9EE" stroke-width="3" opacity="0.5"/><path d="M1040.8 425.4L1057.5 443.7L1036.4 456.5L1047.2 478.7L1023.3 485.0L1027.5 509.4L1002.8 508.7L999.9 533.3L976.4 525.7L966.7 548.4L946.3 534.5L930.6 553.6L914.9 534.5L894.5 548.4L884.8 525.7L861.3 533.3L858.4 508.7L833.8 509.4L837.9 485.0L814.0 478.7L824.9 456.5L803.8 443.7L820.4 425.4L803.8 407.2L824.9 394.4L814.0 372.2L837.9 365.9L833.8 341.5L858.4 342.2L861.3 317.6L884.8 325.2L894.5 302.5L914.9 316.4L930.6 297.3L946.3 316.4L966.7 302.5L976.4 325.2L999.9 317.6L1002.8 342.2L1027.5 341.5L1023.3 365.9L1047.2 372.2L1036.4 394.4L1057.5 407.2L1040.8 425.4Z" fill="none" stroke="#FFC21A" stroke-width="8" opacity="0.95"/><circle cx="930" cy="425" r="32" fill="none" stroke="#BFD9EE" stroke-width="3" opacity="0.5"/><path d="M1331.9 311.9L1355.2 352.8L1317.3 380.7L1321.9 427.5L1276.0 437.5L1261.2 482.2L1215.1 472.7L1183.4 507.4L1145.2 480.0L1102.1 498.9L1078.3 458.3L1031.3 458.0L1026.1 411.3L983.2 391.9L997.5 347.0L966.3 311.9L997.5 276.7L983.2 231.9L1026.1 212.5L1031.3 165.8L1078.3 165.5L1102.1 124.9L1145.2 143.7L1183.4 116.4L1215.1 151.1L1261.2 141.6L1276.0 186.2L1321.9 196.3L1317.3 243.1L1355.2 271.0L1331.9 311.9Z" fill="none" stroke="#BFD9EE" stroke-width="4" opacity="0.6"/><circle cx="1162" cy="311" r="49" fill="none" stroke="#BFD9EE" stroke-width="3" opacity="0.5"/><text x="1152" y="706" text-anchor="end" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="40" font-weight="600" fill="#BFD9EE">№ 040</text></svg></figure>
+    <div class="post__layout wrap">
+      <aside class="post__side"><p class="label">Паспорт темы</p><dl class="spec"><div><dt>Серийный дебют</dt><dd>VW Golf, 2003</dd></div><div><dt>Число валов</dt><dd>2 первичных</dd></div><div><dt>Типы сцеплений</dt><dd>сухие и мокрые</dd></div><div><dt>Мозг коробки</dt><dd>мехатроник</dd></div></dl><nav class="toc" aria-label="Содержание"><p class="label">Содержание</p><ol><li><a href="#sec-1" data-toc="sec-1">Идея, которой почти сто лет</a></li><li><a href="#sec-2" data-toc="sec-2">Две коробки в одном корпусе</a></li><li><a href="#sec-3" data-toc="sec-3">Как происходит переключение</a></li><li><a href="#sec-4" data-toc="sec-4">Сухие и мокрые сцепления</a></li><li><a href="#sec-5" data-toc="sec-5">Мехатроник — мозг коробки</a></li><li><a href="#sec-6" data-toc="sec-6">Как продлить жизнь роботу</a></li><li><a href="#sec-7" data-toc="sec-7">Кому подходит робот</a></li></ol></nav></aside>
+      <div class="prose">
+<p>Даже опытному гонщику на механике переключение передачи занимает заметную долю секунды: выжать сцепление, перевести рычаг, отпустить педаль. Всё это время мотор не тянет колёса. Робот с двумя сцеплениями сокращает этот провал почти до нуля, и делает это не за счёт волшебства, а благодаря простой и остроумной идее: следующая передача у него уже включена, остаётся только передать на неё тягу.</p>
+<h2 id="sec-1">Идея, которой почти сто лет</h2>
+<p>Принцип преселективной коробки с двумя сцеплениями приписывают французскому инженеру Адольфу Кегрессу, который предложил его ещё в конце 1930-х. Технологии того времени не позволяли надёжно управлять двумя сцеплениями, и идея ждала своего часа.</p>
+<p>Он настал вместе с электроникой. В 1980-х Porsche экспериментировала с такой коробкой на гоночных прототипах, обозначив её аббревиатурой PDK, а Audi пробовала её в ралли. На серийных автомобилях технология дебютировала в 2003 году, когда Volkswagen предложил коробку DSG на Golf R32. С тех пор роботы с двумя сцеплениями появились у множества марок — от бюджетных хэтчбеков до суперкаров.</p>
+<h2 id="sec-2">Две коробки в одном корпусе</h2>
+<p>Чтобы понять устройство, представьте обычную механическую коробку, разрезанную на две половины.</p>
+<ul><li><strong>Первый первичный вал</strong> несёт шестерни нечётных передач: первой, третьей, пятой, седьмой.</li><li><strong>Второй первичный вал</strong> несёт шестерни чётных передач и, как правило, задней.</li><li>Валы расположены соосно: один пустотелый, другой проходит внутри него.</li><li><strong>Каждый вал имеет своё сцепление.</strong> Сцепления собраны в общий узел — так называемую двойную корзину.</li><li><strong>Вторичные валы</strong> собирают крутящий момент с обеих половин и передают его на главную передачу и колёса.</li></ul>
+<p>Внутри — вполне классические шестерни и синхронизаторы, как в механике. Отличается лишь то, что включают передачи и управляют сцеплениями не рука и нога водителя, а гидравлические или электрические приводы.</p>
+<h2 id="sec-3">Как происходит переключение</h2>
+<p>Разберём разгон с места по шагам.</p>
+<ol><li>Машина трогается на первой передаче: замкнуто первое сцепление, работает нечётный вал.</li><li>Электроника, видя рост скорости, заранее включает вторую передачу на чётном валу. Второе сцепление пока разомкнуто, поэтому вал крутится вхолостую.</li><li>В момент переключения первое сцепление размыкается, а второе одновременно замыкается. Тяга перетекает с одного вала на другой практически без разрыва.</li><li>Пока машина едет на второй, на нечётном валу уже готовится третья.</li></ol>
+<p>Всё это занимает доли секунды. В спортивных версиях переключение настолько быстрое, что его едва замечаешь, а на разгоне не теряется ни метра.</p>
+<p>Есть и обратная сторона. Электроника вынуждена угадывать, какая передача понадобится следующей. Если водитель резко меняет решение — например, разгоняется и тут же сбрасывает газ перед поворотом, — коробке нужно переставить преселекцию, и возникает заметная пауза.</p>
+<h2 id="sec-4">Сухие и мокрые сцепления</h2>
+<p>Ключевое конструктивное различие между роботами — тип сцеплений.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Таблица: Параметр, Сухие сцепления, Мокрые сцепления"><table><thead><tr><th scope="col">Параметр</th><th scope="col">Сухие сцепления</th><th scope="col">Мокрые сцепления</th></tr></thead><tbody><tr><td>Как работают</td><td>Диски трутся на воздухе</td><td>Пакеты дисков в масле</td></tr><tr><td>Крутящий момент</td><td>Небольшой, ≈250 Н·м</td><td>Значительно больше</td></tr><tr><td>КПД</td><td>Выше</td><td>Немного ниже</td></tr><tr><td>Охлаждение</td><td>Воздухом, слабое</td><td>Маслом, эффективное</td></tr><tr><td>Где встречаются</td><td>Малолитражки</td><td>Мощные и тяжёлые машины</td></tr></tbody></table></div>
+<p>Сухие сцепления проще, легче и чуть экономичнее: масло не тратит энергию на перемешивание. Но тепло отводится плохо, и в пробках с бесконечными троганиями и «подползаниями» они перегреваются и изнашиваются. Мокрые сцепления работают в масляной ванне, лучше охлаждаются и выдерживают большие нагрузки, но требуют регулярной замены масла.</p>
+<p>Классический пример — две коробки Volkswagen: шестиступенчатая DQ250 с мокрыми сцеплениями, появившаяся первой, и семиступенчатая DQ200 с сухими, рассчитанная на моторы с небольшим крутящим моментом. Ранние выпуски последней заработали непростую репутацию, хотя с годами конструкцию заметно доработали.</p>
+<p>Интересно, что сухие сцепления в таких коробках обычно нормально разомкнуты: без давления в гидравлике они расходятся сами. Мокрые чаще работают по тому же принципу, и это важно для безопасности — при отказе управления коробка не заблокирует колёса и не дёрнет машину вперёд.</p>
+<h2 id="sec-5">Мехатроник — мозг коробки</h2>
+<p>Всем этим хозяйством управляет мехатроник — блок, объединяющий электронику и гидравлику. В нём находятся контроллер, датчики, электромагнитные клапаны и каналы, по которым масло под давлением подаётся к исполнительным механизмам. Мехатроник решает, когда переключаться, как плавно замыкать сцепление при трогании, какую передачу готовить заранее.</p>
+<p>Именно с мехатроником связана значительная часть неисправностей роботов: отказы датчиков, износ клапанов, трещины плат. Симптомы бывают разными — от рывков и ударов до аварийного режима, когда коробка оставляет лишь одну-две передачи. Ремонт мехатроника зачастую сводится к замене всего блока, и обходится он недёшево, поэтому многие сервисы научились восстанавливать отдельные узлы — платы, датчики и клапаны. Ещё одна частая причина капризов — не поломка, а сбившаяся адаптация: после замены сцеплений или масла коробке нужно заново «выучить» точки схватывания, и без этой процедуры даже исправный робот будет дёргаться.</p>
+<h2 id="sec-6">Как продлить жизнь роботу</h2>
+<p>Робот с двумя сцеплениями не любит, когда с ним обращаются как с гидроавтоматом. Несколько простых правил заметно продлевают его ресурс.</p>
+<ul><li><strong>Не держите машину на месте газом на подъёме.</strong> Сцепление в этот момент пробуксовывает и греется. Пользуйтесь тормозом и системой удержания на подъёме.</li><li><strong>В плотной пробке не «ползите» сантиметрами.</strong> Лучше выдержать дистанцию и проехать сразу пару метров, чем постоянно трогаться.</li><li><strong>Стоя на светофоре долго, можно ставить N</strong> — но без фанатизма: частое дёрганье селектора тоже не полезно.</li><li><strong>Не трогайтесь «с пробуксовкой» постоянно.</strong> Режимы старта с места рассчитаны на эпизодическое использование.</li><li><strong>Меняйте масло по регламенту</strong> — для мокрых сцеплений это особенно важно.</li></ul>
+<aside class="callout callout--tip"><p class="callout__label">Совет</p><p>при покупке подержанной машины с роботом попросите продавца проехать с вами медленно в горку и задним ходом при парковке. Вибрация, рывки или стук при трогании — повод для диагностики сцеплений и мехатроника до сделки, а не после.</p></aside>
+<h2 id="sec-7">Кому подходит робот</h2>
+<p>Коробка с двумя сцеплениями — лучший выбор для тех, кто много ездит по трассе и любит точный, быстрый отклик. Она экономична, позволяет мотору всегда оставаться в нужном диапазоне оборотов и делает даже скромную машину заметно бодрее. Если же ваша жизнь — это бесконечные городские пробки и парковки, стоит внимательно присмотреться к конкретной версии коробки или выбрать гидроавтомат. Зная, как устроен робот, легко понять его привычки — и не требовать от него невозможного.</p>
+        <p class="tags"><span class="tag">#техника</span><span class="tag">#трансмиссия</span><span class="tag">#dsg</span><span class="tag">#робот</span></p>
+      </div>
+    </div>
+    <nav class="pager wrap" aria-label="Соседние статьи рубрики">
+      <a class="pager__link" href="../articles/diesel-engines.html"><span class="label">← Раньше в рубрике</span><span class="pager__title">Дизель: как он работает и почему его любят тягачи</span></a>
+      <a class="pager__link pager__link--next" href="../articles/brakes-explained.html"><span class="label">Новее в рубрике →</span><span class="pager__title">Тормоза: диски, барабаны, суппорты и тормозная жидкость</span></a>
+    </nav>
+  </article>
+  <section class="wrap related" aria-labelledby="related-title">
+    <h2 id="related-title" class="section-title">Ещё из рубрики «Устройство»</h2>
+    <div class="grid grid--3"><article class="card">
+  <a class="card__media" href="../articles/how-ice-works.html" tabindex="-1" aria-hidden="true"><img src="../assets/covers/how-ice-works.svg" width="1200" height="750" alt="" loading="lazy" decoding="async"></a>
+  <div class="card__body">
+    <p class="meta"><a class="chip chip--tech" href="../category/tech.html">Устройство</a><span class="mono">5 мин</span></p>
+    <h3 class="card__title"><a href="../articles/how-ice-works.html">Как работает двигатель внутреннего сгорания: четыре такта простыми словами</a></h3>
+    <p class="card__excerpt">Впуск, сжатие, рабочий ход, выпуск — разбираем по шагам, как капля бензина превращается во вращение колёс и почему мотор при этом отправляет большую часть энергии в тепло.</p>
+  </div>
+</article><article class="card">
+  <a class="card__media" href="../articles/rotary-engine.html" tabindex="-1" aria-hidden="true"><img src="../assets/covers/rotary-engine.svg" width="1200" height="750" alt="" loading="lazy" decoding="async"></a>
+  <div class="card__body">
+    <p class="meta"><a class="chip chip--tech" href="../category/tech.html">Устройство</a><span class="mono">5 мин</span></p>
+    <h3 class="card__title"><a href="../articles/rotary-engine.html">Роторный двигатель Ванкеля: красивая инженерная идея</a></h3>
+    <p class="card__excerpt">Мотор без поршней, шатунов и клапанов, который крутится до 9000 оборотов и почти не вибрирует — как устроен роторный двигатель Ванкеля и почему его красота обернулась капризным характером.</p>
+  </div>
+</article><article class="card">
+  <a class="card__media" href="../articles/aerodynamics.html" tabindex="-1" aria-hidden="true"><img src="../assets/covers/aerodynamics.svg" width="1200" height="750" alt="" loading="lazy" decoding="async"></a>
+  <div class="card__body">
+    <p class="meta"><a class="chip chip--tech" href="../category/tech.html">Устройство</a><span class="mono">5 мин</span></p>
+    <h3 class="card__title"><a href="../articles/aerodynamics.html">Аэродинамика: почему форма кузова экономит топливо</a></h3>
+    <p class="card__excerpt">Почему на трассе машина тратит топливо в основном на борьбу с воздухом, что такое коэффициент Cx и как каплевидные кузова, хвост Камма и гладкое днище превращаются в литры и километры.</p>
+  </div>
+</article></div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p class="wordmark wordmark--small">ОТСЕЧКА</p>
+      <p class="footer__text">Журнал об автомобилях: история, устройство, вождение и культура. Пишем о машинах так, чтобы было понятно с первого раза и интересно до последнего абзаца.</p>
+    </div>
+    <div>
+      <p class="label">Рубрики</p>
+      <ul class="footer__list"><li><a href="../category/history.html">История</a> <span class="mono">13</span></li><li><a href="../category/tech.html">Устройство</a> <span class="mono">13</span></li><li><a href="../category/electric.html">Электро</a> <span class="mono">12</span></li><li><a href="../category/service.html">Обслуживание</a> <span class="mono">13</span></li><li><a href="../category/driving.html">Вождение</a> <span class="mono">13</span></li><li><a href="../category/buying.html">Покупка</a> <span class="mono">12</span></li><li><a href="../category/motorsport.html">Автоспорт</a> <span class="mono">12</span></li><li><a href="../category/culture.html">Культура</a> <span class="mono">12</span></li></ul>
+    </div>
+    <div>
+      <p class="label">Одометр журнала</p>
+      <p class="odometer mono" role="img" aria-label="100 статей"><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span></p>
+      <p class="footer__text">100 статей · 8 рубрик · ≈94 тыс. слов</p>
+    </div>
+  </div>
+  <p class="wrap footer__fine">© 2026 «Отсечка». Тексты носят информационный характер: при ремонте и обслуживании сверяйтесь с руководством по эксплуатации своего автомобиля.</p>
+</footer>
+<script src="../assets/client.js" defer></script>
+</body>
+</html>
