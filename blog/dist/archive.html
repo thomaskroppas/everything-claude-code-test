@@ -13,563 +13,575 @@
 <meta property="og:url" content="https://otsechka.example/archive.html">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#14171c">
+<meta name="theme-color" content="#0a0a0b">
 <link rel="alternate" type="application/rss+xml" title="Отсечка" href="rss.xml">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Unbounded:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Unbounded:wght@500;600;700;800&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Manrope:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Manrope:wght@400;500;600&display=swap"></noscript>
 <link rel="stylesheet" href="assets/style.css">
-<script>try{var t=localStorage.getItem('otsechka-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 
 </head>
 <body>
 <a class="skip" href="#main">Перейти к содержанию</a>
-<header class="masthead">
-  <div class="masthead__row wrap">
-    <a class="wordmark" href="index.html" aria-label="Отсечка: на главную">ОТСЕЧКА<span class="wordmark__rpm" aria-hidden="true">×1000 об/мин</span></a>
-    <div class="masthead__tools">
-      <a class="tool" href="archive.html" aria-current="page">Все статьи</a>
-      <a class="tool" href="about.html">О журнале</a>
-      <button class="tool tool--theme" type="button" id="theme-toggle">Тема</button>
+
+<div class="issue-bar"><div class="wrap">Журнал об автомобилях · Выпуск № 100 · октябрь 2026</div></div>
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Рубрики"><a href="category/history.html">История</a><a href="category/tech.html">Устройство</a><a href="category/electric.html">Электро</a><a href="category/motorsport.html">Автоспорт</a></nav>
+    <a class="wordmark" href="index.html" aria-label="Отсечка — на главную">ОТСЕЧКА</a>
+    <div class="header-tools">
+      <nav class="nav nav--right" aria-label="Журнал">
+        <a class="icon-btn" href="archive.html" aria-label="Поиск по журналу"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></a>
+        <a href="about.html">О журнале</a>
+        <a href="archive.html" aria-current="page">Архив</a>
+      </nav>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Открыть меню"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
     </div>
   </div>
-  <nav class="catnav wrap" aria-label="Рубрики"><a href="category/history.html">История</a><a href="category/tech.html">Устройство</a><a href="category/electric.html">Электро</a><a href="category/service.html">Обслуживание</a><a href="category/driving.html">Вождение</a><a href="category/buying.html">Покупка</a><a href="category/motorsport.html">Автоспорт</a><a href="category/culture.html">Культура</a></nav>
-  <div class="revbar" aria-hidden="true"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="amber"></i><i class="amber"></i><i class="amber"></i><i class="amber"></i><i class="red"></i><i class="red"></i><i class="red"></i><i class="red"></i></div>
 </header>
+<nav class="menu" id="site-menu" aria-label="Меню" hidden><div class="wrap"><a href="category/history.html">История</a><a href="category/tech.html">Устройство</a><a href="category/electric.html">Электро</a><a href="category/service.html">Обслуживание</a><a href="category/driving.html">Вождение</a><a href="category/buying.html">Покупка</a><a href="category/motorsport.html">Автоспорт</a><a href="category/culture.html">Культура</a><a class="menu__small" href="archive.html">Архив · все 100 статей</a><a class="menu__small" href="about.html">О журнале</a></div></nav>
 <main id="main" class="wrap">
-  <header class="pagehead">
+  <header class="page-head">
     <p class="eyebrow">Архив</p>
-    <h1 class="pagehead__title">Все 100 статей</h1>
-    <p class="pagehead__blurb">Ищите по названию, описанию или тегу. Номер у каждой статьи постоянный, по нему её легко найти снова.</p>
+    <h1 class="page-title">Все 100 статей</h1>
+    <p class="page-lede">Ищите по названию, описанию или тегу. Номер у каждой статьи постоянный.</p>
   </header>
   <div class="finder" role="search">
     <label class="label" for="q">Поиск по журналу</label>
     <input id="q" class="finder__input" type="search" placeholder="Например: турбина, зима, Нива" autocomplete="off">
-    <div class="filters" role="group" aria-label="Фильтр по рубрике"><button type="button" class="filter" data-filter="" aria-pressed="true">Все</button><button type="button" class="filter" data-filter="history" aria-pressed="false">История</button><button type="button" class="filter" data-filter="tech" aria-pressed="false">Устройство</button><button type="button" class="filter" data-filter="electric" aria-pressed="false">Электро</button><button type="button" class="filter" data-filter="service" aria-pressed="false">Обслуживание</button><button type="button" class="filter" data-filter="driving" aria-pressed="false">Вождение</button><button type="button" class="filter" data-filter="buying" aria-pressed="false">Покупка</button><button type="button" class="filter" data-filter="motorsport" aria-pressed="false">Автоспорт</button><button type="button" class="filter" data-filter="culture" aria-pressed="false">Культура</button></div>
-    <p class="finder__count mono" id="count" aria-live="polite">Найдено: 100</p>
+    <div class="toolbar__group" role="group" aria-label="Фильтр по рубрике"><button type="button" class="chip filter" data-filter="" aria-pressed="true">Все</button><button type="button" class="chip filter" data-filter="history" aria-pressed="false">История</button><button type="button" class="chip filter" data-filter="tech" aria-pressed="false">Устройство</button><button type="button" class="chip filter" data-filter="electric" aria-pressed="false">Электро</button><button type="button" class="chip filter" data-filter="service" aria-pressed="false">Обслуживание</button><button type="button" class="chip filter" data-filter="driving" aria-pressed="false">Вождение</button><button type="button" class="chip filter" data-filter="buying" aria-pressed="false">Покупка</button><button type="button" class="chip filter" data-filter="motorsport" aria-pressed="false">Автоспорт</button><button type="button" class="chip filter" data-filter="culture" aria-pressed="false">Культура</button></div>
+    <p class="toolbar__count" id="count" aria-live="polite">Найдено: 100</p>
   </div>
-  <ol class="rows" id="rows"><li class="row" data-cat="culture" data-q="великие дороги мира: маршруты для автопутешествий шоссе 66, трансфагарашское шоссе, атлантическая дорога норвегии, перевал стельвио и чуйский тракт — выбираем дороги, ради которых стоит взять отпуск и сесть за руль. путешествия маршруты дороги автотуризм">
-  <span class="row__no mono">№ 100</span>
-  <a class="row__title" href="articles/road-trip-routes.html">Великие дороги мира: маршруты для автопутешествий</a>
-  <span class="row__cat"><a class="chip chip--culture" href="category/culture.html">Культура</a></span>
-  <time class="row__date mono" datetime="2026-10-02">02.10.2026</time>
-</li><li class="row" data-cat="service" data-q="что можно обслуживать самому, а что лучше доверить сервису замена щёток, ламп и салонного фильтра под силу любому, а вот ремень грм и тормоза ошибок не прощают. делим обслуживание на три уровня сложности и честно считаем, где экономия оправдана. обслуживание ремонт своими руками гараж сервис">
-  <span class="row__no mono">№ 099</span>
-  <a class="row__title" href="articles/diy-maintenance.html">Что можно обслуживать самому, а что лучше доверить сервису</a>
-  <span class="row__cat"><a class="chip chip--service" href="category/service.html">Обслуживание</a></span>
-  <time class="row__date mono" datetime="2026-09-29">29.09.2026</time>
-</li><li class="row" data-cat="tech" data-q="аэродинамика: почему форма кузова экономит топливо почему на трассе машина тратит топливо в основном на борьбу с воздухом, что такое коэффициент cx и как каплевидные кузова, хвост камма и гладкое днище превращаются в литры и километры. аэродинамика расход кузов технологии">
-  <span class="row__no mono">№ 098</span>
-  <a class="row__title" href="articles/aerodynamics.html">Аэродинамика: почему форма кузова экономит топливо</a>
-  <span class="row__cat"><a class="chip chip--tech" href="category/tech.html">Устройство</a></span>
-  <time class="row__date mono" datetime="2026-09-26">26.09.2026</time>
-</li><li class="row" data-cat="service" data-q="уход за кузовом: мойка, полировка и защита лкп большинство царапин-паутинок появляется не на дороге, а на мойке. рассказываем, как мыть машину без вреда для лака, когда полировать и чем отличаются воск, силанты и керамика. кузов мойка полировка детейлинг">
-  <span class="row__no mono">№ 097</span>
-  <a class="row__title" href="articles/car-wash-paint-care.html">Уход за кузовом: мойка, полировка и защита ЛКП</a>
-  <span class="row__cat"><a class="chip chip--service" href="category/service.html">Обслуживание</a></span>
-  <time class="row__date mono" datetime="2026-09-23">23.09.2026</time>
-</li><li class="row" data-cat="tech" data-q="автомат, вариатор или робот: чем отличаются коробки передач две педали в салоне могут скрывать три совершенно разных механизма. объясняем, как устроены классический автомат, вариатор и роботизированная коробка и что выбрать под свой стиль езды. техника трансмиссия акпп вариатор">
-  <span class="row__no mono">№ 096</span>
-  <a class="row__title" href="articles/automatic-transmissions.html">Автомат, вариатор или робот: чем отличаются коробки передач</a>
-  <span class="row__cat"><a class="chip chip--tech" href="category/tech.html">Устройство</a></span>
-  <time class="row__date mono" datetime="2026-09-21">21.09.2026</time>
-</li><li class="row" data-cat="service" data-q="когда менять тормозные колодки и диски скрип, вибрация в педали и длинный ход — тормоза всегда предупреждают заранее. рассказываем, как оценить износ колодок и дисков самому и почему их нельзя менять по одной стороне. тормоза колодки безопасность обслуживание">
-  <span class="row__no mono">№ 095</span>
-  <a class="row__title" href="articles/brake-pads-check.html">Когда менять тормозные колодки и диски</a>
-  <span class="row__cat"><a class="chip chip--service" href="category/service.html">Обслуживание</a></span>
-  <time class="row__date mono" datetime="2026-09-18">18.09.2026</time>
-</li><li class="row" data-cat="electric" data-q="электромобиль зимой: куда уходит запас хода почему на морозе электромобиль теряет заметную часть запаса хода, на что именно уходят киловатт-часы и какие простые привычки помогают вернуть километры даже в настоящую русскую зиму. электромобиль зима батарея запас хода">
-  <span class="row__no mono">№ 094</span>
-  <a class="row__title" href="articles/ev-winter.html">Электромобиль зимой: куда уходит запас хода</a>
-  <span class="row__cat"><a class="chip chip--electric" href="category/electric.html">Электро</a></span>
-  <time class="row__date mono" datetime="2026-09-15">15.09.2026</time>
-</li><li class="row" data-cat="electric" data-q="как выбрать подержанный электромобиль подержанный электромобиль может стать отличной покупкой — первый владелец уже оплатил главную потерю в цене. рассказываем, как проверить батарею, зарядку и не нарваться на проблемы. электромобили подержанные авто покупка батарея">
-  <span class="row__no mono">№ 093</span>
-  <a class="row__title" href="articles/ev-used-buying.html">Как выбрать подержанный электромобиль</a>
-  <span class="row__cat"><a class="chip chip--electric" href="category/electric.html">Электро</a></span>
-  <time class="row__date mono" datetime="2026-09-12">12.09.2026</time>
-</li><li class="row" data-cat="history" data-q="benz patent-motorwagen и поездка берты бенц трёхколёсная повозка карла бенца получила патент в 1886 году, но настоящую славу ей принесла берта бенц, тайком уехавшая на ней с сыновьями из мангейма в пфорцхайм. история германия первый автомобиль benz">
-  <span class="row__no mono">№ 092</span>
-  <a class="row__title" href="articles/benz-patent-motorwagen.html">Benz Patent-Motorwagen и поездка Берты Бенц</a>
-  <span class="row__cat"><a class="chip chip--history" href="category/history.html">История</a></span>
-  <time class="row__date mono" datetime="2026-09-10">10.09.2026</time>
-</li><li class="row" data-cat="culture" data-q="jdm: как японские машины стали культом как машины, созданные для внутреннего рынка японии, превратились в мировой культ — от skyline gt-r и supra до дрифта, аниме «инициал ди» и праворульного владивостока. jdm япония тюнинг дрифт">
-  <span class="row__no mono">№ 091</span>
-  <a class="row__title" href="articles/jdm-culture.html">JDM: как японские машины стали культом</a>
-  <span class="row__cat"><a class="chip chip--culture" href="category/culture.html">Культура</a></span>
-  <time class="row__date mono" datetime="2026-09-07">07.09.2026</time>
-</li><li class="row" data-cat="tech" data-q="роторный двигатель ванкеля: красивая инженерная идея мотор без поршней, шатунов и клапанов, который крутится до 9000 оборотов и почти не вибрирует — как устроен роторный двигатель ванкеля и почему его красота обернулась капризным характером. двигатель ротор mazda история">
-  <span class="row__no mono">№ 090</span>
-  <a class="row__title" href="articles/rotary-engine.html">Роторный двигатель Ванкеля: красивая инженерная идея</a>
-  <span class="row__cat"><a class="chip chip--tech" href="category/tech.html">Устройство</a></span>
-  <time class="row__date mono" datetime="2026-09-04">04.09.2026</time>
-</li><li class="row" data-cat="tech" data-q="уровни автономности от 0 до 5: где мы сейчас шесть уровней автономности по классификации sae простым языком — чем ассистент отличается от автопилота, кто отвечает за аварию и почему полностью беспилотная машина пока остаётся мечтой. автопилот безопасность технологии электроника">
-  <span class="row__no mono">№ 089</span>
-  <a class="row__title" href="articles/adas-levels.html">Уровни автономности от 0 до 5: где мы сейчас</a>
-  <span class="row__cat"><a class="chip chip--tech" href="category/tech.html">Устройство</a></span>
-  <time class="row__date mono" datetime="2026-09-02">02.09.2026</time>
-</li><li class="row" data-cat="history" data-q="porsche 911: шесть десятилетий одной формы от скромного купе 901 на салоне во франкфурте до гибридного 992 — как porsche больше шестидесяти лет меняет 911 изнутри, почти не трогая его знаменитый силуэт. история германия спорткар porsche">
-  <span class="row__no mono">№ 088</span>
-  <a class="row__title" href="articles/porsche-911-evolution.html">Porsche 911: шесть десятилетий одной формы</a>
-  <span class="row__cat"><a class="chip chip--history" href="category/history.html">История</a></span>
-  <time class="row__date mono" datetime="2026-08-30">30.08.2026</time>
-</li><li class="row" data-cat="motorsport" data-q="технологии автоспорта, которые пришли в обычные машины зеркало заднего вида, дисковые тормоза, турбонаддув и подрулевые лепестки — рассказываем, какие решения родились или закалились на гоночных трассах и теперь стоят в вашем автомобиле. технологии формула 1 автоспорт история">
-  <span class="row__no mono">№ 087</span>
-  <a class="row__title" href="articles/f1-tech-road-cars.html">Технологии автоспорта, которые пришли в обычные машины</a>
-  <span class="row__cat"><a class="chip chip--motorsport" href="category/motorsport.html">Автоспорт</a></span>
-  <time class="row__date mono" datetime="2026-08-27">27.08.2026</time>
-</li><li class="row" data-cat="motorsport" data-q="формула-1 для начинающих: правила, команды, стратегия формула-1 кажется запутанной только первые пару гонок: стоит понять, как устроены квалификация, шины, пит-стопы и очки, — и каждый гран-при превращается в шахматную партию на скорости. формула-1 автоспорт гонки правила">
-  <span class="row__no mono">№ 086</span>
-  <a class="row__title" href="articles/formula1-basics.html">Формула-1 для начинающих: правила, команды, стратегия</a>
-  <span class="row__cat"><a class="chip chip--motorsport" href="category/motorsport.html">Автоспорт</a></span>
-  <time class="row__date mono" datetime="2026-08-24">24.08.2026</time>
-</li><li class="row" data-cat="history" data-q="«нива»: внедорожник, опередивший эпоху кроссоверов несущий кузов, постоянный полный привод и комфорт легковушки — в 1977 году ваз построил машину, которую на западе позже назвали бы кроссовером, только проходимую по-настоящему. история ваз внедорожник нива">
-  <span class="row__no mono">№ 085</span>
-  <a class="row__title" href="articles/niva-vaz-2121.html">«Нива»: внедорожник, опередивший эпоху кроссоверов</a>
-  <span class="row__cat"><a class="chip chip--history" href="category/history.html">История</a></span>
-  <time class="row__date mono" datetime="2026-08-22">22.08.2026</time>
-</li><li class="row" data-cat="culture" data-q="масштабные модели: коллекционирование машин в миниатюре гид для начинающего коллекционера масштабных моделей — какие бывают масштабы и материалы, чем отличаются бренды, как собирать советские машинки и как хранить коллекцию без потерь. коллекционирование модели хобби ретро">
-  <span class="row__no mono">№ 084</span>
-  <a class="row__title" href="articles/scale-models.html">Масштабные модели: коллекционирование машин в миниатюре</a>
-  <span class="row__cat"><a class="chip chip--culture" href="category/culture.html">Культура</a></span>
-  <time class="row__date mono" datetime="2026-08-19">19.08.2026</time>
-</li><li class="row" data-cat="electric" data-q="водородные автомобили: топливные элементы против батарей водородная машина заправляется за пять минут и выпускает из трубы только воду. почему же она так и не стала массовой и проигрывает гонку аккумуляторным электромобилям? водород топливные элементы электромобили технологии">
-  <span class="row__no mono">№ 083</span>
-  <a class="row__title" href="articles/hydrogen-cars.html">Водородные автомобили: топливные элементы против батарей</a>
-  <span class="row__cat"><a class="chip chip--electric" href="category/electric.html">Электро</a></span>
-  <time class="row__date mono" datetime="2026-08-16">16.08.2026</time>
-</li><li class="row" data-cat="history" data-q="нефтяной кризис 1973 года и рождение экономичных машин очереди на заправках, пустые автобаны по воскресеньям и подорожавшая в разы нефть заставили автопром вспомнить о расходе топлива и навсегда изменили облик машин. история кризис экономичность сша">
-  <span class="row__no mono">№ 082</span>
-  <a class="row__title" href="articles/oil-crisis-1973.html">Нефтяной кризис 1973 года и рождение экономичных машин</a>
-  <span class="row__cat"><a class="chip chip--history" href="category/history.html">История</a></span>
-  <time class="row__date mono" datetime="2026-08-14">14.08.2026</time>
-</li><li class="row" data-cat="buying" data-q="первая машина: на что смотреть начинающему водителю первая машина должна прощать ошибки, быть недорогой в обслуживании и не пугать в пробках — разбираемся, как выбрать её без переплат и разочарований. новичок покупка первая машина советы">
-  <span class="row__no mono">№ 081</span>
-  <a class="row__title" href="articles/first-car.html">Первая машина: на что смотреть начинающему водителю</a>
-  <span class="row__cat"><a class="chip chip--buying" href="category/buying.html">Покупка</a></span>
-  <time class="row__date mono" datetime="2026-08-11">11.08.2026</time>
-</li><li class="row" data-cat="buying" data-q="как продать машину быстро и без потерь продажа машины — это не только объявление с фотографиями, но и правильная цена, честная подготовка и аккуратное оформление сделки, чтобы потом не платить чужие штрафы. продажа вторичный рынок документы сделка">
-  <span class="row__no mono">№ 080</span>
-  <a class="row__title" href="articles/selling-car.html">Как продать машину быстро и без потерь</a>
-  <span class="row__cat"><a class="chip chip--buying" href="category/buying.html">Покупка</a></span>
-  <time class="row__date mono" datetime="2026-08-08">08.08.2026</time>
-</li><li class="row" data-cat="history" data-q="land rover series: внедорожник, нарисованный на песке как послевоенный дефицит стали, армейский «джип» и рисунок на пляже англси породили land rover series — машину, которая почти сорок лет возила фермеров, военных и путешественников. история британия внедорожник land rover">
-  <span class="row__no mono">№ 079</span>
-  <a class="row__title" href="articles/land-rover-series.html">Land Rover Series: внедорожник, нарисованный на песке</a>
-  <span class="row__cat"><a class="chip chip--history" href="category/history.html">История</a></span>
-  <time class="row__date mono" datetime="2026-08-05">05.08.2026</time>
-</li><li class="row" data-cat="driving" data-q="аквапланирование: почему машина «всплывает» и как этого избежать когда шина не успевает отвести воду, между резиной и асфальтом возникает водяной клин, и машина на мгновение превращается в катер без руля — разбираем, почему так происходит и как этого не допустить. вождение дождь шины безопасность">
-  <span class="row__no mono">№ 078</span>
-  <a class="row__title" href="articles/rain-aquaplaning.html">Аквапланирование: почему машина «всплывает» и как этого избежать</a>
-  <span class="row__cat"><a class="chip chip--driving" href="category/driving.html">Вождение</a></span>
-  <time class="row__date mono" datetime="2026-08-03">03.08.2026</time>
-</li><li class="row" data-cat="electric" data-q="рекуперация: как электромобиль заряжается при торможении каждый раз, когда электромобиль замедляется, его мотор превращается в генератор и возвращает часть энергии в батарею. объясняем, как это работает и сколько реально даёт. рекуперация электромобили тормоза экономия">
-  <span class="row__no mono">№ 077</span>
-  <a class="row__title" href="articles/regenerative-braking.html">Рекуперация: как электромобиль заряжается при торможении</a>
-  <span class="row__cat"><a class="chip chip--electric" href="category/electric.html">Электро</a></span>
-  <time class="row__date mono" datetime="2026-07-31">31.07.2026</time>
-</li><li class="row" data-cat="culture" data-q="как рождается дизайн автомобиля: от эскиза до пластилиновой модели сотни эскизов, цифровые модели, тонны промышленного пластилина и долгие споры — как дизайнерская студия превращает идею в кузов, который через несколько лет появится на дорогах. дизайн производство культура концепт">
-  <span class="row__no mono">№ 076</span>
-  <a class="row__title" href="articles/car-design-process.html">Как рождается дизайн автомобиля: от эскиза до пластилиновой модели</a>
-  <span class="row__cat"><a class="chip chip--culture" href="category/culture.html">Культура</a></span>
-  <time class="row__date mono" datetime="2026-07-28">28.07.2026</time>
-</li><li class="row" data-cat="history" data-q="ford mustang и рождение класса пони-каров длинный капот, короткий багажник, недорогая база и список опций на любой вкус — в 1964 году ford нашёл формулу, которая породила целый класс машин и живёт до сих пор. история форд мустанг сша">
-  <span class="row__no mono">№ 075</span>
-  <a class="row__title" href="articles/ford-mustang-pony-car.html">Ford Mustang и рождение класса пони-каров</a>
-  <span class="row__cat"><a class="chip chip--history" href="category/history.html">История</a></span>
-  <time class="row__date mono" datetime="2026-07-26">26.07.2026</time>
-</li><li class="row" data-cat="history" data-q="ваз-2101: как «копейка» стала народной итальянский fiat 124 переделали под русские дороги и морозы, построили для него город-завод на волге и получили машину, которая научила страну ездить. история ссср ваз жигули">
-  <span class="row__no mono">№ 074</span>
-  <a class="row__title" href="articles/vaz-2101.html">ВАЗ-2101: как «Копейка» стала народной</a>
-  <span class="row__cat"><a class="chip chip--history" href="category/history.html">История</a></span>
-  <time class="row__date mono" datetime="2026-07-23">23.07.2026</time>
-</li><li class="row" data-cat="service" data-q="как читать маркировку шин и выбирать резину надпись 205/55 r16 91v на боковине шины рассказывает о ней почти всё. учимся расшифровывать маркировку, узнавать возраст покрышки и выбирать резину под свою машину. шины обслуживание маркировка безопасность">
-  <span class="row__no mono">№ 073</span>
-  <a class="row__title" href="articles/tires-guide.html">Как читать маркировку шин и выбирать резину</a>
-  <span class="row__cat"><a class="chip chip--service" href="category/service.html">Обслуживание</a></span>
-  <time class="row__date mono" datetime="2026-07-20">20.07.2026</time>
-</li><li class="row" data-cat="driving" data-q="экономичное вождение: десять привычек, которые снижают расход расход зависит не только от мотора, но и от правой ноги водителя: десять простых привычек, которые без доработок машины заметно облегчают счета на заправке. вождение экономия расход топлива эковождение">
-  <span class="row__no mono">№ 072</span>
-  <a class="row__title" href="articles/fuel-economy-driving.html">Экономичное вождение: десять привычек, которые снижают расход</a>
-  <span class="row__cat"><a class="chip chip--driving" href="category/driving.html">Вождение</a></span>
-  <time class="row__date mono" datetime="2026-07-17">17.07.2026</time>
-</li><li class="row" data-cat="motorsport" data-q="indianapolis 500: самая быстрая овальная гонка двести кругов по овалу из кирпича и асфальта, скорости за 350 км/ч и бутылка молока для победителя — почему indy 500 называют величайшим зрелищем в гонках. индикар сша овал история">
-  <span class="row__no mono">№ 071</span>
-  <a class="row__title" href="articles/indianapolis-500.html">Indianapolis 500: самая быстрая овальная гонка</a>
-  <span class="row__cat"><a class="chip chip--motorsport" href="category/motorsport.html">Автоспорт</a></span>
-  <time class="row__date mono" datetime="2026-07-15">15.07.2026</time>
-</li><li class="row" data-cat="history" data-q="citroën ds: богиня на гидропневматике показанная в 1955 году ds выглядела как гостья из будущего — парящая подвеска, односпицевый руль и кузов-капля сделали её самым смелым серийным автомобилем эпохи. история ситроен франция гидропневматика">
-  <span class="row__no mono">№ 070</span>
-  <a class="row__title" href="articles/citroen-ds.html">Citroën DS: богиня на гидропневматике</a>
-  <span class="row__cat"><a class="chip chip--history" href="category/history.html">История</a></span>
-  <time class="row__date mono" datetime="2026-07-12">12.07.2026</time>
-</li><li class="row" data-cat="motorsport" data-q="группа b: самая безумная эпоха ралли пять сезонов, полтысячи сил на гравии и толпы зрителей прямо на трассе — как группа b подняла ралли на небывалую высоту и почему её пришлось закрыть. ралли группа b история автоспорт">
-  <span class="row__no mono">№ 069</span>
-  <a class="row__title" href="articles/group-b-rally.html">Группа B: самая безумная эпоха ралли</a>
-  <span class="row__cat"><a class="chip chip--motorsport" href="category/motorsport.html">Автоспорт</a></span>
-  <time class="row__date mono" datetime="2026-07-09">09.07.2026</time>
-</li><li class="row" data-cat="culture" data-q="звук мотора: как инженеры настраивают голос автомобиля звук автомобиля давно перестал быть случайностью: инженеры настраивают выпуск, впуск и даже динамики салона, а электромобилям голос придумывают с нуля — вместе с композиторами. звук инженерия выхлоп электромобили">
-  <span class="row__no mono">№ 068</span>
-  <a class="row__title" href="articles/car-sound-design.html">Звук мотора: как инженеры настраивают голос автомобиля</a>
-  <span class="row__cat"><a class="chip chip--culture" href="category/culture.html">Культура</a></span>
-  <time class="row__date mono" datetime="2026-07-07">07.07.2026</time>
-</li><li class="row" data-cat="service" data-q="свечи зажигания: признаки износа и правильная замена свеча стоит недорого, но от неё зависят пуск, тяга, расход и даже ресурс катализатора. разбираем, как понять, что свечи устали, как читать нагар и не сорвать резьбу в головке. свечи зажигание двигатель обслуживание">
-  <span class="row__no mono">№ 067</span>
-  <a class="row__title" href="articles/spark-plugs.html">Свечи зажигания: признаки износа и правильная замена</a>
-  <span class="row__cat"><a class="chip chip--service" href="category/service.html">Обслуживание</a></span>
-  <time class="row__date mono" datetime="2026-07-04">04.07.2026</time>
-</li><li class="row" data-cat="tech" data-q="abs, esp и другие электронные помощники: что они делают на самом деле abs не всегда сокращает тормозной путь, а esp не отменяет законы физики. рассказываем, как работают электронные системы безопасности, чем они реально помогают и где их возможности заканчиваются. техника безопасность электроника тормоза">
-  <span class="row__no mono">№ 066</span>
-  <a class="row__title" href="articles/abs-esp.html">ABS, ESP и другие электронные помощники: что они делают на самом деле</a>
-  <span class="row__cat"><a class="chip chip--tech" href="category/tech.html">Устройство</a></span>
-  <time class="row__date mono" datetime="2026-07-01">01.07.2026</time>
-</li><li class="row" data-cat="history" data-q="производственная система toyota и японское чудо как бедная послевоенная компания из японии придумала «точно вовремя», канбан и шнур андон и в итоге научила весь мировой автопром работать без лишнего. история тойота япония производство">
-  <span class="row__no mono">№ 065</span>
-  <a class="row__title" href="articles/toyota-production-system.html">Производственная система Toyota и японское чудо</a>
-  <span class="row__cat"><a class="chip chip--history" href="category/history.html">История</a></span>
-  <time class="row__date mono" datetime="2026-06-28">28.06.2026</time>
-</li><li class="row" data-cat="electric" data-q="зарядка электромобиля: ac, dc, разъёмы и мощности чем медленная зарядка переменным током отличается от быстрой постоянным, какие бывают разъёмы от type 2 до gb/t и почему заявленные 250 квт на практике держатся лишь несколько минут. электромобиль зарядка разъёмы инфраструктура">
-  <span class="row__no mono">№ 064</span>
-  <a class="row__title" href="articles/ev-charging-types.html">Зарядка электромобиля: AC, DC, разъёмы и мощности</a>
-  <span class="row__cat"><a class="chip chip--electric" href="category/electric.html">Электро</a></span>
-  <time class="row__date mono" datetime="2026-06-26">26.06.2026</time>
-</li><li class="row" data-cat="motorsport" data-q="дрифт: от японских перевалов до чемпионатов как ночные заезды по горным дорогам японии превратились в зрелищный вид спорта с судьями, парными заездами и тысячесильными машинами — история и устройство дрифта. дрифт япония автоспорт тюнинг">
-  <span class="row__no mono">№ 063</span>
-  <a class="row__title" href="articles/drifting.html">Дрифт: от японских перевалов до чемпионатов</a>
-  <span class="row__cat"><a class="chip chip--motorsport" href="category/motorsport.html">Автоспорт</a></span>
-  <time class="row__date mono" datetime="2026-06-23">23.06.2026</time>
-</li><li class="row" data-cat="culture" data-q="pininfarina, bertone, italdesign: итальянские кузовные ателье как три туринских ателье подарили миру ferrari testarossa, lamborghini countach и volkswagen golf, и почему итальянская школа кузовного дизайна до сих пор задаёт тон всей индустрии. дизайн италия история кузов">
-  <span class="row__no mono">№ 062</span>
-  <a class="row__title" href="articles/italian-coachbuilders.html">Pininfarina, Bertone, Italdesign: итальянские кузовные ателье</a>
-  <span class="row__cat"><a class="chip chip--culture" href="category/culture.html">Культура</a></span>
-  <time class="row__date mono" datetime="2026-06-20">20.06.2026</time>
-</li><li class="row" data-cat="driving" data-q="парковка задним ходом и параллельная парковка без стресса парковка пугает многих водителей сильнее, чем трасса, хотя в ней нет никакой магии: понятная геометрия, пара ориентиров на кузове и малая скорость решают почти всё. вождение парковка навыки город">
-  <span class="row__no mono">№ 061</span>
-  <a class="row__title" href="articles/parking-skills.html">Парковка задним ходом и параллельная парковка без стресса</a>
-  <span class="row__cat"><a class="chip chip--driving" href="category/driving.html">Вождение</a></span>
-  <time class="row__date mono" datetime="2026-06-18">18.06.2026</time>
-</li><li class="row" data-cat="service" data-q="моторное масло: вязкость, допуски и интервалы замены цифры 5w-30 на канистре, допуски автопроизводителя и спор о том, когда менять масло. объясняем, что всё это значит и как не ошибиться с выбором для своего мотора. масло обслуживание двигатель вязкость">
-  <span class="row__no mono">№ 060</span>
-  <a class="row__title" href="articles/oil-change.html">Моторное масло: вязкость, допуски и интервалы замены</a>
-  <span class="row__cat"><a class="chip chip--service" href="category/service.html">Обслуживание</a></span>
-  <time class="row__date mono" datetime="2026-06-15">15.06.2026</time>
-</li><li class="row" data-cat="driving" data-q="занос: как его распознать и что делать снос передней оси и занос задней выглядят похоже, но лечатся по-разному: разбираемся, как поймать первые признаки потери сцепления и вернуть машину на траекторию. вождение занос безопасность контраварийная подготовка">
-  <span class="row__no mono">№ 059</span>
-  <a class="row__title" href="articles/skid-control.html">Занос: как его распознать и что делать</a>
-  <span class="row__cat"><a class="chip chip--driving" href="category/driving.html">Вождение</a></span>
-  <time class="row__date mono" datetime="2026-06-12">12.06.2026</time>
-</li><li class="row" data-cat="buying" data-q="как правильно проводить тест-драйв перед покупкой тест-драйв — это не прогулка вокруг квартала с менеджером, а проверка, подходит ли машина вашему росту, маршрутам и привычкам: план, маршрут и список вопросов на каждый этап. покупка тест-драйв советы выбор авто">
-  <span class="row__no mono">№ 058</span>
-  <a class="row__title" href="articles/test-drive-guide.html">Как правильно проводить тест-драйв перед покупкой</a>
-  <span class="row__cat"><a class="chip chip--buying" href="category/buying.html">Покупка</a></span>
-  <time class="row__date mono" datetime="2026-06-09">09.06.2026</time>
-</li><li class="row" data-cat="culture" data-q="каким будет автомобиль через 20 лет электрификация, автопилот, автомобиль как гаджет с обновлениями по воздуху и новые модели владения — разбираемся, какие прогнозы реалистичны, а какие останутся мечтами футурологов. будущее электромобили автопилот технологии">
-  <span class="row__no mono">№ 057</span>
-  <a class="row__title" href="articles/future-of-cars.html">Каким будет автомобиль через 20 лет</a>
-  <span class="row__cat"><a class="chip chip--culture" href="category/culture.html">Культура</a></span>
-  <time class="row__date mono" datetime="2026-06-07">07.06.2026</time>
-</li><li class="row" data-cat="motorsport" data-q="«камаз-мастер»: как российские грузовики покорили «дакар» команда из набережных челнов прошла путь от экспериментальных выступлений на заводских грузовиках до девятнадцати побед на «дакаре» и стала самой титулованной в истории зачёта грузовиков. камаз дакар грузовики автоспорт">
-  <span class="row__no mono">№ 056</span>
-  <a class="row__title" href="articles/kamaz-master.html">«КАМАЗ-мастер»: как российские грузовики покорили «Дакар»</a>
-  <span class="row__cat"><a class="chip chip--motorsport" href="category/motorsport.html">Автоспорт</a></span>
-  <time class="row__date mono" datetime="2026-06-04">04.06.2026</time>
-</li><li class="row" data-cat="driving" data-q="механическая коробка: как ездить плавно и беречь сцепление плавное трогание, точные переключения и привычки, которые продлевают жизнь сцеплению: практическое руководство для тех, кто ездит на механике или только учится. вождение механика сцепление трансмиссия">
-  <span class="row__no mono">№ 055</span>
-  <a class="row__title" href="articles/manual-transmission-tips.html">Механическая коробка: как ездить плавно и беречь сцепление</a>
-  <span class="row__cat"><a class="chip chip--driving" href="category/driving.html">Вождение</a></span>
-  <time class="row__date mono" datetime="2026-06-01">01.06.2026</time>
-</li><li class="row" data-cat="driving" data-q="усталость за рулём: опасность, которую недооценивают уставший водитель реагирует медленнее, хуже оценивает дистанцию и может провалиться в микросон на скорости сотня — почему усталость опасна почти как алкоголь и что с ней на самом деле работает. безопасность усталость сон вождение">
-  <span class="row__no mono">№ 054</span>
-  <a class="row__title" href="articles/driver-fatigue.html">Усталость за рулём: опасность, которую недооценивают</a>
-  <span class="row__cat"><a class="chip chip--driving" href="category/driving.html">Вождение</a></span>
-  <time class="row__date mono" datetime="2026-05-30">30.05.2026</time>
-</li><li class="row" data-cat="history" data-q="ford model t: как конвейер посадил мир за руль простая, прочная и всё более дешёвая «жестянка лиззи» за девятнадцать лет превратила автомобиль из игрушки богачей в рабочий инструмент миллионов семей. история форд конвейер сша">
-  <span class="row__no mono">№ 053</span>
-  <a class="row__title" href="articles/ford-model-t.html">Ford Model T: как конвейер посадил мир за руль</a>
-  <span class="row__cat"><a class="chip chip--history" href="category/history.html">История</a></span>
-  <time class="row__date mono" datetime="2026-05-27">27.05.2026</time>
-</li><li class="row" data-cat="motorsport" data-q="нюрбургринг: «зелёный ад» и время круга двадцать с лишним километров леса, слепых гребней и перепадов высот — почему северная петля нюрбургринга стала главным мерилом скорости для гоночных и серийных машин. нюрбургринг трассы германия автоспорт">
-  <span class="row__no mono">№ 052</span>
-  <a class="row__title" href="articles/nurburgring.html">Нюрбургринг: «Зелёный ад» и время круга</a>
-  <span class="row__cat"><a class="chip chip--motorsport" href="category/motorsport.html">Автоспорт</a></span>
-  <time class="row__date mono" datetime="2026-05-24">24.05.2026</time>
-</li><li class="row" data-cat="electric" data-q="сколько на самом деле стоит владение электромобилем электромобиль дороже на старте, но дешевле в каждом километре. считаем полную стоимость владения: энергия, сервис, страховка, шины и самая коварная статья — потеря в цене. электромобили стоимость владения экономия расходы">
-  <span class="row__no mono">№ 051</span>
-  <a class="row__title" href="articles/ev-total-cost.html">Сколько на самом деле стоит владение электромобилем</a>
-  <span class="row__cat"><a class="chip chip--electric" href="category/electric.html">Электро</a></span>
-  <time class="row__date mono" datetime="2026-05-21">21.05.2026</time>
-</li><li class="row" data-cat="culture" data-q="реставрация классики: с чего начать и сколько стоит практический путеводитель по реставрации старого автомобиля — как выбрать донора, оценить кузов, спланировать бюджет и не превратить мечту о классике в бесконечный долгострой. реставрация классика ретро кузов">
-  <span class="row__no mono">№ 050</span>
-  <a class="row__title" href="articles/classic-car-restoration.html">Реставрация классики: с чего начать и сколько стоит</a>
-  <span class="row__cat"><a class="chip chip--culture" href="category/culture.html">Культура</a></span>
-  <time class="row__date mono" datetime="2026-05-19">19.05.2026</time>
-</li><li class="row" data-cat="service" data-q="аккумулятор: как продлить жизнь и не остаться без запуска стартерная батарея редко умирает внезапно — она годами подаёт сигналы. рассказываем, как читать напряжение, правильно заряжать и чем губят аккумулятор короткие поездки. аккумулятор электрика обслуживание зима">
-  <span class="row__no mono">№ 049</span>
-  <a class="row__title" href="articles/car-battery-care.html">Аккумулятор: как продлить жизнь и не остаться без запуска</a>
-  <span class="row__cat"><a class="chip chip--service" href="category/service.html">Обслуживание</a></span>
-  <time class="row__date mono" datetime="2026-05-16">16.05.2026</time>
-</li><li class="row" data-cat="buying" data-q="автострахование: как устроены полисы и от чего зависит цена осаго обязательно для всех, каско — по желанию, а цена обоих полисов складывается из коэффициентов, которые водитель может понимать и частично контролировать. страховка осаго каско расходы">
-  <span class="row__no mono">№ 048</span>
-  <a class="row__title" href="articles/insurance-basics.html">Автострахование: как устроены полисы и от чего зависит цена</a>
-  <span class="row__cat"><a class="chip chip--buying" href="category/buying.html">Покупка</a></span>
-  <time class="row__date mono" datetime="2026-05-13">13.05.2026</time>
-</li><li class="row" data-cat="culture" data-q="советские концепт-кары, которые не пошли в серию одноглазый зис-112, микромобиль «белка», вседорожный «москвич-2150» и аэродинамическая «истра» — рассказываем о смелых советских прототипах, которые так и не встали на конвейер. ссср история прототипы дизайн">
-  <span class="row__no mono">№ 047</span>
-  <a class="row__title" href="articles/soviet-concept-cars.html">Советские концепт-кары, которые не пошли в серию</a>
-  <span class="row__cat"><a class="chip chip--culture" href="category/culture.html">Культура</a></span>
-  <time class="row__date mono" datetime="2026-05-10">10.05.2026</time>
-</li><li class="row" data-cat="driving" data-q="езда с прицепом: нагрузка, сцепка и манёвры как правильно загрузить прицеп, проверить сцепку перед выездом, не раскачать автопоезд на трассе и сдать задом без нервов: всё, что нужно знать о езде с прицепом. вождение прицеп фаркоп безопасность">
-  <span class="row__no mono">№ 046</span>
-  <a class="row__title" href="articles/towing-trailer.html">Езда с прицепом: нагрузка, сцепка и манёвры</a>
-  <span class="row__cat"><a class="chip chip--driving" href="category/driving.html">Вождение</a></span>
-  <time class="row__date mono" datetime="2026-05-08">08.05.2026</time>
-</li><li class="row" data-cat="history" data-q="газ-21 «волга»: символ советской мечты хромированный олень на капоте, мягкий диван и мотор, который тянул с самого низа — как «двадцать первая» стала главной машиной советского человека. история ссср газ седан">
-  <span class="row__no mono">№ 045</span>
-  <a class="row__title" href="articles/gaz-21-volga.html">ГАЗ-21 «Волга»: символ советской мечты</a>
-  <span class="row__cat"><a class="chip chip--history" href="category/history.html">История</a></span>
-  <time class="row__date mono" datetime="2026-05-05">05.05.2026</time>
-</li><li class="row" data-cat="buying" data-q="скрученный пробег: как распознать обман скрутка пробега остаётся одним из самых распространённых обманов на вторичном рынке, но износ салона, история обслуживания и данные из электронных блоков почти всегда выдают правду. пробег вторичный рынок проверка покупка">
-  <span class="row__no mono">№ 044</span>
-  <a class="row__title" href="articles/odometer-fraud.html">Скрученный пробег: как распознать обман</a>
-  <span class="row__cat"><a class="chip chip--buying" href="category/buying.html">Покупка</a></span>
-  <time class="row__date mono" datetime="2026-05-02">02.05.2026</time>
-</li><li class="row" data-cat="culture" data-q="знаменитые автомобили в кино от aston martin агента 007 до delorean с машиной времени — как автомобили становились полноправными героями фильмов и почему зрители помнят их лучше иных актёров. кино поп-культура легенды история">
-  <span class="row__no mono">№ 043</span>
-  <a class="row__title" href="articles/cars-in-cinema.html">Знаменитые автомобили в кино</a>
-  <span class="row__cat"><a class="chip chip--culture" href="category/culture.html">Культура</a></span>
-  <time class="row__date mono" datetime="2026-04-30">30.04.2026</time>
-</li><li class="row" data-cat="tech" data-q="тормоза: диски, барабаны, суппорты и тормозная жидкость как педаль превращает усилие ноги в остановку полуторатонной машины, чем дисковые тормоза отличаются от барабанных и почему тормозную жидкость нужно менять по сроку. тормоза устройство обслуживание безопасность">
-  <span class="row__no mono">№ 042</span>
-  <a class="row__title" href="articles/brakes-explained.html">Тормоза: диски, барабаны, суппорты и тормозная жидкость</a>
-  <span class="row__cat"><a class="chip chip--tech" href="category/tech.html">Устройство</a></span>
-  <time class="row__date mono" datetime="2026-04-27">27.04.2026</time>
-</li><li class="row" data-cat="electric" data-q="десять популярных мифов об электромобилях электромобили обросли мифами быстрее, чем зарядными станциями. проверяем десять самых живучих утверждений — от вечно горящих батарей до грязного электричества. электромобили мифы батарея экология">
-  <span class="row__no mono">№ 041</span>
-  <a class="row__title" href="articles/ev-myths.html">Десять популярных мифов об электромобилях</a>
-  <span class="row__cat"><a class="chip chip--electric" href="category/electric.html">Электро</a></span>
-  <time class="row__date mono" datetime="2026-04-24">24.04.2026</time>
-</li><li class="row" data-cat="tech" data-q="как устроен робот с двумя сцеплениями две коробки в одном корпусе, заранее включённая следующая передача и переключение за доли секунды. разбираем устройство преселективного робота, разницу сухих и мокрых сцеплений и правила эксплуатации. техника трансмиссия dsg робот">
-  <span class="row__no mono">№ 040</span>
-  <a class="row__title" href="articles/dual-clutch.html">Как устроен робот с двумя сцеплениями</a>
-  <span class="row__cat"><a class="chip chip--tech" href="category/tech.html">Устройство</a></span>
-  <time class="row__date mono" datetime="2026-04-21">21.04.2026</time>
-</li><li class="row" data-cat="tech" data-q="дизель: как он работает и почему его любят тягачи как дизель обходится без свечей зажигания, откуда у него такой крутящий момент и почему магистральные тягачи, тракторы и корабли до сих пор не спешат расставаться с этим мотором. двигатель дизель грузовики технологии">
-  <span class="row__no mono">№ 039</span>
-  <a class="row__title" href="articles/diesel-engines.html">Дизель: как он работает и почему его любят тягачи</a>
-  <span class="row__cat"><a class="chip chip--tech" href="category/tech.html">Устройство</a></span>
-  <time class="row__date mono" datetime="2026-04-19">19.04.2026</time>
-</li><li class="row" data-cat="driving" data-q="бездорожье для новичка: как не застрять и выбраться разведка пешком, правильная передача, давление в шинах и спокойное самовытаскивание: базовые приёмы, которые помогут проехать грунтовку и не вызывать трактор. вождение бездорожье внедорожник полный привод">
-  <span class="row__no mono">№ 038</span>
-  <a class="row__title" href="articles/offroad-basics.html">Бездорожье для новичка: как не застрять и выбраться</a>
-  <span class="row__cat"><a class="chip chip--driving" href="category/driving.html">Вождение</a></span>
-  <time class="row__date mono" datetime="2026-04-16">16.04.2026</time>
-</li><li class="row" data-cat="motorsport" data-q="24 часа ле-мана: гонка на выносливость сутки без остановки, три пилота на одну машину, ночь на прямой юнодьер и финиш, до которого доезжают не все: почему ле-ман называют главной гонкой на выносливость в мире. ле-ман выносливость автоспорт история">
-  <span class="row__no mono">№ 037</span>
-  <a class="row__title" href="articles/le-mans-24.html">24 часа Ле-Мана: гонка на выносливость</a>
-  <span class="row__cat"><a class="chip chip--motorsport" href="category/motorsport.html">Автоспорт</a></span>
-  <time class="row__date mono" datetime="2026-04-13">13.04.2026</time>
-</li><li class="row" data-cat="service" data-q="как подготовить машину к долгой стоянке командировка, зимовка в гараже или долгий отпуск — машина, брошенная на месяцы без подготовки, мстит севшим аккумулятором, плоскими шинами и прикипевшими тормозами. обслуживание хранение аккумулятор шины">
-  <span class="row__no mono">№ 036</span>
-  <a class="row__title" href="articles/car-storage.html">Как подготовить машину к долгой стоянке</a>
-  <span class="row__cat"><a class="chip chip--service" href="category/service.html">Обслуживание</a></span>
-  <time class="row__date mono" datetime="2026-04-11">11.04.2026</time>
-</li><li class="row" data-cat="buying" data-q="седан, хэтчбек, универсал, кроссовер: какой кузов выбрать тип кузова определяет не только внешность машины, но и то, как вы будете с ней жить: парковаться, грузить вещи, ездить зимой и продавать через пять лет. кузов покупка кроссовер универсал седан">
-  <span class="row__no mono">№ 035</span>
-  <a class="row__title" href="articles/body-types-guide.html">Седан, хэтчбек, универсал, кроссовер: какой кузов выбрать</a>
-  <span class="row__cat"><a class="chip chip--buying" href="category/buying.html">Покупка</a></span>
-  <time class="row__date mono" datetime="2026-04-08">08.04.2026</time>
-</li><li class="row" data-cat="buying" data-q="амортизация: какие машины теряют в цене быстрее почему одна машина через пять лет стоит половину цены, а другая почти сохраняет её: разбираемся, от чего зависит падение стоимости и как выбрать автомобиль, который легко продать. покупка деньги рынок продажа">
-  <span class="row__no mono">№ 034</span>
-  <a class="row__title" href="articles/depreciation.html">Амортизация: какие машины теряют в цене быстрее</a>
-  <span class="row__cat"><a class="chip chip--buying" href="category/buying.html">Покупка</a></span>
-  <time class="row__date mono" datetime="2026-04-05">05.04.2026</time>
-</li><li class="row" data-cat="buying" data-q="кредит, лизинг или подписка: как платить за машину автокредит, лизинг для частных лиц и юрлиц, подписка на автомобиль: разбираем, кому принадлежит машина, что входит в платёж и какой способ обойдётся дешевле именно в вашей ситуации. покупка кредит лизинг деньги">
-  <span class="row__no mono">№ 033</span>
-  <a class="row__title" href="articles/car-loan-leasing.html">Кредит, лизинг или подписка: как платить за машину</a>
-  <span class="row__cat"><a class="chip chip--buying" href="category/buying.html">Покупка</a></span>
-  <time class="row__date mono" datetime="2026-04-02">02.04.2026</time>
-</li><li class="row" data-cat="electric" data-q="литий-ионные батареи: nmc, lfp и что будет дальше почему одни электромобили советуют заряжать до 80%, а другие до 100%, чем никель-марганец-кобальтовые ячейки отличаются от литий-железо-фосфатных и чего ждать от натрия и твёрдого электролита. электромобиль батарея химия технологии">
-  <span class="row__no mono">№ 032</span>
-  <a class="row__title" href="articles/ev-batteries-chemistry.html">Литий-ионные батареи: NMC, LFP и что будет дальше</a>
-  <span class="row__cat"><a class="chip chip--electric" href="category/electric.html">Электро</a></span>
-  <time class="row__date mono" datetime="2026-03-31">31.03.2026</time>
-</li><li class="row" data-cat="culture" data-q="цвет автомобиля: история, мода и практичность почему ford model t был чёрным, откуда взялись гоночные цвета стран, как назывались оттенки «жигулей» и какой цвет кузова на самом деле практичнее в повседневной жизни. история дизайн лакокрасочное покрытие мода">
-  <span class="row__no mono">№ 031</span>
-  <a class="row__title" href="articles/car-colors.html">Цвет автомобиля: история, мода и практичность</a>
-  <span class="row__cat"><a class="chip chip--culture" href="category/culture.html">Культура</a></span>
-  <time class="row__date mono" datetime="2026-03-28">28.03.2026</time>
-</li><li class="row" data-cat="tech" data-q="как работает двигатель внутреннего сгорания: четыре такта простыми словами впуск, сжатие, рабочий ход, выпуск — разбираем по шагам, как капля бензина превращается во вращение колёс и почему мотор при этом отправляет большую часть энергии в тепло. техника двигатель устройство автомобиля бензин">
-  <span class="row__no mono">№ 030</span>
-  <a class="row__title" href="articles/how-ice-works.html">Как работает двигатель внутреннего сгорания: четыре такта простыми словами</a>
-  <span class="row__cat"><a class="chip chip--tech" href="category/tech.html">Устройство</a></span>
-  <time class="row__date mono" datetime="2026-03-25">25.03.2026</time>
-</li><li class="row" data-cat="tech" data-q="непосредственный впрыск: плюсы, минусы и нагар почему почти все современные бензиновые моторы впрыскивают топливо прямо в цилиндр, что это даёт мощности и расходу и откуда берётся нагар на впускных клапанах. двигатель впрыск бензин обслуживание">
-  <span class="row__no mono">№ 029</span>
-  <a class="row__title" href="articles/direct-injection.html">Непосредственный впрыск: плюсы, минусы и нагар</a>
-  <span class="row__cat"><a class="chip chip--tech" href="category/tech.html">Устройство</a></span>
-  <time class="row__date mono" datetime="2026-03-23">23.03.2026</time>
-</li><li class="row" data-cat="motorsport" data-q="трек-дэй: как впервые выехать на гоночную трассу пошаговое руководство для новичка — как подготовить машину и себя, что взять с собой, как читать флаги и почему первый трек-дэй стоит проехать спокойно, а не на пределе. трек-дэй трасса подготовка советы">
-  <span class="row__no mono">№ 028</span>
-  <a class="row__title" href="articles/track-day.html">Трек-дэй: как впервые выехать на гоночную трассу</a>
-  <span class="row__cat"><a class="chip chip--motorsport" href="category/motorsport.html">Автоспорт</a></span>
-  <time class="row__date mono" datetime="2026-03-20">20.03.2026</time>
-</li><li class="row" data-cat="driving" data-q="зимнее вождение: базовые приёмы на скользкой дороге лёд и снежная каша не прощают резких движений: разбираем, как трогаться, тормозить и проходить повороты зимой, чтобы машина слушалась руля, а не законов инерции. вождение зима безопасность шины">
-  <span class="row__no mono">№ 027</span>
-  <a class="row__title" href="articles/winter-driving.html">Зимнее вождение: базовые приёмы на скользкой дороге</a>
-  <span class="row__cat"><a class="chip chip--driving" href="category/driving.html">Вождение</a></span>
-  <time class="row__date mono" datetime="2026-03-17">17.03.2026</time>
-</li><li class="row" data-cat="motorsport" data-q="ралли «дакар»: от парижа до саудовской аравии «дакар» начинался как безумное приключение через сахару, пережил переезд в южную америку и нашёл новый дом в саудовской аравии, но остался самым суровым ралли-марафоном планеты. дакар ралли-рейд автоспорт история">
-  <span class="row__no mono">№ 026</span>
-  <a class="row__title" href="articles/dakar-rally.html">Ралли «Дакар»: от Парижа до Саудовской Аравии</a>
-  <span class="row__cat"><a class="chip chip--motorsport" href="category/motorsport.html">Автоспорт</a></span>
-  <time class="row__date mono" datetime="2026-03-14">14.03.2026</time>
-</li><li class="row" data-cat="service" data-q="система охлаждения: антифриз, термостат и перегрев перегрев способен за несколько минут испортить двигатель, который служил бы ещё сотни тысяч километров. разбираем, как работает система охлаждения и что делать, если стрелка поползла вверх. охлаждение антифриз двигатель перегрев">
-  <span class="row__no mono">№ 025</span>
-  <a class="row__title" href="articles/coolant-system.html">Система охлаждения: антифриз, термостат и перегрев</a>
-  <span class="row__cat"><a class="chip chip--service" href="category/service.html">Обслуживание</a></span>
-  <time class="row__date mono" datetime="2026-03-12">12.03.2026</time>
-</li><li class="row" data-cat="tech" data-q="подвеска автомобиля: от торсионов до пневмобаллонов рессоры, торсионы, стойки макферсона, многорычажки и пневмобаллоны — рассказываем, как разные подвески решают вечный спор между комфортом и управляемостью и что выбрать под свои дороги. техника подвеска устройство автомобиля ходовая">
-  <span class="row__no mono">№ 024</span>
-  <a class="row__title" href="articles/suspension-types.html">Подвеска автомобиля: от торсионов до пневмобаллонов</a>
-  <span class="row__cat"><a class="chip chip--tech" href="category/tech.html">Устройство</a></span>
-  <time class="row__date mono" datetime="2026-03-09">09.03.2026</time>
-</li><li class="row" data-cat="tech" data-q="полный привод: подключаемый, постоянный и всё между ними шильдик 4×4 на крышке багажника может означать очень разные вещи — от жёсткой раздатки старого внедорожника до муфты, которая включает задние колёса лишь при пробуксовке. разбираемся по схемам. техника полный привод трансмиссия внедорожник">
-  <span class="row__no mono">№ 023</span>
-  <a class="row__title" href="articles/all-wheel-drive.html">Полный привод: подключаемый, постоянный и всё между ними</a>
-  <span class="row__cat"><a class="chip chip--tech" href="category/tech.html">Устройство</a></span>
-  <time class="row__date mono" datetime="2026-03-06">06.03.2026</time>
-</li><li class="row" data-cat="driving" data-q="подготовка к дальней поездке: чек-лист водителя тысяча километров пути начинается за пару дней до старта: что проверить в машине, что положить в багажник и как спланировать маршрут, чтобы дорога запомнилась видами, а не поломками. путешествия вождение чек-лист обслуживание">
-  <span class="row__no mono">№ 022</span>
-  <a class="row__title" href="articles/long-trip-prep.html">Подготовка к дальней поездке: чек-лист водителя</a>
-  <span class="row__cat"><a class="chip chip--driving" href="category/driving.html">Вождение</a></span>
-  <time class="row__date mono" datetime="2026-03-04">04.03.2026</time>
-</li><li class="row" data-cat="buying" data-q="vin-номер: что можно узнать о машине по 17 символам из чего состоит vin, как прочитать в нём страну, производителя и год выпуска, где искать номер на кузове и что реально показывают проверки истории автомобиля перед покупкой. покупка vin проверка документы">
-  <span class="row__no mono">№ 021</span>
-  <a class="row__title" href="articles/vin-check.html">VIN-номер: что можно узнать о машине по 17 символам</a>
-  <span class="row__cat"><a class="chip chip--buying" href="category/buying.html">Покупка</a></span>
-  <time class="row__date mono" datetime="2026-03-01">01.03.2026</time>
-</li><li class="row" data-cat="electric" data-q="деградация батареи: мифы и реальность батарея электромобиля не умирает через пять лет, но и вечной её не назовёшь. разбираем, от чего на самом деле теряется ёмкость и как продлить жизнь аккумулятору. батарея электромобили деградация зарядка">
-  <span class="row__no mono">№ 020</span>
-  <a class="row__title" href="articles/ev-battery-degradation.html">Деградация батареи: мифы и реальность</a>
-  <span class="row__cat"><a class="chip chip--electric" href="category/electric.html">Электро</a></span>
-  <time class="row__date mono" datetime="2026-02-26">26.02.2026</time>
-</li><li class="row" data-cat="history" data-q="volkswagen käfer: долгая жизнь «жука» машина, задуманная как пропагандистский проект третьего рейха, стала символом послевоенного возрождения, хиппи и мексиканских такси и пережила почти всех ровесников. история фольксваген германия жук">
-  <span class="row__no mono">№ 019</span>
-  <a class="row__title" href="articles/vw-beetle.html">Volkswagen Käfer: долгая жизнь «Жука»</a>
-  <span class="row__cat"><a class="chip chip--history" href="category/history.html">История</a></span>
-  <time class="row__date mono" datetime="2026-02-23">23.02.2026</time>
-</li><li class="row" data-cat="culture" data-q="история автомобильных эмблем что на самом деле означают трёхлучевая звезда, гарцующий конь, четыре кольца и ладья на решётке «жигулей» — и почему почти все марки в последние годы сделали логотипы плоскими. история дизайн бренды эмблемы">
-  <span class="row__no mono">№ 018</span>
-  <a class="row__title" href="articles/car-logos-history.html">История автомобильных эмблем</a>
-  <span class="row__cat"><a class="chip chip--culture" href="category/culture.html">Культура</a></span>
-  <time class="row__date mono" datetime="2026-02-21">21.02.2026</time>
-</li><li class="row" data-cat="buying" data-q="полная стоимость владения: считаем расходы честно цена в объявлении — лишь вершина айсберга: потеря стоимости, топливо, страховка, налог, шины и ремонт за несколько лет легко превышают сумму, за которую машину купили. расходы покупка бюджет владение">
-  <span class="row__no mono">№ 017</span>
-  <a class="row__title" href="articles/cost-of-ownership.html">Полная стоимость владения: считаем расходы честно</a>
-  <span class="row__cat"><a class="chip chip--buying" href="category/buying.html">Покупка</a></span>
-  <time class="row__date mono" datetime="2026-02-18">18.02.2026</time>
-</li><li class="row" data-cat="motorsport" data-q="картинг: с чего начинается путь гонщика почти каждый чемпион формулы-1 начинал с карта. разбираемся, как устроен картинг, какие бывают классы, сколько стоит старт и как сделать первые шаги ребёнку или взрослому. картинг автоспорт обучение дети">
-  <span class="row__no mono">№ 016</span>
-  <a class="row__title" href="articles/karting-start.html">Картинг: с чего начинается путь гонщика</a>
-  <span class="row__cat"><a class="chip chip--motorsport" href="category/motorsport.html">Автоспорт</a></span>
-  <time class="row__date mono" datetime="2026-02-15">15.02.2026</time>
-</li><li class="row" data-cat="buying" data-q="осмотр подержанного автомобиля: пошаговая инструкция документы, кузов, салон, мотор и короткая поездка: последовательный план осмотра машины с пробегом, который помогает отсеять проблемные варианты ещё до диагностики в сервисе. покупка подержанные авто осмотр советы">
-  <span class="row__no mono">№ 015</span>
-  <a class="row__title" href="articles/used-car-inspection.html">Осмотр подержанного автомобиля: пошаговая инструкция</a>
-  <span class="row__cat"><a class="chip chip--buying" href="category/buying.html">Покупка</a></span>
-  <time class="row__date mono" datetime="2026-02-13">13.02.2026</time>
-</li><li class="row" data-cat="service" data-q="кондиционер и салонный фильтр: обслуживание без переплат затхлый запах, слабый обдув и запотевающие стёкла лечатся проще и дешевле, чем кажется. объясняем, что в климатической системе можно сделать самому, а за чем действительно ехать в сервис. кондиционер салонный фильтр климат обслуживание">
-  <span class="row__no mono">№ 014</span>
-  <a class="row__title" href="articles/cabin-filter-ac.html">Кондиционер и салонный фильтр: обслуживание без переплат</a>
-  <span class="row__cat"><a class="chip chip--service" href="category/service.html">Обслуживание</a></span>
-  <time class="row__date mono" datetime="2026-02-10">10.02.2026</time>
-</li><li class="row" data-cat="driving" data-q="защитное вождение: как предугадать ошибки других защитное вождение — это не страх и не медлительность, а умение читать дорогу на несколько шагов вперёд и всегда оставлять себе запасной выход из любой ситуации. вождение безопасность дтп навыки">
-  <span class="row__no mono">№ 013</span>
-  <a class="row__title" href="articles/defensive-driving.html">Защитное вождение: как предугадать ошибки других</a>
-  <span class="row__cat"><a class="chip chip--driving" href="category/driving.html">Вождение</a></span>
-  <time class="row__date mono" datetime="2026-02-07">07.02.2026</time>
-</li><li class="row" data-cat="driving" data-q="езда ночью: свет, усталость и внимание ночью трафика меньше, а аварий в пересчёте на километр больше: как настроить свет, не ослепнуть от встречных фар и не дать усталости взять руль в свои руки. вождение ночь фары безопасность">
-  <span class="row__no mono">№ 012</span>
-  <a class="row__title" href="articles/night-driving.html">Езда ночью: свет, усталость и внимание</a>
-  <span class="row__cat"><a class="chip chip--driving" href="category/driving.html">Вождение</a></span>
-  <time class="row__date mono" datetime="2026-02-04">04.02.2026</time>
-</li><li class="row" data-cat="driving" data-q="детские автокресла: группы, isofix и типичные ошибки хорошее автокресло спасает жизнь, только если оно подобрано по росту и весу и установлено правильно — разбираем группы, стандарты, крепления и ошибки, которые родители совершают чаще всего. безопасность дети автокресла isofix">
-  <span class="row__no mono">№ 011</span>
-  <a class="row__title" href="articles/child-seats.html">Детские автокресла: группы, ISOFIX и типичные ошибки</a>
-  <span class="row__cat"><a class="chip chip--driving" href="category/driving.html">Вождение</a></span>
-  <time class="row__date mono" datetime="2026-02-02">02.02.2026</time>
-</li><li class="row" data-cat="motorsport" data-q="айртон сенна: гонщик, ставший легендой три титула, 65 поул-позиций и дождевые гонки, которые пересматривают до сих пор — путь айртона сенны от картинга в сан-паулу до трагического дня в имоле. формула 1 сенна бразилия история">
-  <span class="row__no mono">№ 010</span>
-  <a class="row__title" href="articles/ayrton-senna.html">Айртон Сенна: гонщик, ставший легендой</a>
-  <span class="row__cat"><a class="chip chip--motorsport" href="category/motorsport.html">Автоспорт</a></span>
-  <time class="row__date mono" datetime="2026-01-30">30.01.2026</time>
-</li><li class="row" data-cat="service" data-q="шипы или липучка: выбираем зимние шины шипованная резина спасает на голом льду, фрикционная тише и комфортнее в городе — разбираем, кому что подходит и как не ошибиться с размером, маркировкой и сроком годности. шины зима безопасность обслуживание">
-  <span class="row__no mono">№ 009</span>
-  <a class="row__title" href="articles/winter-tires.html">Шипы или липучка: выбираем зимние шины</a>
-  <span class="row__cat"><a class="chip chip--service" href="category/service.html">Обслуживание</a></span>
-  <time class="row__date mono" datetime="2026-01-27">27.01.2026</time>
-</li><li class="row" data-cat="service" data-q="ремень или цепь грм: когда менять и чем грозит обрыв привод газораспределения работает незаметно, пока не порвётся — и тогда счёт может пойти на десятки тысяч. объясняем, как следить за ремнём и цепью и что меняют вместе с ними. грм двигатель ремонт обслуживание">
-  <span class="row__no mono">№ 008</span>
-  <a class="row__title" href="articles/timing-belt.html">Ремень или цепь ГРМ: когда менять и чем грозит обрыв</a>
-  <span class="row__cat"><a class="chip chip--service" href="category/service.html">Обслуживание</a></span>
-  <time class="row__date mono" datetime="2026-01-25">25.01.2026</time>
-</li><li class="row" data-cat="history" data-q="mini 1959 года: революция поперёк кузова алек иссигонис развернул мотор поперёк, загнал колёса в углы кузова и получил крошечную машину, которая перевернула представления о компоновке автомобиля. история британия мини хэтчбек">
-  <span class="row__no mono">№ 007</span>
-  <a class="row__title" href="articles/mini-1959.html">Mini 1959 года: революция поперёк кузова</a>
-  <span class="row__cat"><a class="chip chip--history" href="category/history.html">История</a></span>
-  <time class="row__date mono" datetime="2026-01-22">22.01.2026</time>
-</li><li class="row" data-cat="electric" data-q="домашняя зарядка: что нужно знать перед установкой домашняя розетка — лучший друг владельца электромобиля, но установка зарядной станции требует расчёта мощности, правильной проводки и защиты. рассказываем, с чего начать. зарядка электромобили электрика wallbox">
-  <span class="row__no mono">№ 006</span>
-  <a class="row__title" href="articles/ev-home-charging.html">Домашняя зарядка: что нужно знать перед установкой</a>
-  <span class="row__cat"><a class="chip chip--electric" href="category/electric.html">Электро</a></span>
-  <time class="row__date mono" datetime="2026-01-19">19.01.2026</time>
-</li><li class="row" data-cat="electric" data-q="гибриды: мягкий, полный, подключаемый — в чём разница слово «гибрид» на шильдике может означать что угодно — от скромного стартер-генератора до машины, которая неделю ездит без бензина. разбираем три главные схемы. гибриды электрификация phev экономия">
-  <span class="row__no mono">№ 005</span>
-  <a class="row__title" href="articles/hybrid-types.html">Гибриды: мягкий, полный, подключаемый — в чём разница</a>
-  <span class="row__cat"><a class="chip chip--electric" href="category/electric.html">Электро</a></span>
-  <time class="row__date mono" datetime="2026-01-16">16.01.2026</time>
-</li><li class="row" data-cat="service" data-q="сигнальные лампы на приборной панели: что срочно, а что подождёт красная маслёнка и жёлтый двигатель выглядят одинаково тревожно, но означают совсем разное. объясняем логику цветов и говорим, при каких лампах нужно остановиться немедленно. приборная панель диагностика электрика безопасность">
-  <span class="row__no mono">№ 004</span>
-  <a class="row__title" href="articles/dashboard-warning-lights.html">Сигнальные лампы на приборной панели: что срочно, а что подождёт</a>
-  <span class="row__cat"><a class="chip chip--service" href="category/service.html">Обслуживание</a></span>
-  <time class="row__date mono" datetime="2026-01-14">14.01.2026</time>
-</li><li class="row" data-cat="electric" data-q="как устроен электромобиль: батарея, инвертор, мотор что на самом деле прячется под полом и капотом электромобиля — как батарея, инвертор и электромотор превращают киловатт-часы в движение и почему такой машине не нужна коробка передач. электромобиль батарея устройство электромотор">
-  <span class="row__no mono">№ 003</span>
-  <a class="row__title" href="articles/ev-how-it-works.html">Как устроен электромобиль: батарея, инвертор, мотор</a>
-  <span class="row__cat"><a class="chip chip--electric" href="category/electric.html">Электро</a></span>
-  <time class="row__date mono" datetime="2026-01-11">11.01.2026</time>
-</li><li class="row" data-cat="tech" data-q="турбонаддув: откуда берутся лишние лошадиные силы турбина использует энергию выхлопа, чтобы затолкать в цилиндры больше воздуха. разбираемся, как это работает, откуда берётся турбояма и как продлить жизнь турбокомпрессору. техника двигатель турбонаддув обслуживание">
-  <span class="row__no mono">№ 002</span>
-  <a class="row__title" href="articles/turbocharging.html">Турбонаддув: откуда берутся лишние лошадиные силы</a>
-  <span class="row__cat"><a class="chip chip--tech" href="category/tech.html">Устройство</a></span>
-  <time class="row__date mono" datetime="2026-01-08">08.01.2026</time>
-</li><li class="row" data-cat="buying" data-q="новый или с пробегом: что выгоднее на дистанции новая машина теряет в цене быстрее всего, подержанная дороже в обслуживании и рискованнее: считаем полную стоимость владения на дистанции в пять лет и разбираемся, когда что выгоднее. покупка деньги подержанные авто новые авто">
-  <span class="row__no mono">№ 001</span>
-  <a class="row__title" href="articles/new-vs-used.html">Новый или с пробегом: что выгоднее на дистанции</a>
-  <span class="row__cat"><a class="chip chip--buying" href="category/buying.html">Покупка</a></span>
-  <time class="row__date mono" datetime="2026-01-06">06.01.2026</time>
-</li></ol>
+  <ol class="rows" id="rows"><li class="row" data-cat="culture" data-q="великие дороги мира: маршруты для автопутешествий шоссе 66, трансфагарашское шоссе, атлантическая дорога норвегии, перевал стельвио и чуйский тракт — выбираем дороги, ради которых стоит взять отпуск и сесть за руль. путешествия маршруты дороги автотуризм"><a href="articles/road-trip-routes.html">
+  <span class="row__no">№ 100</span>
+  <span class="row__title">Великие дороги мира: маршруты для автопутешествий</span>
+  <span class="row__cat">Культура</span>
+  <time class="row__date" datetime="2026-10-02">02.10.2026</time>
+</a></li><li class="row" data-cat="service" data-q="что можно обслуживать самому, а что лучше доверить сервису замена щёток, ламп и салонного фильтра под силу любому, а вот ремень грм и тормоза ошибок не прощают. делим обслуживание на три уровня сложности и честно считаем, где экономия оправдана. обслуживание ремонт своими руками гараж сервис"><a href="articles/diy-maintenance.html">
+  <span class="row__no">№ 099</span>
+  <span class="row__title">Что можно обслуживать самому, а что лучше доверить сервису</span>
+  <span class="row__cat">Обслуживание</span>
+  <time class="row__date" datetime="2026-09-29">29.09.2026</time>
+</a></li><li class="row" data-cat="tech" data-q="аэродинамика: почему форма кузова экономит топливо почему на трассе машина тратит топливо в основном на борьбу с воздухом, что такое коэффициент cx и как каплевидные кузова, хвост камма и гладкое днище превращаются в литры и километры. аэродинамика расход кузов технологии"><a href="articles/aerodynamics.html">
+  <span class="row__no">№ 098</span>
+  <span class="row__title">Аэродинамика: почему форма кузова экономит топливо</span>
+  <span class="row__cat">Устройство</span>
+  <time class="row__date" datetime="2026-09-26">26.09.2026</time>
+</a></li><li class="row" data-cat="service" data-q="уход за кузовом: мойка, полировка и защита лкп большинство царапин-паутинок появляется не на дороге, а на мойке. рассказываем, как мыть машину без вреда для лака, когда полировать и чем отличаются воск, силанты и керамика. кузов мойка полировка детейлинг"><a href="articles/car-wash-paint-care.html">
+  <span class="row__no">№ 097</span>
+  <span class="row__title">Уход за кузовом: мойка, полировка и защита ЛКП</span>
+  <span class="row__cat">Обслуживание</span>
+  <time class="row__date" datetime="2026-09-23">23.09.2026</time>
+</a></li><li class="row" data-cat="tech" data-q="автомат, вариатор или робот: чем отличаются коробки передач две педали в салоне могут скрывать три совершенно разных механизма. объясняем, как устроены классический автомат, вариатор и роботизированная коробка и что выбрать под свой стиль езды. техника трансмиссия акпп вариатор"><a href="articles/automatic-transmissions.html">
+  <span class="row__no">№ 096</span>
+  <span class="row__title">Автомат, вариатор или робот: чем отличаются коробки передач</span>
+  <span class="row__cat">Устройство</span>
+  <time class="row__date" datetime="2026-09-21">21.09.2026</time>
+</a></li><li class="row" data-cat="service" data-q="когда менять тормозные колодки и диски скрип, вибрация в педали и длинный ход — тормоза всегда предупреждают заранее. рассказываем, как оценить износ колодок и дисков самому и почему их нельзя менять по одной стороне. тормоза колодки безопасность обслуживание"><a href="articles/brake-pads-check.html">
+  <span class="row__no">№ 095</span>
+  <span class="row__title">Когда менять тормозные колодки и диски</span>
+  <span class="row__cat">Обслуживание</span>
+  <time class="row__date" datetime="2026-09-18">18.09.2026</time>
+</a></li><li class="row" data-cat="electric" data-q="электромобиль зимой: куда уходит запас хода почему на морозе электромобиль теряет заметную часть запаса хода, на что именно уходят киловатт-часы и какие простые привычки помогают вернуть километры даже в настоящую русскую зиму. электромобиль зима батарея запас хода"><a href="articles/ev-winter.html">
+  <span class="row__no">№ 094</span>
+  <span class="row__title">Электромобиль зимой: куда уходит запас хода</span>
+  <span class="row__cat">Электро</span>
+  <time class="row__date" datetime="2026-09-15">15.09.2026</time>
+</a></li><li class="row" data-cat="electric" data-q="как выбрать подержанный электромобиль подержанный электромобиль может стать отличной покупкой — первый владелец уже оплатил главную потерю в цене. рассказываем, как проверить батарею, зарядку и не нарваться на проблемы. электромобили подержанные авто покупка батарея"><a href="articles/ev-used-buying.html">
+  <span class="row__no">№ 093</span>
+  <span class="row__title">Как выбрать подержанный электромобиль</span>
+  <span class="row__cat">Электро</span>
+  <time class="row__date" datetime="2026-09-12">12.09.2026</time>
+</a></li><li class="row" data-cat="history" data-q="benz patent-motorwagen и поездка берты бенц трёхколёсная повозка карла бенца получила патент в 1886 году, но настоящую славу ей принесла берта бенц, тайком уехавшая на ней с сыновьями из мангейма в пфорцхайм. история германия первый автомобиль benz"><a href="articles/benz-patent-motorwagen.html">
+  <span class="row__no">№ 092</span>
+  <span class="row__title">Benz Patent-Motorwagen и поездка Берты Бенц</span>
+  <span class="row__cat">История</span>
+  <time class="row__date" datetime="2026-09-10">10.09.2026</time>
+</a></li><li class="row" data-cat="culture" data-q="jdm: как японские машины стали культом как машины, созданные для внутреннего рынка японии, превратились в мировой культ — от skyline gt-r и supra до дрифта, аниме «инициал ди» и праворульного владивостока. jdm япония тюнинг дрифт"><a href="articles/jdm-culture.html">
+  <span class="row__no">№ 091</span>
+  <span class="row__title">JDM: как японские машины стали культом</span>
+  <span class="row__cat">Культура</span>
+  <time class="row__date" datetime="2026-09-07">07.09.2026</time>
+</a></li><li class="row" data-cat="tech" data-q="роторный двигатель ванкеля: красивая инженерная идея мотор без поршней, шатунов и клапанов, который крутится до 9000 оборотов и почти не вибрирует — как устроен роторный двигатель ванкеля и почему его красота обернулась капризным характером. двигатель ротор mazda история"><a href="articles/rotary-engine.html">
+  <span class="row__no">№ 090</span>
+  <span class="row__title">Роторный двигатель Ванкеля: красивая инженерная идея</span>
+  <span class="row__cat">Устройство</span>
+  <time class="row__date" datetime="2026-09-04">04.09.2026</time>
+</a></li><li class="row" data-cat="tech" data-q="уровни автономности от 0 до 5: где мы сейчас шесть уровней автономности по классификации sae простым языком — чем ассистент отличается от автопилота, кто отвечает за аварию и почему полностью беспилотная машина пока остаётся мечтой. автопилот безопасность технологии электроника"><a href="articles/adas-levels.html">
+  <span class="row__no">№ 089</span>
+  <span class="row__title">Уровни автономности от 0 до 5: где мы сейчас</span>
+  <span class="row__cat">Устройство</span>
+  <time class="row__date" datetime="2026-09-02">02.09.2026</time>
+</a></li><li class="row" data-cat="history" data-q="porsche 911: шесть десятилетий одной формы от скромного купе 901 на салоне во франкфурте до гибридного 992 — как porsche больше шестидесяти лет меняет 911 изнутри, почти не трогая его знаменитый силуэт. история германия спорткар porsche"><a href="articles/porsche-911-evolution.html">
+  <span class="row__no">№ 088</span>
+  <span class="row__title">Porsche 911: шесть десятилетий одной формы</span>
+  <span class="row__cat">История</span>
+  <time class="row__date" datetime="2026-08-30">30.08.2026</time>
+</a></li><li class="row" data-cat="motorsport" data-q="технологии автоспорта, которые пришли в обычные машины зеркало заднего вида, дисковые тормоза, турбонаддув и подрулевые лепестки — рассказываем, какие решения родились или закалились на гоночных трассах и теперь стоят в вашем автомобиле. технологии формула 1 автоспорт история"><a href="articles/f1-tech-road-cars.html">
+  <span class="row__no">№ 087</span>
+  <span class="row__title">Технологии автоспорта, которые пришли в обычные машины</span>
+  <span class="row__cat">Автоспорт</span>
+  <time class="row__date" datetime="2026-08-27">27.08.2026</time>
+</a></li><li class="row" data-cat="motorsport" data-q="формула-1 для начинающих: правила, команды, стратегия формула-1 кажется запутанной только первые пару гонок: стоит понять, как устроены квалификация, шины, пит-стопы и очки, — и каждый гран-при превращается в шахматную партию на скорости. формула-1 автоспорт гонки правила"><a href="articles/formula1-basics.html">
+  <span class="row__no">№ 086</span>
+  <span class="row__title">Формула-1 для начинающих: правила, команды, стратегия</span>
+  <span class="row__cat">Автоспорт</span>
+  <time class="row__date" datetime="2026-08-24">24.08.2026</time>
+</a></li><li class="row" data-cat="history" data-q="«нива»: внедорожник, опередивший эпоху кроссоверов несущий кузов, постоянный полный привод и комфорт легковушки — в 1977 году ваз построил машину, которую на западе позже назвали бы кроссовером, только проходимую по-настоящему. история ваз внедорожник нива"><a href="articles/niva-vaz-2121.html">
+  <span class="row__no">№ 085</span>
+  <span class="row__title">«Нива»: внедорожник, опередивший эпоху кроссоверов</span>
+  <span class="row__cat">История</span>
+  <time class="row__date" datetime="2026-08-22">22.08.2026</time>
+</a></li><li class="row" data-cat="culture" data-q="масштабные модели: коллекционирование машин в миниатюре гид для начинающего коллекционера масштабных моделей — какие бывают масштабы и материалы, чем отличаются бренды, как собирать советские машинки и как хранить коллекцию без потерь. коллекционирование модели хобби ретро"><a href="articles/scale-models.html">
+  <span class="row__no">№ 084</span>
+  <span class="row__title">Масштабные модели: коллекционирование машин в миниатюре</span>
+  <span class="row__cat">Культура</span>
+  <time class="row__date" datetime="2026-08-19">19.08.2026</time>
+</a></li><li class="row" data-cat="electric" data-q="водородные автомобили: топливные элементы против батарей водородная машина заправляется за пять минут и выпускает из трубы только воду. почему же она так и не стала массовой и проигрывает гонку аккумуляторным электромобилям? водород топливные элементы электромобили технологии"><a href="articles/hydrogen-cars.html">
+  <span class="row__no">№ 083</span>
+  <span class="row__title">Водородные автомобили: топливные элементы против батарей</span>
+  <span class="row__cat">Электро</span>
+  <time class="row__date" datetime="2026-08-16">16.08.2026</time>
+</a></li><li class="row" data-cat="history" data-q="нефтяной кризис 1973 года и рождение экономичных машин очереди на заправках, пустые автобаны по воскресеньям и подорожавшая в разы нефть заставили автопром вспомнить о расходе топлива и навсегда изменили облик машин. история кризис экономичность сша"><a href="articles/oil-crisis-1973.html">
+  <span class="row__no">№ 082</span>
+  <span class="row__title">Нефтяной кризис 1973 года и рождение экономичных машин</span>
+  <span class="row__cat">История</span>
+  <time class="row__date" datetime="2026-08-14">14.08.2026</time>
+</a></li><li class="row" data-cat="buying" data-q="первая машина: на что смотреть начинающему водителю первая машина должна прощать ошибки, быть недорогой в обслуживании и не пугать в пробках — разбираемся, как выбрать её без переплат и разочарований. новичок покупка первая машина советы"><a href="articles/first-car.html">
+  <span class="row__no">№ 081</span>
+  <span class="row__title">Первая машина: на что смотреть начинающему водителю</span>
+  <span class="row__cat">Покупка</span>
+  <time class="row__date" datetime="2026-08-11">11.08.2026</time>
+</a></li><li class="row" data-cat="buying" data-q="как продать машину быстро и без потерь продажа машины — это не только объявление с фотографиями, но и правильная цена, честная подготовка и аккуратное оформление сделки, чтобы потом не платить чужие штрафы. продажа вторичный рынок документы сделка"><a href="articles/selling-car.html">
+  <span class="row__no">№ 080</span>
+  <span class="row__title">Как продать машину быстро и без потерь</span>
+  <span class="row__cat">Покупка</span>
+  <time class="row__date" datetime="2026-08-08">08.08.2026</time>
+</a></li><li class="row" data-cat="history" data-q="land rover series: внедорожник, нарисованный на песке как послевоенный дефицит стали, армейский «джип» и рисунок на пляже англси породили land rover series — машину, которая почти сорок лет возила фермеров, военных и путешественников. история британия внедорожник land rover"><a href="articles/land-rover-series.html">
+  <span class="row__no">№ 079</span>
+  <span class="row__title">Land Rover Series: внедорожник, нарисованный на песке</span>
+  <span class="row__cat">История</span>
+  <time class="row__date" datetime="2026-08-05">05.08.2026</time>
+</a></li><li class="row" data-cat="driving" data-q="аквапланирование: почему машина «всплывает» и как этого избежать когда шина не успевает отвести воду, между резиной и асфальтом возникает водяной клин, и машина на мгновение превращается в катер без руля — разбираем, почему так происходит и как этого не допустить. вождение дождь шины безопасность"><a href="articles/rain-aquaplaning.html">
+  <span class="row__no">№ 078</span>
+  <span class="row__title">Аквапланирование: почему машина «всплывает» и как этого избежать</span>
+  <span class="row__cat">Вождение</span>
+  <time class="row__date" datetime="2026-08-03">03.08.2026</time>
+</a></li><li class="row" data-cat="electric" data-q="рекуперация: как электромобиль заряжается при торможении каждый раз, когда электромобиль замедляется, его мотор превращается в генератор и возвращает часть энергии в батарею. объясняем, как это работает и сколько реально даёт. рекуперация электромобили тормоза экономия"><a href="articles/regenerative-braking.html">
+  <span class="row__no">№ 077</span>
+  <span class="row__title">Рекуперация: как электромобиль заряжается при торможении</span>
+  <span class="row__cat">Электро</span>
+  <time class="row__date" datetime="2026-07-31">31.07.2026</time>
+</a></li><li class="row" data-cat="culture" data-q="как рождается дизайн автомобиля: от эскиза до пластилиновой модели сотни эскизов, цифровые модели, тонны промышленного пластилина и долгие споры — как дизайнерская студия превращает идею в кузов, который через несколько лет появится на дорогах. дизайн производство культура концепт"><a href="articles/car-design-process.html">
+  <span class="row__no">№ 076</span>
+  <span class="row__title">Как рождается дизайн автомобиля: от эскиза до пластилиновой модели</span>
+  <span class="row__cat">Культура</span>
+  <time class="row__date" datetime="2026-07-28">28.07.2026</time>
+</a></li><li class="row" data-cat="history" data-q="ford mustang и рождение класса пони-каров длинный капот, короткий багажник, недорогая база и список опций на любой вкус — в 1964 году ford нашёл формулу, которая породила целый класс машин и живёт до сих пор. история форд мустанг сша"><a href="articles/ford-mustang-pony-car.html">
+  <span class="row__no">№ 075</span>
+  <span class="row__title">Ford Mustang и рождение класса пони-каров</span>
+  <span class="row__cat">История</span>
+  <time class="row__date" datetime="2026-07-26">26.07.2026</time>
+</a></li><li class="row" data-cat="history" data-q="ваз-2101: как «копейка» стала народной итальянский fiat 124 переделали под русские дороги и морозы, построили для него город-завод на волге и получили машину, которая научила страну ездить. история ссср ваз жигули"><a href="articles/vaz-2101.html">
+  <span class="row__no">№ 074</span>
+  <span class="row__title">ВАЗ-2101: как «Копейка» стала народной</span>
+  <span class="row__cat">История</span>
+  <time class="row__date" datetime="2026-07-23">23.07.2026</time>
+</a></li><li class="row" data-cat="service" data-q="как читать маркировку шин и выбирать резину надпись 205/55 r16 91v на боковине шины рассказывает о ней почти всё. учимся расшифровывать маркировку, узнавать возраст покрышки и выбирать резину под свою машину. шины обслуживание маркировка безопасность"><a href="articles/tires-guide.html">
+  <span class="row__no">№ 073</span>
+  <span class="row__title">Как читать маркировку шин и выбирать резину</span>
+  <span class="row__cat">Обслуживание</span>
+  <time class="row__date" datetime="2026-07-20">20.07.2026</time>
+</a></li><li class="row" data-cat="driving" data-q="экономичное вождение: десять привычек, которые снижают расход расход зависит не только от мотора, но и от правой ноги водителя: десять простых привычек, которые без доработок машины заметно облегчают счета на заправке. вождение экономия расход топлива эковождение"><a href="articles/fuel-economy-driving.html">
+  <span class="row__no">№ 072</span>
+  <span class="row__title">Экономичное вождение: десять привычек, которые снижают расход</span>
+  <span class="row__cat">Вождение</span>
+  <time class="row__date" datetime="2026-07-17">17.07.2026</time>
+</a></li><li class="row" data-cat="motorsport" data-q="indianapolis 500: самая быстрая овальная гонка двести кругов по овалу из кирпича и асфальта, скорости за 350 км/ч и бутылка молока для победителя — почему indy 500 называют величайшим зрелищем в гонках. индикар сша овал история"><a href="articles/indianapolis-500.html">
+  <span class="row__no">№ 071</span>
+  <span class="row__title">Indianapolis 500: самая быстрая овальная гонка</span>
+  <span class="row__cat">Автоспорт</span>
+  <time class="row__date" datetime="2026-07-15">15.07.2026</time>
+</a></li><li class="row" data-cat="history" data-q="citroën ds: богиня на гидропневматике показанная в 1955 году ds выглядела как гостья из будущего — парящая подвеска, односпицевый руль и кузов-капля сделали её самым смелым серийным автомобилем эпохи. история ситроен франция гидропневматика"><a href="articles/citroen-ds.html">
+  <span class="row__no">№ 070</span>
+  <span class="row__title">Citroën DS: богиня на гидропневматике</span>
+  <span class="row__cat">История</span>
+  <time class="row__date" datetime="2026-07-12">12.07.2026</time>
+</a></li><li class="row" data-cat="motorsport" data-q="группа b: самая безумная эпоха ралли пять сезонов, полтысячи сил на гравии и толпы зрителей прямо на трассе — как группа b подняла ралли на небывалую высоту и почему её пришлось закрыть. ралли группа b история автоспорт"><a href="articles/group-b-rally.html">
+  <span class="row__no">№ 069</span>
+  <span class="row__title">Группа B: самая безумная эпоха ралли</span>
+  <span class="row__cat">Автоспорт</span>
+  <time class="row__date" datetime="2026-07-09">09.07.2026</time>
+</a></li><li class="row" data-cat="culture" data-q="звук мотора: как инженеры настраивают голос автомобиля звук автомобиля давно перестал быть случайностью: инженеры настраивают выпуск, впуск и даже динамики салона, а электромобилям голос придумывают с нуля — вместе с композиторами. звук инженерия выхлоп электромобили"><a href="articles/car-sound-design.html">
+  <span class="row__no">№ 068</span>
+  <span class="row__title">Звук мотора: как инженеры настраивают голос автомобиля</span>
+  <span class="row__cat">Культура</span>
+  <time class="row__date" datetime="2026-07-07">07.07.2026</time>
+</a></li><li class="row" data-cat="service" data-q="свечи зажигания: признаки износа и правильная замена свеча стоит недорого, но от неё зависят пуск, тяга, расход и даже ресурс катализатора. разбираем, как понять, что свечи устали, как читать нагар и не сорвать резьбу в головке. свечи зажигание двигатель обслуживание"><a href="articles/spark-plugs.html">
+  <span class="row__no">№ 067</span>
+  <span class="row__title">Свечи зажигания: признаки износа и правильная замена</span>
+  <span class="row__cat">Обслуживание</span>
+  <time class="row__date" datetime="2026-07-04">04.07.2026</time>
+</a></li><li class="row" data-cat="tech" data-q="abs, esp и другие электронные помощники: что они делают на самом деле abs не всегда сокращает тормозной путь, а esp не отменяет законы физики. рассказываем, как работают электронные системы безопасности, чем они реально помогают и где их возможности заканчиваются. техника безопасность электроника тормоза"><a href="articles/abs-esp.html">
+  <span class="row__no">№ 066</span>
+  <span class="row__title">ABS, ESP и другие электронные помощники: что они делают на самом деле</span>
+  <span class="row__cat">Устройство</span>
+  <time class="row__date" datetime="2026-07-01">01.07.2026</time>
+</a></li><li class="row" data-cat="history" data-q="производственная система toyota и японское чудо как бедная послевоенная компания из японии придумала «точно вовремя», канбан и шнур андон и в итоге научила весь мировой автопром работать без лишнего. история тойота япония производство"><a href="articles/toyota-production-system.html">
+  <span class="row__no">№ 065</span>
+  <span class="row__title">Производственная система Toyota и японское чудо</span>
+  <span class="row__cat">История</span>
+  <time class="row__date" datetime="2026-06-28">28.06.2026</time>
+</a></li><li class="row" data-cat="electric" data-q="зарядка электромобиля: ac, dc, разъёмы и мощности чем медленная зарядка переменным током отличается от быстрой постоянным, какие бывают разъёмы от type 2 до gb/t и почему заявленные 250 квт на практике держатся лишь несколько минут. электромобиль зарядка разъёмы инфраструктура"><a href="articles/ev-charging-types.html">
+  <span class="row__no">№ 064</span>
+  <span class="row__title">Зарядка электромобиля: AC, DC, разъёмы и мощности</span>
+  <span class="row__cat">Электро</span>
+  <time class="row__date" datetime="2026-06-26">26.06.2026</time>
+</a></li><li class="row" data-cat="motorsport" data-q="дрифт: от японских перевалов до чемпионатов как ночные заезды по горным дорогам японии превратились в зрелищный вид спорта с судьями, парными заездами и тысячесильными машинами — история и устройство дрифта. дрифт япония автоспорт тюнинг"><a href="articles/drifting.html">
+  <span class="row__no">№ 063</span>
+  <span class="row__title">Дрифт: от японских перевалов до чемпионатов</span>
+  <span class="row__cat">Автоспорт</span>
+  <time class="row__date" datetime="2026-06-23">23.06.2026</time>
+</a></li><li class="row" data-cat="culture" data-q="pininfarina, bertone, italdesign: итальянские кузовные ателье как три туринских ателье подарили миру ferrari testarossa, lamborghini countach и volkswagen golf, и почему итальянская школа кузовного дизайна до сих пор задаёт тон всей индустрии. дизайн италия история кузов"><a href="articles/italian-coachbuilders.html">
+  <span class="row__no">№ 062</span>
+  <span class="row__title">Pininfarina, Bertone, Italdesign: итальянские кузовные ателье</span>
+  <span class="row__cat">Культура</span>
+  <time class="row__date" datetime="2026-06-20">20.06.2026</time>
+</a></li><li class="row" data-cat="driving" data-q="парковка задним ходом и параллельная парковка без стресса парковка пугает многих водителей сильнее, чем трасса, хотя в ней нет никакой магии: понятная геометрия, пара ориентиров на кузове и малая скорость решают почти всё. вождение парковка навыки город"><a href="articles/parking-skills.html">
+  <span class="row__no">№ 061</span>
+  <span class="row__title">Парковка задним ходом и параллельная парковка без стресса</span>
+  <span class="row__cat">Вождение</span>
+  <time class="row__date" datetime="2026-06-18">18.06.2026</time>
+</a></li><li class="row" data-cat="service" data-q="моторное масло: вязкость, допуски и интервалы замены цифры 5w-30 на канистре, допуски автопроизводителя и спор о том, когда менять масло. объясняем, что всё это значит и как не ошибиться с выбором для своего мотора. масло обслуживание двигатель вязкость"><a href="articles/oil-change.html">
+  <span class="row__no">№ 060</span>
+  <span class="row__title">Моторное масло: вязкость, допуски и интервалы замены</span>
+  <span class="row__cat">Обслуживание</span>
+  <time class="row__date" datetime="2026-06-15">15.06.2026</time>
+</a></li><li class="row" data-cat="driving" data-q="занос: как его распознать и что делать снос передней оси и занос задней выглядят похоже, но лечатся по-разному: разбираемся, как поймать первые признаки потери сцепления и вернуть машину на траекторию. вождение занос безопасность контраварийная подготовка"><a href="articles/skid-control.html">
+  <span class="row__no">№ 059</span>
+  <span class="row__title">Занос: как его распознать и что делать</span>
+  <span class="row__cat">Вождение</span>
+  <time class="row__date" datetime="2026-06-12">12.06.2026</time>
+</a></li><li class="row" data-cat="buying" data-q="как правильно проводить тест-драйв перед покупкой тест-драйв — это не прогулка вокруг квартала с менеджером, а проверка, подходит ли машина вашему росту, маршрутам и привычкам: план, маршрут и список вопросов на каждый этап. покупка тест-драйв советы выбор авто"><a href="articles/test-drive-guide.html">
+  <span class="row__no">№ 058</span>
+  <span class="row__title">Как правильно проводить тест-драйв перед покупкой</span>
+  <span class="row__cat">Покупка</span>
+  <time class="row__date" datetime="2026-06-09">09.06.2026</time>
+</a></li><li class="row" data-cat="culture" data-q="каким будет автомобиль через 20 лет электрификация, автопилот, автомобиль как гаджет с обновлениями по воздуху и новые модели владения — разбираемся, какие прогнозы реалистичны, а какие останутся мечтами футурологов. будущее электромобили автопилот технологии"><a href="articles/future-of-cars.html">
+  <span class="row__no">№ 057</span>
+  <span class="row__title">Каким будет автомобиль через 20 лет</span>
+  <span class="row__cat">Культура</span>
+  <time class="row__date" datetime="2026-06-07">07.06.2026</time>
+</a></li><li class="row" data-cat="motorsport" data-q="«камаз-мастер»: как российские грузовики покорили «дакар» команда из набережных челнов прошла путь от экспериментальных выступлений на заводских грузовиках до девятнадцати побед на «дакаре» и стала самой титулованной в истории зачёта грузовиков. камаз дакар грузовики автоспорт"><a href="articles/kamaz-master.html">
+  <span class="row__no">№ 056</span>
+  <span class="row__title">«КАМАЗ-мастер»: как российские грузовики покорили «Дакар»</span>
+  <span class="row__cat">Автоспорт</span>
+  <time class="row__date" datetime="2026-06-04">04.06.2026</time>
+</a></li><li class="row" data-cat="driving" data-q="механическая коробка: как ездить плавно и беречь сцепление плавное трогание, точные переключения и привычки, которые продлевают жизнь сцеплению: практическое руководство для тех, кто ездит на механике или только учится. вождение механика сцепление трансмиссия"><a href="articles/manual-transmission-tips.html">
+  <span class="row__no">№ 055</span>
+  <span class="row__title">Механическая коробка: как ездить плавно и беречь сцепление</span>
+  <span class="row__cat">Вождение</span>
+  <time class="row__date" datetime="2026-06-01">01.06.2026</time>
+</a></li><li class="row" data-cat="driving" data-q="усталость за рулём: опасность, которую недооценивают уставший водитель реагирует медленнее, хуже оценивает дистанцию и может провалиться в микросон на скорости сотня — почему усталость опасна почти как алкоголь и что с ней на самом деле работает. безопасность усталость сон вождение"><a href="articles/driver-fatigue.html">
+  <span class="row__no">№ 054</span>
+  <span class="row__title">Усталость за рулём: опасность, которую недооценивают</span>
+  <span class="row__cat">Вождение</span>
+  <time class="row__date" datetime="2026-05-30">30.05.2026</time>
+</a></li><li class="row" data-cat="history" data-q="ford model t: как конвейер посадил мир за руль простая, прочная и всё более дешёвая «жестянка лиззи» за девятнадцать лет превратила автомобиль из игрушки богачей в рабочий инструмент миллионов семей. история форд конвейер сша"><a href="articles/ford-model-t.html">
+  <span class="row__no">№ 053</span>
+  <span class="row__title">Ford Model T: как конвейер посадил мир за руль</span>
+  <span class="row__cat">История</span>
+  <time class="row__date" datetime="2026-05-27">27.05.2026</time>
+</a></li><li class="row" data-cat="motorsport" data-q="нюрбургринг: «зелёный ад» и время круга двадцать с лишним километров леса, слепых гребней и перепадов высот — почему северная петля нюрбургринга стала главным мерилом скорости для гоночных и серийных машин. нюрбургринг трассы германия автоспорт"><a href="articles/nurburgring.html">
+  <span class="row__no">№ 052</span>
+  <span class="row__title">Нюрбургринг: «Зелёный ад» и время круга</span>
+  <span class="row__cat">Автоспорт</span>
+  <time class="row__date" datetime="2026-05-24">24.05.2026</time>
+</a></li><li class="row" data-cat="electric" data-q="сколько на самом деле стоит владение электромобилем электромобиль дороже на старте, но дешевле в каждом километре. считаем полную стоимость владения: энергия, сервис, страховка, шины и самая коварная статья — потеря в цене. электромобили стоимость владения экономия расходы"><a href="articles/ev-total-cost.html">
+  <span class="row__no">№ 051</span>
+  <span class="row__title">Сколько на самом деле стоит владение электромобилем</span>
+  <span class="row__cat">Электро</span>
+  <time class="row__date" datetime="2026-05-21">21.05.2026</time>
+</a></li><li class="row" data-cat="culture" data-q="реставрация классики: с чего начать и сколько стоит практический путеводитель по реставрации старого автомобиля — как выбрать донора, оценить кузов, спланировать бюджет и не превратить мечту о классике в бесконечный долгострой. реставрация классика ретро кузов"><a href="articles/classic-car-restoration.html">
+  <span class="row__no">№ 050</span>
+  <span class="row__title">Реставрация классики: с чего начать и сколько стоит</span>
+  <span class="row__cat">Культура</span>
+  <time class="row__date" datetime="2026-05-19">19.05.2026</time>
+</a></li><li class="row" data-cat="service" data-q="аккумулятор: как продлить жизнь и не остаться без запуска стартерная батарея редко умирает внезапно — она годами подаёт сигналы. рассказываем, как читать напряжение, правильно заряжать и чем губят аккумулятор короткие поездки. аккумулятор электрика обслуживание зима"><a href="articles/car-battery-care.html">
+  <span class="row__no">№ 049</span>
+  <span class="row__title">Аккумулятор: как продлить жизнь и не остаться без запуска</span>
+  <span class="row__cat">Обслуживание</span>
+  <time class="row__date" datetime="2026-05-16">16.05.2026</time>
+</a></li><li class="row" data-cat="buying" data-q="автострахование: как устроены полисы и от чего зависит цена осаго обязательно для всех, каско — по желанию, а цена обоих полисов складывается из коэффициентов, которые водитель может понимать и частично контролировать. страховка осаго каско расходы"><a href="articles/insurance-basics.html">
+  <span class="row__no">№ 048</span>
+  <span class="row__title">Автострахование: как устроены полисы и от чего зависит цена</span>
+  <span class="row__cat">Покупка</span>
+  <time class="row__date" datetime="2026-05-13">13.05.2026</time>
+</a></li><li class="row" data-cat="culture" data-q="советские концепт-кары, которые не пошли в серию одноглазый зис-112, микромобиль «белка», вседорожный «москвич-2150» и аэродинамическая «истра» — рассказываем о смелых советских прототипах, которые так и не встали на конвейер. ссср история прототипы дизайн"><a href="articles/soviet-concept-cars.html">
+  <span class="row__no">№ 047</span>
+  <span class="row__title">Советские концепт-кары, которые не пошли в серию</span>
+  <span class="row__cat">Культура</span>
+  <time class="row__date" datetime="2026-05-10">10.05.2026</time>
+</a></li><li class="row" data-cat="driving" data-q="езда с прицепом: нагрузка, сцепка и манёвры как правильно загрузить прицеп, проверить сцепку перед выездом, не раскачать автопоезд на трассе и сдать задом без нервов: всё, что нужно знать о езде с прицепом. вождение прицеп фаркоп безопасность"><a href="articles/towing-trailer.html">
+  <span class="row__no">№ 046</span>
+  <span class="row__title">Езда с прицепом: нагрузка, сцепка и манёвры</span>
+  <span class="row__cat">Вождение</span>
+  <time class="row__date" datetime="2026-05-08">08.05.2026</time>
+</a></li><li class="row" data-cat="history" data-q="газ-21 «волга»: символ советской мечты хромированный олень на капоте, мягкий диван и мотор, который тянул с самого низа — как «двадцать первая» стала главной машиной советского человека. история ссср газ седан"><a href="articles/gaz-21-volga.html">
+  <span class="row__no">№ 045</span>
+  <span class="row__title">ГАЗ-21 «Волга»: символ советской мечты</span>
+  <span class="row__cat">История</span>
+  <time class="row__date" datetime="2026-05-05">05.05.2026</time>
+</a></li><li class="row" data-cat="buying" data-q="скрученный пробег: как распознать обман скрутка пробега остаётся одним из самых распространённых обманов на вторичном рынке, но износ салона, история обслуживания и данные из электронных блоков почти всегда выдают правду. пробег вторичный рынок проверка покупка"><a href="articles/odometer-fraud.html">
+  <span class="row__no">№ 044</span>
+  <span class="row__title">Скрученный пробег: как распознать обман</span>
+  <span class="row__cat">Покупка</span>
+  <time class="row__date" datetime="2026-05-02">02.05.2026</time>
+</a></li><li class="row" data-cat="culture" data-q="знаменитые автомобили в кино от aston martin агента 007 до delorean с машиной времени — как автомобили становились полноправными героями фильмов и почему зрители помнят их лучше иных актёров. кино поп-культура легенды история"><a href="articles/cars-in-cinema.html">
+  <span class="row__no">№ 043</span>
+  <span class="row__title">Знаменитые автомобили в кино</span>
+  <span class="row__cat">Культура</span>
+  <time class="row__date" datetime="2026-04-30">30.04.2026</time>
+</a></li><li class="row" data-cat="tech" data-q="тормоза: диски, барабаны, суппорты и тормозная жидкость как педаль превращает усилие ноги в остановку полуторатонной машины, чем дисковые тормоза отличаются от барабанных и почему тормозную жидкость нужно менять по сроку. тормоза устройство обслуживание безопасность"><a href="articles/brakes-explained.html">
+  <span class="row__no">№ 042</span>
+  <span class="row__title">Тормоза: диски, барабаны, суппорты и тормозная жидкость</span>
+  <span class="row__cat">Устройство</span>
+  <time class="row__date" datetime="2026-04-27">27.04.2026</time>
+</a></li><li class="row" data-cat="electric" data-q="десять популярных мифов об электромобилях электромобили обросли мифами быстрее, чем зарядными станциями. проверяем десять самых живучих утверждений — от вечно горящих батарей до грязного электричества. электромобили мифы батарея экология"><a href="articles/ev-myths.html">
+  <span class="row__no">№ 041</span>
+  <span class="row__title">Десять популярных мифов об электромобилях</span>
+  <span class="row__cat">Электро</span>
+  <time class="row__date" datetime="2026-04-24">24.04.2026</time>
+</a></li><li class="row" data-cat="tech" data-q="как устроен робот с двумя сцеплениями две коробки в одном корпусе, заранее включённая следующая передача и переключение за доли секунды. разбираем устройство преселективного робота, разницу сухих и мокрых сцеплений и правила эксплуатации. техника трансмиссия dsg робот"><a href="articles/dual-clutch.html">
+  <span class="row__no">№ 040</span>
+  <span class="row__title">Как устроен робот с двумя сцеплениями</span>
+  <span class="row__cat">Устройство</span>
+  <time class="row__date" datetime="2026-04-21">21.04.2026</time>
+</a></li><li class="row" data-cat="tech" data-q="дизель: как он работает и почему его любят тягачи как дизель обходится без свечей зажигания, откуда у него такой крутящий момент и почему магистральные тягачи, тракторы и корабли до сих пор не спешат расставаться с этим мотором. двигатель дизель грузовики технологии"><a href="articles/diesel-engines.html">
+  <span class="row__no">№ 039</span>
+  <span class="row__title">Дизель: как он работает и почему его любят тягачи</span>
+  <span class="row__cat">Устройство</span>
+  <time class="row__date" datetime="2026-04-19">19.04.2026</time>
+</a></li><li class="row" data-cat="driving" data-q="бездорожье для новичка: как не застрять и выбраться разведка пешком, правильная передача, давление в шинах и спокойное самовытаскивание: базовые приёмы, которые помогут проехать грунтовку и не вызывать трактор. вождение бездорожье внедорожник полный привод"><a href="articles/offroad-basics.html">
+  <span class="row__no">№ 038</span>
+  <span class="row__title">Бездорожье для новичка: как не застрять и выбраться</span>
+  <span class="row__cat">Вождение</span>
+  <time class="row__date" datetime="2026-04-16">16.04.2026</time>
+</a></li><li class="row" data-cat="motorsport" data-q="24 часа ле-мана: гонка на выносливость сутки без остановки, три пилота на одну машину, ночь на прямой юнодьер и финиш, до которого доезжают не все: почему ле-ман называют главной гонкой на выносливость в мире. ле-ман выносливость автоспорт история"><a href="articles/le-mans-24.html">
+  <span class="row__no">№ 037</span>
+  <span class="row__title">24 часа Ле-Мана: гонка на выносливость</span>
+  <span class="row__cat">Автоспорт</span>
+  <time class="row__date" datetime="2026-04-13">13.04.2026</time>
+</a></li><li class="row" data-cat="service" data-q="как подготовить машину к долгой стоянке командировка, зимовка в гараже или долгий отпуск — машина, брошенная на месяцы без подготовки, мстит севшим аккумулятором, плоскими шинами и прикипевшими тормозами. обслуживание хранение аккумулятор шины"><a href="articles/car-storage.html">
+  <span class="row__no">№ 036</span>
+  <span class="row__title">Как подготовить машину к долгой стоянке</span>
+  <span class="row__cat">Обслуживание</span>
+  <time class="row__date" datetime="2026-04-11">11.04.2026</time>
+</a></li><li class="row" data-cat="buying" data-q="седан, хэтчбек, универсал, кроссовер: какой кузов выбрать тип кузова определяет не только внешность машины, но и то, как вы будете с ней жить: парковаться, грузить вещи, ездить зимой и продавать через пять лет. кузов покупка кроссовер универсал седан"><a href="articles/body-types-guide.html">
+  <span class="row__no">№ 035</span>
+  <span class="row__title">Седан, хэтчбек, универсал, кроссовер: какой кузов выбрать</span>
+  <span class="row__cat">Покупка</span>
+  <time class="row__date" datetime="2026-04-08">08.04.2026</time>
+</a></li><li class="row" data-cat="buying" data-q="амортизация: какие машины теряют в цене быстрее почему одна машина через пять лет стоит половину цены, а другая почти сохраняет её: разбираемся, от чего зависит падение стоимости и как выбрать автомобиль, который легко продать. покупка деньги рынок продажа"><a href="articles/depreciation.html">
+  <span class="row__no">№ 034</span>
+  <span class="row__title">Амортизация: какие машины теряют в цене быстрее</span>
+  <span class="row__cat">Покупка</span>
+  <time class="row__date" datetime="2026-04-05">05.04.2026</time>
+</a></li><li class="row" data-cat="buying" data-q="кредит, лизинг или подписка: как платить за машину автокредит, лизинг для частных лиц и юрлиц, подписка на автомобиль: разбираем, кому принадлежит машина, что входит в платёж и какой способ обойдётся дешевле именно в вашей ситуации. покупка кредит лизинг деньги"><a href="articles/car-loan-leasing.html">
+  <span class="row__no">№ 033</span>
+  <span class="row__title">Кредит, лизинг или подписка: как платить за машину</span>
+  <span class="row__cat">Покупка</span>
+  <time class="row__date" datetime="2026-04-02">02.04.2026</time>
+</a></li><li class="row" data-cat="electric" data-q="литий-ионные батареи: nmc, lfp и что будет дальше почему одни электромобили советуют заряжать до 80%, а другие до 100%, чем никель-марганец-кобальтовые ячейки отличаются от литий-железо-фосфатных и чего ждать от натрия и твёрдого электролита. электромобиль батарея химия технологии"><a href="articles/ev-batteries-chemistry.html">
+  <span class="row__no">№ 032</span>
+  <span class="row__title">Литий-ионные батареи: NMC, LFP и что будет дальше</span>
+  <span class="row__cat">Электро</span>
+  <time class="row__date" datetime="2026-03-31">31.03.2026</time>
+</a></li><li class="row" data-cat="culture" data-q="цвет автомобиля: история, мода и практичность почему ford model t был чёрным, откуда взялись гоночные цвета стран, как назывались оттенки «жигулей» и какой цвет кузова на самом деле практичнее в повседневной жизни. история дизайн лакокрасочное покрытие мода"><a href="articles/car-colors.html">
+  <span class="row__no">№ 031</span>
+  <span class="row__title">Цвет автомобиля: история, мода и практичность</span>
+  <span class="row__cat">Культура</span>
+  <time class="row__date" datetime="2026-03-28">28.03.2026</time>
+</a></li><li class="row" data-cat="tech" data-q="как работает двигатель внутреннего сгорания: четыре такта простыми словами впуск, сжатие, рабочий ход, выпуск — разбираем по шагам, как капля бензина превращается во вращение колёс и почему мотор при этом отправляет большую часть энергии в тепло. техника двигатель устройство автомобиля бензин"><a href="articles/how-ice-works.html">
+  <span class="row__no">№ 030</span>
+  <span class="row__title">Как работает двигатель внутреннего сгорания: четыре такта простыми словами</span>
+  <span class="row__cat">Устройство</span>
+  <time class="row__date" datetime="2026-03-25">25.03.2026</time>
+</a></li><li class="row" data-cat="tech" data-q="непосредственный впрыск: плюсы, минусы и нагар почему почти все современные бензиновые моторы впрыскивают топливо прямо в цилиндр, что это даёт мощности и расходу и откуда берётся нагар на впускных клапанах. двигатель впрыск бензин обслуживание"><a href="articles/direct-injection.html">
+  <span class="row__no">№ 029</span>
+  <span class="row__title">Непосредственный впрыск: плюсы, минусы и нагар</span>
+  <span class="row__cat">Устройство</span>
+  <time class="row__date" datetime="2026-03-23">23.03.2026</time>
+</a></li><li class="row" data-cat="motorsport" data-q="трек-дэй: как впервые выехать на гоночную трассу пошаговое руководство для новичка — как подготовить машину и себя, что взять с собой, как читать флаги и почему первый трек-дэй стоит проехать спокойно, а не на пределе. трек-дэй трасса подготовка советы"><a href="articles/track-day.html">
+  <span class="row__no">№ 028</span>
+  <span class="row__title">Трек-дэй: как впервые выехать на гоночную трассу</span>
+  <span class="row__cat">Автоспорт</span>
+  <time class="row__date" datetime="2026-03-20">20.03.2026</time>
+</a></li><li class="row" data-cat="driving" data-q="зимнее вождение: базовые приёмы на скользкой дороге лёд и снежная каша не прощают резких движений: разбираем, как трогаться, тормозить и проходить повороты зимой, чтобы машина слушалась руля, а не законов инерции. вождение зима безопасность шины"><a href="articles/winter-driving.html">
+  <span class="row__no">№ 027</span>
+  <span class="row__title">Зимнее вождение: базовые приёмы на скользкой дороге</span>
+  <span class="row__cat">Вождение</span>
+  <time class="row__date" datetime="2026-03-17">17.03.2026</time>
+</a></li><li class="row" data-cat="motorsport" data-q="ралли «дакар»: от парижа до саудовской аравии «дакар» начинался как безумное приключение через сахару, пережил переезд в южную америку и нашёл новый дом в саудовской аравии, но остался самым суровым ралли-марафоном планеты. дакар ралли-рейд автоспорт история"><a href="articles/dakar-rally.html">
+  <span class="row__no">№ 026</span>
+  <span class="row__title">Ралли «Дакар»: от Парижа до Саудовской Аравии</span>
+  <span class="row__cat">Автоспорт</span>
+  <time class="row__date" datetime="2026-03-14">14.03.2026</time>
+</a></li><li class="row" data-cat="service" data-q="система охлаждения: антифриз, термостат и перегрев перегрев способен за несколько минут испортить двигатель, который служил бы ещё сотни тысяч километров. разбираем, как работает система охлаждения и что делать, если стрелка поползла вверх. охлаждение антифриз двигатель перегрев"><a href="articles/coolant-system.html">
+  <span class="row__no">№ 025</span>
+  <span class="row__title">Система охлаждения: антифриз, термостат и перегрев</span>
+  <span class="row__cat">Обслуживание</span>
+  <time class="row__date" datetime="2026-03-12">12.03.2026</time>
+</a></li><li class="row" data-cat="tech" data-q="подвеска автомобиля: от торсионов до пневмобаллонов рессоры, торсионы, стойки макферсона, многорычажки и пневмобаллоны — рассказываем, как разные подвески решают вечный спор между комфортом и управляемостью и что выбрать под свои дороги. техника подвеска устройство автомобиля ходовая"><a href="articles/suspension-types.html">
+  <span class="row__no">№ 024</span>
+  <span class="row__title">Подвеска автомобиля: от торсионов до пневмобаллонов</span>
+  <span class="row__cat">Устройство</span>
+  <time class="row__date" datetime="2026-03-09">09.03.2026</time>
+</a></li><li class="row" data-cat="tech" data-q="полный привод: подключаемый, постоянный и всё между ними шильдик 4×4 на крышке багажника может означать очень разные вещи — от жёсткой раздатки старого внедорожника до муфты, которая включает задние колёса лишь при пробуксовке. разбираемся по схемам. техника полный привод трансмиссия внедорожник"><a href="articles/all-wheel-drive.html">
+  <span class="row__no">№ 023</span>
+  <span class="row__title">Полный привод: подключаемый, постоянный и всё между ними</span>
+  <span class="row__cat">Устройство</span>
+  <time class="row__date" datetime="2026-03-06">06.03.2026</time>
+</a></li><li class="row" data-cat="driving" data-q="подготовка к дальней поездке: чек-лист водителя тысяча километров пути начинается за пару дней до старта: что проверить в машине, что положить в багажник и как спланировать маршрут, чтобы дорога запомнилась видами, а не поломками. путешествия вождение чек-лист обслуживание"><a href="articles/long-trip-prep.html">
+  <span class="row__no">№ 022</span>
+  <span class="row__title">Подготовка к дальней поездке: чек-лист водителя</span>
+  <span class="row__cat">Вождение</span>
+  <time class="row__date" datetime="2026-03-04">04.03.2026</time>
+</a></li><li class="row" data-cat="buying" data-q="vin-номер: что можно узнать о машине по 17 символам из чего состоит vin, как прочитать в нём страну, производителя и год выпуска, где искать номер на кузове и что реально показывают проверки истории автомобиля перед покупкой. покупка vin проверка документы"><a href="articles/vin-check.html">
+  <span class="row__no">№ 021</span>
+  <span class="row__title">VIN-номер: что можно узнать о машине по 17 символам</span>
+  <span class="row__cat">Покупка</span>
+  <time class="row__date" datetime="2026-03-01">01.03.2026</time>
+</a></li><li class="row" data-cat="electric" data-q="деградация батареи: мифы и реальность батарея электромобиля не умирает через пять лет, но и вечной её не назовёшь. разбираем, от чего на самом деле теряется ёмкость и как продлить жизнь аккумулятору. батарея электромобили деградация зарядка"><a href="articles/ev-battery-degradation.html">
+  <span class="row__no">№ 020</span>
+  <span class="row__title">Деградация батареи: мифы и реальность</span>
+  <span class="row__cat">Электро</span>
+  <time class="row__date" datetime="2026-02-26">26.02.2026</time>
+</a></li><li class="row" data-cat="history" data-q="volkswagen käfer: долгая жизнь «жука» машина, задуманная как пропагандистский проект третьего рейха, стала символом послевоенного возрождения, хиппи и мексиканских такси и пережила почти всех ровесников. история фольксваген германия жук"><a href="articles/vw-beetle.html">
+  <span class="row__no">№ 019</span>
+  <span class="row__title">Volkswagen Käfer: долгая жизнь «Жука»</span>
+  <span class="row__cat">История</span>
+  <time class="row__date" datetime="2026-02-23">23.02.2026</time>
+</a></li><li class="row" data-cat="culture" data-q="история автомобильных эмблем что на самом деле означают трёхлучевая звезда, гарцующий конь, четыре кольца и ладья на решётке «жигулей» — и почему почти все марки в последние годы сделали логотипы плоскими. история дизайн бренды эмблемы"><a href="articles/car-logos-history.html">
+  <span class="row__no">№ 018</span>
+  <span class="row__title">История автомобильных эмблем</span>
+  <span class="row__cat">Культура</span>
+  <time class="row__date" datetime="2026-02-21">21.02.2026</time>
+</a></li><li class="row" data-cat="buying" data-q="полная стоимость владения: считаем расходы честно цена в объявлении — лишь вершина айсберга: потеря стоимости, топливо, страховка, налог, шины и ремонт за несколько лет легко превышают сумму, за которую машину купили. расходы покупка бюджет владение"><a href="articles/cost-of-ownership.html">
+  <span class="row__no">№ 017</span>
+  <span class="row__title">Полная стоимость владения: считаем расходы честно</span>
+  <span class="row__cat">Покупка</span>
+  <time class="row__date" datetime="2026-02-18">18.02.2026</time>
+</a></li><li class="row" data-cat="motorsport" data-q="картинг: с чего начинается путь гонщика почти каждый чемпион формулы-1 начинал с карта. разбираемся, как устроен картинг, какие бывают классы, сколько стоит старт и как сделать первые шаги ребёнку или взрослому. картинг автоспорт обучение дети"><a href="articles/karting-start.html">
+  <span class="row__no">№ 016</span>
+  <span class="row__title">Картинг: с чего начинается путь гонщика</span>
+  <span class="row__cat">Автоспорт</span>
+  <time class="row__date" datetime="2026-02-15">15.02.2026</time>
+</a></li><li class="row" data-cat="buying" data-q="осмотр подержанного автомобиля: пошаговая инструкция документы, кузов, салон, мотор и короткая поездка: последовательный план осмотра машины с пробегом, который помогает отсеять проблемные варианты ещё до диагностики в сервисе. покупка подержанные авто осмотр советы"><a href="articles/used-car-inspection.html">
+  <span class="row__no">№ 015</span>
+  <span class="row__title">Осмотр подержанного автомобиля: пошаговая инструкция</span>
+  <span class="row__cat">Покупка</span>
+  <time class="row__date" datetime="2026-02-13">13.02.2026</time>
+</a></li><li class="row" data-cat="service" data-q="кондиционер и салонный фильтр: обслуживание без переплат затхлый запах, слабый обдув и запотевающие стёкла лечатся проще и дешевле, чем кажется. объясняем, что в климатической системе можно сделать самому, а за чем действительно ехать в сервис. кондиционер салонный фильтр климат обслуживание"><a href="articles/cabin-filter-ac.html">
+  <span class="row__no">№ 014</span>
+  <span class="row__title">Кондиционер и салонный фильтр: обслуживание без переплат</span>
+  <span class="row__cat">Обслуживание</span>
+  <time class="row__date" datetime="2026-02-10">10.02.2026</time>
+</a></li><li class="row" data-cat="driving" data-q="защитное вождение: как предугадать ошибки других защитное вождение — это не страх и не медлительность, а умение читать дорогу на несколько шагов вперёд и всегда оставлять себе запасной выход из любой ситуации. вождение безопасность дтп навыки"><a href="articles/defensive-driving.html">
+  <span class="row__no">№ 013</span>
+  <span class="row__title">Защитное вождение: как предугадать ошибки других</span>
+  <span class="row__cat">Вождение</span>
+  <time class="row__date" datetime="2026-02-07">07.02.2026</time>
+</a></li><li class="row" data-cat="driving" data-q="езда ночью: свет, усталость и внимание ночью трафика меньше, а аварий в пересчёте на километр больше: как настроить свет, не ослепнуть от встречных фар и не дать усталости взять руль в свои руки. вождение ночь фары безопасность"><a href="articles/night-driving.html">
+  <span class="row__no">№ 012</span>
+  <span class="row__title">Езда ночью: свет, усталость и внимание</span>
+  <span class="row__cat">Вождение</span>
+  <time class="row__date" datetime="2026-02-04">04.02.2026</time>
+</a></li><li class="row" data-cat="driving" data-q="детские автокресла: группы, isofix и типичные ошибки хорошее автокресло спасает жизнь, только если оно подобрано по росту и весу и установлено правильно — разбираем группы, стандарты, крепления и ошибки, которые родители совершают чаще всего. безопасность дети автокресла isofix"><a href="articles/child-seats.html">
+  <span class="row__no">№ 011</span>
+  <span class="row__title">Детские автокресла: группы, ISOFIX и типичные ошибки</span>
+  <span class="row__cat">Вождение</span>
+  <time class="row__date" datetime="2026-02-02">02.02.2026</time>
+</a></li><li class="row" data-cat="motorsport" data-q="айртон сенна: гонщик, ставший легендой три титула, 65 поул-позиций и дождевые гонки, которые пересматривают до сих пор — путь айртона сенны от картинга в сан-паулу до трагического дня в имоле. формула 1 сенна бразилия история"><a href="articles/ayrton-senna.html">
+  <span class="row__no">№ 010</span>
+  <span class="row__title">Айртон Сенна: гонщик, ставший легендой</span>
+  <span class="row__cat">Автоспорт</span>
+  <time class="row__date" datetime="2026-01-30">30.01.2026</time>
+</a></li><li class="row" data-cat="service" data-q="шипы или липучка: выбираем зимние шины шипованная резина спасает на голом льду, фрикционная тише и комфортнее в городе — разбираем, кому что подходит и как не ошибиться с размером, маркировкой и сроком годности. шины зима безопасность обслуживание"><a href="articles/winter-tires.html">
+  <span class="row__no">№ 009</span>
+  <span class="row__title">Шипы или липучка: выбираем зимние шины</span>
+  <span class="row__cat">Обслуживание</span>
+  <time class="row__date" datetime="2026-01-27">27.01.2026</time>
+</a></li><li class="row" data-cat="service" data-q="ремень или цепь грм: когда менять и чем грозит обрыв привод газораспределения работает незаметно, пока не порвётся — и тогда счёт может пойти на десятки тысяч. объясняем, как следить за ремнём и цепью и что меняют вместе с ними. грм двигатель ремонт обслуживание"><a href="articles/timing-belt.html">
+  <span class="row__no">№ 008</span>
+  <span class="row__title">Ремень или цепь ГРМ: когда менять и чем грозит обрыв</span>
+  <span class="row__cat">Обслуживание</span>
+  <time class="row__date" datetime="2026-01-25">25.01.2026</time>
+</a></li><li class="row" data-cat="history" data-q="mini 1959 года: революция поперёк кузова алек иссигонис развернул мотор поперёк, загнал колёса в углы кузова и получил крошечную машину, которая перевернула представления о компоновке автомобиля. история британия мини хэтчбек"><a href="articles/mini-1959.html">
+  <span class="row__no">№ 007</span>
+  <span class="row__title">Mini 1959 года: революция поперёк кузова</span>
+  <span class="row__cat">История</span>
+  <time class="row__date" datetime="2026-01-22">22.01.2026</time>
+</a></li><li class="row" data-cat="electric" data-q="домашняя зарядка: что нужно знать перед установкой домашняя розетка — лучший друг владельца электромобиля, но установка зарядной станции требует расчёта мощности, правильной проводки и защиты. рассказываем, с чего начать. зарядка электромобили электрика wallbox"><a href="articles/ev-home-charging.html">
+  <span class="row__no">№ 006</span>
+  <span class="row__title">Домашняя зарядка: что нужно знать перед установкой</span>
+  <span class="row__cat">Электро</span>
+  <time class="row__date" datetime="2026-01-19">19.01.2026</time>
+</a></li><li class="row" data-cat="electric" data-q="гибриды: мягкий, полный, подключаемый — в чём разница слово «гибрид» на шильдике может означать что угодно — от скромного стартер-генератора до машины, которая неделю ездит без бензина. разбираем три главные схемы. гибриды электрификация phev экономия"><a href="articles/hybrid-types.html">
+  <span class="row__no">№ 005</span>
+  <span class="row__title">Гибриды: мягкий, полный, подключаемый — в чём разница</span>
+  <span class="row__cat">Электро</span>
+  <time class="row__date" datetime="2026-01-16">16.01.2026</time>
+</a></li><li class="row" data-cat="service" data-q="сигнальные лампы на приборной панели: что срочно, а что подождёт красная маслёнка и жёлтый двигатель выглядят одинаково тревожно, но означают совсем разное. объясняем логику цветов и говорим, при каких лампах нужно остановиться немедленно. приборная панель диагностика электрика безопасность"><a href="articles/dashboard-warning-lights.html">
+  <span class="row__no">№ 004</span>
+  <span class="row__title">Сигнальные лампы на приборной панели: что срочно, а что подождёт</span>
+  <span class="row__cat">Обслуживание</span>
+  <time class="row__date" datetime="2026-01-14">14.01.2026</time>
+</a></li><li class="row" data-cat="electric" data-q="как устроен электромобиль: батарея, инвертор, мотор что на самом деле прячется под полом и капотом электромобиля — как батарея, инвертор и электромотор превращают киловатт-часы в движение и почему такой машине не нужна коробка передач. электромобиль батарея устройство электромотор"><a href="articles/ev-how-it-works.html">
+  <span class="row__no">№ 003</span>
+  <span class="row__title">Как устроен электромобиль: батарея, инвертор, мотор</span>
+  <span class="row__cat">Электро</span>
+  <time class="row__date" datetime="2026-01-11">11.01.2026</time>
+</a></li><li class="row" data-cat="tech" data-q="турбонаддув: откуда берутся лишние лошадиные силы турбина использует энергию выхлопа, чтобы затолкать в цилиндры больше воздуха. разбираемся, как это работает, откуда берётся турбояма и как продлить жизнь турбокомпрессору. техника двигатель турбонаддув обслуживание"><a href="articles/turbocharging.html">
+  <span class="row__no">№ 002</span>
+  <span class="row__title">Турбонаддув: откуда берутся лишние лошадиные силы</span>
+  <span class="row__cat">Устройство</span>
+  <time class="row__date" datetime="2026-01-08">08.01.2026</time>
+</a></li><li class="row" data-cat="buying" data-q="новый или с пробегом: что выгоднее на дистанции новая машина теряет в цене быстрее всего, подержанная дороже в обслуживании и рискованнее: считаем полную стоимость владения на дистанции в пять лет и разбираемся, когда что выгоднее. покупка деньги подержанные авто новые авто"><a href="articles/new-vs-used.html">
+  <span class="row__no">№ 001</span>
+  <span class="row__title">Новый или с пробегом: что выгоднее на дистанции</span>
+  <span class="row__cat">Покупка</span>
+  <time class="row__date" datetime="2026-01-06">06.01.2026</time>
+</a></li></ol>
   <p class="empty" id="empty" hidden>Ничего не нашлось. Попробуйте другое слово или выберите «Все».</p>
 </main>
-<footer class="footer">
-  <div class="wrap footer__grid">
-    <div>
-      <p class="wordmark wordmark--small">ОТСЕЧКА</p>
-      <p class="footer__text">Журнал об автомобилях: история, устройство, вождение и культура. Пишем о машинах так, чтобы было понятно с первого раза и интересно до последнего абзаца.</p>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="wordmark" href="index.html">ОТСЕЧКА</a>
+        <p class="footer__motto">Всё, что может мотор. Но не больше.</p>
+      </div>
+      <div class="footer__col">
+        <p class="eyebrow">Рубрики</p>
+        <div class="footer__links footer__links--2"><a href="category/history.html">История</a><a href="category/tech.html">Устройство</a><a href="category/electric.html">Электро</a><a href="category/service.html">Обслуживание</a><a href="category/driving.html">Вождение</a><a href="category/buying.html">Покупка</a><a href="category/motorsport.html">Автоспорт</a><a href="category/culture.html">Культура</a></div>
+      </div>
+      <div class="footer__col">
+        <p class="eyebrow">Журнал</p>
+        <div class="footer__links">
+          <a href="archive.html">Архив · все 100 статей</a>
+          <a href="about.html">О журнале</a>
+          <a href="rss.xml">RSS</a>
+        </div>
+      </div>
     </div>
-    <div>
-      <p class="label">Рубрики</p>
-      <ul class="footer__list"><li><a href="category/history.html">История</a> <span class="mono">13</span></li><li><a href="category/tech.html">Устройство</a> <span class="mono">13</span></li><li><a href="category/electric.html">Электро</a> <span class="mono">12</span></li><li><a href="category/service.html">Обслуживание</a> <span class="mono">13</span></li><li><a href="category/driving.html">Вождение</a> <span class="mono">13</span></li><li><a href="category/buying.html">Покупка</a> <span class="mono">12</span></li><li><a href="category/motorsport.html">Автоспорт</a> <span class="mono">12</span></li><li><a href="category/culture.html">Культура</a> <span class="mono">12</span></li></ul>
-    </div>
-    <div>
-      <p class="label">Одометр журнала</p>
-      <p class="odometer mono" role="img" aria-label="100 статей"><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span></p>
-      <p class="footer__text">100 статей · 8 рубрик · ≈94 тыс. слов</p>
+    <div class="footer__legal">
+      <span>© 2026 «Отсечка». Журнал об автомобилях</span>
+      <span>Выпуск № 100 · октябрь 2026</span>
     </div>
   </div>
-  <p class="wrap footer__fine">© 2026 «Отсечка». Тексты носят информационный характер: при ремонте и обслуживании сверяйтесь с руководством по эксплуатации своего автомобиля.</p>
 </footer>
 <script src="assets/client.js" defer></script>
 </body>

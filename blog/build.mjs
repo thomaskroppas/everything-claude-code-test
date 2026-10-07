@@ -12,7 +12,7 @@ const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
 const Site = require('./src/site.js');
 const SITE_URL = (process.env.SITE_URL || 'https://otsechka.example').replace(/\/$/, '');
-const FONTS = 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Unbounded:wght@500;600;700;800&display=swap';
+const FONTS = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Manrope:wght@400;500;600&display=swap';
 
 // ---------- load + validate ----------
 const dir = path.join(ROOT, 'content/articles');
@@ -32,6 +32,7 @@ const missing = plan.filter((p) => !loaded.some((a) => a.slug === p.slug)).map((
 if (missing.length) console.warn(`[build] ${missing.length} planned articles not written yet: ${missing.join(', ')}`);
 if (problems.length) { console.error('[build] content problems:\n  ' + problems.join('\n  ')); process.exit(1); }
 const articles = Site.prepare(loaded);
+Site.ART.hero = fs.readFileSync(path.join(ROOT, 'src/art/hero-car.svg'), 'utf8').replace(/<svg /, '<svg preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false" ');
 
 // ---------- static site ----------
 const OUT = path.join(ROOT, 'dist');
@@ -45,8 +46,8 @@ function links(prefix) {
     about: prefix + 'about.html',
     article: (slug) => `${prefix}articles/${slug}.html`,
     category: (id) => `${prefix}category/${id}.html`,
-    cover: (slug) => `${prefix}assets/covers/${slug}.svg`,
-    themeToggle: true,
+    asset: (p) => prefix + p,
+    rss: prefix + 'rss.xml',
   };
 }
 
@@ -71,7 +72,7 @@ function page({ rel, title, description, active, body, jsonld, ogType, date, roo
 <meta property="og:url" content="${url}">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary">${date ? `\n<meta property="article:published_time" content="${date}">` : ''}${rootRelative ? '\n<meta name="robots" content="noindex">' : ''}
-<meta name="theme-color" content="#14171c">
+<meta name="theme-color" content="#0a0a0b">
 <link rel="alternate" type="application/rss+xml" title="${Site.SITE.name}" href="${prefix}rss.xml">
 <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,11 +80,10 @@ function page({ rel, title, description, active, body, jsonld, ogType, date, roo
 <link rel="stylesheet" href="${FONTS}" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="${FONTS}"></noscript>
 <link rel="stylesheet" href="${prefix}assets/style.css">
-<script>try{var t=localStorage.getItem('otsechka-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld).replace(/</g, '\\u003c')}</script>` : ''}
 </head>
 <body>
-${Site.header(L, active)}
+${Site.header(L, active, articles)}
 ${body(L)}
 ${Site.footer(L, articles)}
 <script src="${prefix}assets/client.js" defer></script>
@@ -124,6 +124,7 @@ fs.mkdirSync(path.join(OUT, 'assets/covers'), { recursive: true });
 for (const a of articles) fs.writeFileSync(path.join(OUT, `assets/covers/${a.slug}.svg`), Site.cover(a));
 fs.copyFileSync(path.join(ROOT, 'src/style.css'), path.join(OUT, 'assets/style.css'));
 fs.copyFileSync(path.join(ROOT, 'src/client.js'), path.join(OUT, 'assets/client.js'));
+if (fs.existsSync(path.join(ROOT, 'photos'))) fs.cpSync(path.join(ROOT, 'photos'), path.join(OUT, 'photos'), { recursive: true });
 write('assets/favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#14171c"/><path d="M12 44a20 20 0 0 1 40 0" fill="none" stroke="#eceef0" stroke-width="5"/><path d="M45 30a20 20 0 0 1 7 14" fill="none" stroke="#d63a20" stroke-width="5"/><path d="M32 44 46 26" stroke="#ffc21a" stroke-width="5" stroke-linecap="round"/></svg>');
 write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\n`);
 const urls = ['', 'archive.html', 'about.html', ...Site.CATEGORIES.map((c) => `category/${c.id}.html`), ...articles.map((a) => `articles/${a.slug}.html`)];
@@ -150,6 +151,7 @@ ${fs.readFileSync(path.join(ROOT, 'src/style.css'), 'utf8')}
 <script>window.OTSECHKA_SPA = true;</script>
 <script>
 ${safe(fs.readFileSync(path.join(ROOT, 'src/site.js'), 'utf8'))}
+Site.ART.hero = ${JSON.stringify(Site.ART.hero).replace(/</g, '\\u003c')};
 </script>
 <script>
 ${safe(fs.readFileSync(path.join(ROOT, 'src/client.js'), 'utf8'))}
@@ -163,7 +165,7 @@ ${safe(fs.readFileSync(path.join(ROOT, 'src/client.js'), 'utf8'))}
     home: '#home', archive: '#archive', about: '#about',
     article: function (s) { return '#a-' + s; },
     category: function (id) { return '#c-' + id; },
-    themeToggle: false,
+    asset: function (p) { return p; },
   };
   var app = document.getElementById('app');
   var ROUTE = /^(home|archive|about|a-[a-z0-9-]+|c-[a-z]+)?$/;
@@ -175,7 +177,7 @@ ${safe(fs.readFileSync(path.join(ROOT, 'src/client.js'), 'utf8'))}
     else if (route.indexOf('a-') === 0 && BY_SLUG[route.slice(2)]) { var a = BY_SLUG[route.slice(2)]; main = Site.articlePage(L, a, ARTICLES); active = 'article'; title = a.title; }
     else if (route.indexOf('c-') === 0 && Site.CAT[route.slice(2)]) { var c = Site.CAT[route.slice(2)]; main = Site.categoryPage(L, c, ARTICLES); active = c.id; title = c.name; }
     else { main = Site.notFound(L); title = 'Страница не найдена'; }
-    app.innerHTML = Site.header(L, active) + main + Site.footer(L, ARTICLES);
+    app.innerHTML = Site.header(L, active, ARTICLES) + main + Site.footer(L, ARTICLES);
     document.title = title ? title + ' — Отсечка' : 'Отсечка';
     window.scrollTo(0, 0);
     window.Otsechka.init();

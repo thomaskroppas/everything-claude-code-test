@@ -2,302 +2,381 @@
 <meta name="description" content="Журнал об автомобилях: история, устройство, вождение и культура">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Unbounded:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Manrope:wght@400;500;600&display=swap">
 <style>
-/* Layout: instrument-cluster masthead with a 24-segment rev bar; magazine grid below; long-read column with a sticky "spec sheet" rail. */
+/* «Отсечка» — dark premium design system (from the Claude Design handoff).
+   Layout: 1440 container with 40px gutters; serif display (Cormorant Garamond) over Manrope.
+   Deliberately single-theme: the site is always dark. */
 :root {
-  --bg: #eceef0;          /* light asphalt */
-  --surface: #ffffff;
-  --ink: #14171c;
-  --muted: #586270;
-  --line: #ccd2d9;
-  --accent: #ffc21a;      /* road-marking yellow, used as fill only */
-  --on-accent: #14171c;
-  --amber: #ef8a17;
-  --red: #d63a20;         /* redline, used only on the rev bar and warnings */
-  --focus: #1d5fd1;
-  --font-display: 'Unbounded', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
-  --font-body: 'Literata', Georgia, 'Times New Roman', serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
-  --step--1: 0.8125rem;
-  --step-0: 1.0625rem;
-  --step-1: 1.25rem;
-  --step-2: 1.6rem;
-  --step-3: clamp(1.9rem, 1.4rem + 2vw, 2.7rem);
-  --step-4: clamp(2.2rem, 1.5rem + 3.2vw, 3.6rem);
-  --radius: 6px;
-  --gutter: clamp(16px, 4vw, 40px);
-  color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #111316; --surface: #1a1d22; --ink: #e8ebee; --muted: #9aa4b0; --line: #2c323a;
-    --accent: #ffc21a; --on-accent: #14171c; --amber: #ffa23a; --red: #ff5a3d; --focus: #7fb0ff;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #111316; --surface: #1a1d22; --ink: #e8ebee; --muted: #9aa4b0; --line: #2c323a;
-  --accent: #ffc21a; --on-accent: #14171c; --amber: #ffa23a; --red: #ff5a3d; --focus: #7fb0ff;
+  --bg: #0a0a0b;
+  --bg-deep: #070708;
+  --band: #0e0e10;
+  --surface: #111012;
+  --shot: #0c0b0d;
+  --line: #1c1c20;
+  --line-strong: #2e2e33;
+  --text: #ecebe6;
+  --text-2: #c9c6be;
+  --text-3: #b4b1a9;
+  --body: #d6d4ce;
+  --muted: #8d8a84;
+  --gold: #c8b48a;
+  --gold-press: #a8966e;
+  --redline: #d63a20;
+  --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --gutter: 40px;
   color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { -webkit-text-size-adjust: 100%; scroll-padding-top: 9rem; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 24px; }
 body {
   margin: 0;
   background: var(--bg);
-  color: var(--ink);
-  font: 400 var(--step-0)/1.6 var(--font-body);
-  text-rendering: optimizeLegibility;
+  color: var(--text);
+  font: 400 16px/1.6 var(--sans);
   -webkit-font-smoothing: antialiased;
 }
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--gold); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+::selection { background: var(--gold); color: var(--bg); }
+button, input { font-family: inherit; }
 img, svg { max-width: 100%; display: block; }
-a { color: inherit; text-decoration-color: currentColor; text-decoration-thickness: 3px; text-underline-offset: 3px; }
-a:hover { text-decoration-color: var(--accent); }
-:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
-h1, h2, h3 { text-wrap: balance; margin: 0; }
-p { margin: 0; }
-.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: var(--step--1); letter-spacing: 0.01em; }
-.wrap { width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: var(--gutter); }
-.narrow { max-width: 780px; }
+h1, h2, h3, p, figure, dl, dd { margin: 0; }
+
+.wrap { max-width: 1440px; margin: 0 auto; padding-inline: var(--gutter); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.skip { position: absolute; left: -999px; top: 0; background: var(--accent); color: var(--on-accent); padding: 0.6rem 1rem; z-index: 50; font-family: var(--font-mono); }
-.skip:focus { left: 1rem; top: 1rem; }
-.label, .eyebrow {
-  font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
-}
-.eyebrow { display: flex; align-items: center; gap: 0.5rem; }
+.skip { position: absolute; left: -999px; top: 0; z-index: 100; background: var(--text); color: var(--bg); padding: 12px 18px; font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+.skip:focus { left: 16px; top: 16px; }
 
-/* ---------- masthead ---------- */
-.masthead {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
-  background: var(--bg);
-  border-bottom: 1px solid var(--line);
-}
-.masthead__row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.9rem 0.4rem; flex-wrap: wrap; }
-.wordmark {
-  font-family: var(--font-display); font-weight: 800; font-size: clamp(1.35rem, 1rem + 1.6vw, 1.9rem);
-  letter-spacing: 0.04em; text-decoration: none; line-height: 1; display: inline-flex; align-items: baseline; gap: 0.6rem;
-}
-.wordmark__rpm { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; color: var(--muted); }
-.wordmark--small { font-size: 1.2rem; margin-bottom: 0.75rem; }
-.masthead__tools { display: flex; gap: 0.25rem; flex-wrap: wrap; }
-.tool {
-  font-family: var(--font-mono); font-size: var(--step--1); text-decoration: none; color: var(--ink);
-  padding: 0.4rem 0.7rem; border-radius: 999px; border: 1px solid transparent; background: none; cursor: pointer;
-}
-.tool:hover { border-color: var(--line); }
-.tool[aria-current="page"] { background: var(--ink); color: var(--bg); }
-.catnav { display: flex; gap: 0.15rem; overflow-x: auto; scrollbar-width: none; padding-block: 0.15rem 0.5rem; }
-.catnav::-webkit-scrollbar { display: none; }
-.catnav a {
-  flex: none; font-family: var(--font-display); font-weight: 500; font-size: 0.82rem; text-decoration: none;
-  padding: 0.35rem 0.7rem; border-radius: var(--radius); color: var(--muted);
-}
-.catnav a:hover { color: var(--ink); background: var(--surface); }
-.catnav a[aria-current="page"] { color: var(--on-accent); background: var(--accent); }
+/* type helpers */
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); }
+.label { font-size: 11px; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
+.meta-line { font-size: 11px; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; line-height: 1.7; color: var(--muted); }
+.meta-line .cat { color: var(--gold); }
+.h-section { font-family: var(--serif); font-weight: 500; font-size: 60px; line-height: 1; }
+.more { min-height: 44px; display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--text); white-space: nowrap; }
 
-/* rev bar: idle shows the first segments lit; on articles it tracks reading progress */
-.revbar { display: grid; grid-template-columns: repeat(24, 1fr); gap: 3px; height: 5px; padding-inline: var(--gutter); max-width: 1240px; margin: 0 auto 6px; }
-.revbar i { background: var(--line); border-radius: 1px; transition: background-color 120ms linear; }
-.revbar:not(.revbar--progress) i:nth-child(-n+4) { background: var(--ink); }
-.revbar i.on { background: var(--ink); }
-.revbar i.amber.on { background: var(--amber); }
-.revbar i.red { box-shadow: inset 0 -2px 0 color-mix(in srgb, var(--red) 55%, transparent); }
-.revbar i.red.on { background: var(--red); }
+/* buttons */
+.btn { white-space: nowrap; height: 52px; padding: 0 34px; display: inline-flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; transition: background .2s, border-color .2s, color .2s; cursor: pointer; }
+.btn--solid { background: var(--text); color: var(--bg); border: 0; }
+.btn--solid:hover { background: var(--gold); color: var(--bg); }
+.btn--solid:active { background: var(--gold-press); }
+.btn--ghost { border: 1px solid var(--line-strong); color: var(--text); background: transparent; padding: 0 32px; }
+.btn--ghost:hover { border-color: var(--gold); color: var(--gold); }
+.btn--ghost:active { background: var(--surface); }
 
-/* ---------- shared bits ---------- */
-.meta { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; color: var(--muted); }
-.chip {
-  font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
-  text-decoration: none; padding: 0.22rem 0.5rem; border-radius: 3px; color: var(--ink);
-  background: color-mix(in srgb, var(--cat) 18%, var(--surface)); border: 1px solid color-mix(in srgb, var(--cat) 45%, var(--line));
-}
-.chip:hover { background: color-mix(in srgb, var(--cat) 30%, var(--surface)); }
-.swatch { display: inline-block; width: 0.8em; height: 0.8em; border-radius: 2px; background: var(--cat); flex: none; }
-.chip--history, .swatch--history { --cat: #8a5d34; }
-.chip--tech, .swatch--tech { --cat: #2f6690; }
-.chip--electric, .swatch--electric { --cat: #23826b; }
-.chip--service, .swatch--service { --cat: #6b737d; }
-.chip--driving, .swatch--driving { --cat: #5f7a2e; }
-.chip--buying, .swatch--buying { --cat: #8e3c67; }
-.chip--motorsport, .swatch--motorsport { --cat: #b2321f; }
-.chip--culture, .swatch--culture { --cat: #5a52b5; }
-.section-title {
-  font-family: var(--font-display); font-weight: 700; font-size: var(--step-2);
-  margin-block: 3.5rem 1.25rem; display: flex; align-items: center; gap: 0.75rem;
-}
-.section-title::after { content: ""; flex: 1; height: 2px; background: var(--ink); opacity: 0.85; }
+/* ---------- header ---------- */
+.issue-bar { border-bottom: 1px solid var(--line); }
+.issue-bar .wrap { height: 36px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); text-align: center; }
+.site-header { border-bottom: 1px solid var(--line); background: var(--bg); }
+.site-header .wrap { height: 88px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 40px; }
+.nav { display: flex; flex-wrap: wrap; height: 44px; overflow: hidden; column-gap: clamp(18px, 2.2vw, 32px); align-items: center; min-width: 0; }
+.nav--right { flex-direction: row-reverse; }
+.nav a { position: relative; white-space: nowrap; height: 44px; display: flex; align-items: center; font-size: 12px; font-weight: 500; letter-spacing: .28em; text-transform: uppercase; color: var(--text-3); }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--gold); }
+.nav a[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: .28em; bottom: 6px; height: 1px; background: var(--gold); }
+.wordmark { font-size: 17px; font-weight: 600; letter-spacing: .5em; margin-right: -.5em; color: var(--text); height: 44px; display: flex; align-items: center; white-space: nowrap; }
+.header-tools { display: flex; gap: 8px; justify-content: flex-end; }
+.icon-btn { flex: none; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line-strong); display: flex; align-items: center; justify-content: center; color: var(--text); background: transparent; transition: border-color .2s, color .2s; cursor: pointer; }
+.icon-btn:hover { border-color: var(--gold); color: var(--gold); }
+.menu-btn { display: none; }
+.menu { border-bottom: 1px solid var(--line); background: var(--bg); }
+.menu .wrap { padding-block: 8px 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
+.menu a { min-height: 56px; display: flex; align-items: center; border-bottom: 1px solid var(--line); font-family: var(--serif); font-weight: 500; font-size: 28px; }
+.menu a.menu__small { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
+.read-progress { position: fixed; left: 0; top: 0; height: 2px; width: 100%; z-index: 50; pointer-events: none; }
+.read-progress i { display: block; height: 100%; width: 0; background: var(--gold); }
 
-/* ---------- lead story ---------- */
-.lead { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(1.25rem, 3vw, 3rem); align-items: center; padding-block: 2rem 0.5rem; }
-.lead__media { display: block; border-radius: var(--radius); overflow: hidden; aspect-ratio: 16 / 10; max-width: 100%; }
-.lead__media svg, .lead__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms cubic-bezier(.2,.7,.2,1); }
-.lead__media:hover svg, .lead__media:hover img { transform: scale(1.03); }
-.lead__body { display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
-.lead__title { font-family: var(--font-display); font-weight: 700; font-size: var(--step-3); line-height: 1.12; letter-spacing: -0.01em; }
-.lead__title a { text-decoration: none; }
-.lead__title a:hover { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 5px; }
-.lead__excerpt { font-size: var(--step-1); color: var(--muted); max-width: 46ch; }
+/* ---------- shot (image frame) ---------- */
+.shot { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--shot); color: var(--muted); }
+.shot > * { position: absolute; inset: 0; }
+.shot__glow { pointer-events: none; }
+.shot--warm .shot__glow { background: radial-gradient(ellipse 42% 62% at 52% 14%, rgba(214,190,140,.20), rgba(214,190,140,0) 72%), radial-gradient(ellipse 60% 10% at 50% 76%, rgba(214,190,140,.12), rgba(214,190,140,0) 70%); }
+.shot--cold .shot__glow { background: radial-gradient(ellipse 34% 48% at 68% 44%, rgba(150,186,214,.18), rgba(150,186,214,0) 72%), radial-gradient(circle at 68% 44%, rgba(190,224,240,.22) 0, rgba(190,224,240,0) 3%); }
+.shot--dusk .shot__glow { background: radial-gradient(ellipse 80% 38% at 50% 100%, rgba(214,128,70,.24), rgba(214,128,70,0) 72%), radial-gradient(ellipse 40% 30% at 20% 30%, rgba(200,180,138,.06), rgba(200,180,138,0) 70%); }
+.shot--red .shot__glow { background: radial-gradient(ellipse 50% 22% at 30% 72%, rgba(214,58,32,.18), rgba(214,58,32,0) 72%), radial-gradient(ellipse 50% 40% at 78% 30%, rgba(200,180,138,.10), rgba(200,180,138,0) 70%); }
+.shot .shot__horizon { top: 74%; bottom: auto; height: 1px; background: rgba(200,180,138,.14); }
+.shot--dusk .shot__horizon { top: 66%; background: rgba(214,150,100,.18); }
+.shot--red .shot__horizon { top: 68%; height: 2px; left: -10%; right: -10%; background: rgba(214,58,32,.22); transform: rotate(-4deg); }
+.shot--cold .shot__horizon { display: none; }
+.shot__art svg, .shot__art img, .shot__photo { width: 100%; height: 100%; object-fit: cover; }
+.banner .shot__art, .notfound .shot__art { opacity: .45; }
+@media (min-width: 641px) { .hero .shot__art { transform: translateX(18%) scale(.94); transform-origin: 60% 70%; } }
+.shot__grain { opacity: .09; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); pointer-events: none; }
 
-/* ---------- grids & cards ---------- */
-.grid { display: grid; gap: clamp(1rem, 2vw, 1.75rem); }
-.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.card { display: flex; flex-direction: column; gap: 0.8rem; min-width: 0; }
-.card__media { display: block; aspect-ratio: 16 / 10; border-radius: var(--radius); overflow: hidden; max-width: 100%; }
-.card__media svg, .card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms cubic-bezier(.2,.7,.2,1); }
-.card:hover .card__media svg, .card:hover .card__media img { transform: scale(1.04); }
-.card__body { display: flex; flex-direction: column; gap: 0.5rem; }
-.card__title { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; line-height: 1.3; letter-spacing: -0.005em; }
-.card--compact .card__title { font-size: 0.95rem; }
-.card__title a { text-decoration: none; }
-.card__title a:hover { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 3px; }
-.card__excerpt { color: var(--muted); font-size: 0.98rem; line-height: 1.55; }
+/* ---------- hero ---------- */
+.hero { position: relative; height: 760px; max-width: 1440px; margin: 0 auto; overflow: hidden; }
+.hero .shot { position: absolute; inset: 0; }
+.hero__scrim { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(10,10,11,.92) 0%, rgba(10,10,11,.6) 38%, rgba(10,10,11,0) 66%); }
+.hero__body { position: absolute; left: var(--gutter); bottom: 88px; max-width: 900px; display: flex; flex-direction: column; gap: 28px; }
+.hero__title { font-family: var(--serif); font-weight: 500; font-size: 100px; line-height: .98; letter-spacing: -.01em; text-wrap: balance; }
+.hero__title a { color: inherit; }
+.hero__title a:hover { color: var(--gold); }
+.hero__lede { max-width: 680px; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 27px; line-height: 1.35; color: var(--text-2); text-wrap: pretty; }
+.hero__actions { display: flex; align-items: center; gap: 32px; margin-top: 8px; flex-wrap: wrap; }
+.hero__note { font-size: 13px; color: var(--text-3); }
 
-/* category shelves on the home page */
-.shelf { padding-block: 2.5rem 0.5rem; border-top: 2px solid var(--ink); margin-top: 3rem; }
-.shelf__head { display: flex; align-items: baseline; gap: 0.5rem 1.25rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
-.shelf__title { font-family: var(--font-display); font-weight: 700; font-size: var(--step-2); display: flex; align-items: center; gap: 0.6rem; }
-.shelf__blurb { color: var(--muted); flex: 1 1 18rem; min-width: 0; }
-.more { font-family: var(--font-mono); font-size: var(--step--1); white-space: nowrap; }
+/* ---------- spec strip («Паспорт темы») ---------- */
+.spec { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+.spec > div { padding: 36px 32px 40px; display: flex; flex-direction: column; gap: 14px; border-right: 1px solid var(--line); min-width: 0; }
+.spec > div:first-child { padding-left: 0; }
+.spec > div:last-child { padding-right: 0; border-right: 0; }
+.spec dt { font-size: 11px; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
+.spec dd { font-family: var(--serif); font-weight: 500; font-size: 36px; line-height: 1.1; overflow-wrap: anywhere; }
+.spec--top { border-top: 1px solid var(--text); }
 
-/* ---------- spec sheet ("паспорт") ---------- */
-.spec { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 0; }
-.spec > div { background: var(--surface); padding: 0.75rem 0.9rem; display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
-.spec dt { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-.spec dd { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; line-height: 1.25; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
-.spec--small dd { font-size: 0.95rem; }
+/* ---------- sections ---------- */
+.section { padding-top: 120px; }
+.section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px 40px; padding-bottom: 48px; flex-wrap: wrap; }
+.section-head > div { display: flex; flex-direction: column; gap: 18px; }
+.section-head--ruled { border-bottom: 1px solid var(--line); margin-bottom: 48px; }
 
-/* ---------- article ---------- */
-.post__head { max-width: 980px; padding-block: 2.5rem 1.75rem; display: flex; flex-direction: column; gap: 1.1rem; }
-.post__title { font-family: var(--font-display); font-weight: 700; font-size: var(--step-4); line-height: 1.08; letter-spacing: -0.015em; }
-.post__lede { font-size: var(--step-1); color: var(--muted); max-width: 52ch; line-height: 1.5; }
-.post__byline { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; color: var(--muted); }
-.post__byline span::before { content: "·"; margin-right: 1.25rem; }
-.post__cover { margin-block: 0 2.5rem; }
-.post__cover svg { width: 100%; aspect-ratio: 21 / 9; border-radius: var(--radius); }
-.post__layout { display: grid; grid-template-columns: 17rem minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
-.post__side { position: sticky; top: 9.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
-.post__side .spec { grid-template-columns: 1fr; }
-.toc { margin-top: 1rem; }
-.toc ol { list-style: none; padding: 0; margin: 0.6rem 0 0; display: flex; flex-direction: column; border-left: 2px solid var(--line); }
-.toc a { display: block; padding: 0.35rem 0 0.35rem 0.85rem; margin-left: -2px; border-left: 2px solid transparent; text-decoration: none; font-size: 0.88rem; line-height: 1.35; color: var(--muted); }
-.toc a:hover { color: var(--ink); }
-.toc a.active { color: var(--ink); border-left-color: var(--accent); }
+/* cards */
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+.grid-3--loose { row-gap: 72px; }
+.card { display: flex; flex-direction: column; gap: 22px; color: var(--text); }
+.card:hover { color: var(--text); }
+.card__media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--shot); }
+.card__media .shot { position: absolute; inset: 0; transition: transform .9s cubic-bezier(.2,.7,.2,1), filter .9s; }
+.card:hover .card__media .shot, .card:focus-visible .card__media .shot { transform: scale(1.045); filter: brightness(1.18); }
+.card__body { display: flex; flex-direction: column; gap: 14px; }
+.card__title { font-family: var(--serif); font-weight: 500; font-size: 32px; line-height: 1.08; text-wrap: balance; transition: color .3s; }
+.card:hover .card__title, .card:focus-visible .card__title { color: var(--gold); }
+.card__lead { font-size: 15px; line-height: 1.65; color: var(--text-3); text-wrap: pretty; }
 
-.prose { max-width: 68ch; min-width: 0; font-size: 1.12rem; line-height: 1.72; }
-.prose > * + * { margin-top: 1.15em; }
-.post .prose > p:first-child::first-letter {
-  font-family: var(--font-display); font-weight: 800; float: left; font-size: 3.6em; line-height: 0.85;
-  padding: 0.08em 0.12em 0 0; color: var(--ink);
-}
-.prose h2 { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; line-height: 1.2; margin-top: 2.2em; letter-spacing: -0.005em; }
-.prose h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; margin-top: 1.8em; }
-.prose ul, .prose ol { padding-left: 1.3em; }
-.prose li + li { margin-top: 0.45em; }
-.prose ul li::marker { color: var(--muted); }
-.prose ol li::marker { font-family: var(--font-mono); font-size: 0.85em; color: var(--muted); }
-.prose strong { font-weight: 700; }
-.prose blockquote { margin-inline: 0; padding-left: 1.2rem; border-left: 4px solid var(--ink); font-style: italic; }
-.callout { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.2rem 1.1rem; display: flex; flex-direction: column; gap: 0.4rem; position: relative; overflow: hidden; }
-.callout::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 6px; background: repeating-linear-gradient(-45deg, var(--accent) 0 8px, var(--ink) 8px 16px); }
-.callout--warn::before { background: repeating-linear-gradient(-45deg, var(--red) 0 8px, var(--surface) 8px 16px); }
-.callout--fact::before { background: var(--ink); }
-.callout p { padding-left: 0.6rem; }
-.callout__label { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
-.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
-.prose table { border-collapse: collapse; width: 100%; font-size: 0.95rem; line-height: 1.45; }
-.prose th, .prose td { text-align: left; padding: 0.65rem 0.85rem; border-bottom: 1px solid var(--line); vertical-align: top; }
-.prose th { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: color-mix(in srgb, var(--bg) 60%, var(--surface)); }
-.prose tr:last-child td { border-bottom: 0; }
-.prose td { font-variant-numeric: tabular-nums; }
-.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); margin-top: 2.5rem !important; }
-.tag { font-family: var(--font-mono); font-size: var(--step--1); color: var(--muted); }
+/* category feature block */
+.feature { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 40px; }
+.feature__big { position: relative; display: block; height: 640px; overflow: hidden; color: var(--text); }
+.feature__big .shot { position: absolute; inset: 0; transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+.feature__big:hover .shot { transform: scale(1.03); }
+.feature__scrim { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, rgba(10,10,11,.94) 0%, rgba(10,10,11,.5) 36%, rgba(10,10,11,0) 60%); }
+.feature__text { position: absolute; left: 40px; right: 40px; bottom: 40px; display: flex; flex-direction: column; gap: 18px; }
+.feature__title { font-family: var(--serif); font-weight: 500; font-size: 52px; line-height: 1.02; transition: color .3s; }
+.feature__big:hover .feature__title { color: var(--gold); }
+.feature__lead { font-size: 16px; line-height: 1.65; color: var(--text-2); max-width: 620px; }
+.feature__text .meta-line .rest { color: var(--text-3); }
+.list-row { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 20px; padding: 28px 0; border-bottom: 1px solid var(--line); color: var(--text); transition: color .2s; }
+.list-row__no { font-size: 13px; font-weight: 500; letter-spacing: .12em; color: var(--muted); padding-top: 8px; }
+.list-row__body { display: flex; flex-direction: column; gap: 10px; }
+.list-row__title { font-family: var(--serif); font-weight: 500; font-size: 28px; line-height: 1.12; }
+.list-row__date { font-size: 13px; color: var(--muted); }
 
-.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 3rem; }
-.pager__link { display: flex; flex-direction: column; gap: 0.35rem; padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; background: var(--surface); min-width: 0; }
-.pager__link:hover { border-color: var(--ink); }
-.pager__link--next { text-align: right; }
-.pager__title { font-family: var(--font-display); font-weight: 600; font-size: 0.98rem; line-height: 1.3; }
-.related { padding-bottom: 1rem; }
+/* brand band with tachometer */
+.band { background: var(--band); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 120px; }
+.band .wrap { padding-block: 100px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; align-items: center; }
+.band__tacho { display: flex; justify-content: center; }
+.tacho { width: min(480px, 100%); aspect-ratio: 1; }
+.tacho svg { width: 100%; height: 100%; }
+.band__text { display: flex; flex-direction: column; gap: 28px; max-width: 560px; }
+.band__title { font-family: var(--serif); font-weight: 500; font-size: 60px; line-height: 1.02; text-wrap: balance; }
+.band__text p { font-size: 18px; line-height: 1.8; color: var(--text-2); }
+.band__text .btn { align-self: flex-start; }
 
-/* ---------- category / archive / about ---------- */
-.pagehead { padding-block: 2.5rem 2rem; display: flex; flex-direction: column; gap: 0.8rem; }
-.pagehead__title { font-family: var(--font-display); font-weight: 800; font-size: var(--step-4); line-height: 1.05; letter-spacing: -0.015em; }
-.pagehead__blurb { font-size: var(--step-1); color: var(--muted); max-width: 52ch; }
-.finder { display: flex; flex-direction: column; gap: 0.75rem; padding: 1.2rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 1.5rem; }
-.finder__input {
-  font: 500 1.1rem var(--font-body); padding: 0.75rem 0.9rem; border-radius: var(--radius);
-  border: 2px solid var(--ink); background: var(--bg); color: var(--ink); width: 100%;
-}
-.filters { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.filter {
-  font: 600 0.75rem var(--font-display); letter-spacing: 0.04em; text-transform: uppercase;
-  padding: 0.45rem 0.7rem; border-radius: 3px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer;
-}
-.filter[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-.finder__count { color: var(--muted); }
-.rows { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
-.row { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr) auto 6.5rem; gap: 1rem; align-items: center; padding: 0.85rem 0.25rem; border-bottom: 1px solid var(--line); }
-.row__no, .row__date { color: var(--muted); }
-.row__date { text-align: right; }
-.row__title { font-family: var(--font-display); font-weight: 500; font-size: 0.98rem; line-height: 1.35; text-decoration: none; }
-.row__title:hover { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 3px; }
-.empty { padding: 2rem 0; color: var(--muted); }
-.narrow .spec { margin-block: 1rem; }
+/* rubric index */
+.index { padding-block: 120px; }
+.index__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; border-top: 1px solid var(--line); }
+.index__row { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; gap: 20px; align-items: baseline; padding: 32px 0; border-bottom: 1px solid var(--line); color: var(--text); transition: color .2s; }
+.index__no, .index__count { font-size: 13px; letter-spacing: .12em; color: var(--muted); white-space: nowrap; }
+.index__body { display: flex; flex-direction: column; gap: 8px; }
+.index__name { font-family: var(--serif); font-weight: 500; font-size: 36px; line-height: 1.05; }
+.index__desc { font-size: 15px; color: var(--text-3); }
 
 /* ---------- footer ---------- */
-.footer { margin-top: 5rem; background: var(--ink); color: var(--bg); padding-block: 3rem 2rem; }
-.footer .label { color: color-mix(in srgb, var(--bg) 65%, var(--ink)); margin-bottom: 0.75rem; }
-.footer a { color: var(--bg); }
-.footer :focus-visible { outline-color: var(--accent); }
-.footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; }
-.footer__text { color: color-mix(in srgb, var(--bg) 78%, var(--ink)); font-size: 0.95rem; max-width: 40ch; }
-.footer__list { list-style: none; padding: 0; margin: 0; columns: 2; font-size: 0.95rem; }
-.footer__list li { margin-bottom: 0.35rem; break-inside: avoid; }
-.footer__list .mono { color: color-mix(in srgb, var(--bg) 60%, var(--ink)); }
-.odometer { display: inline-flex; gap: 3px; margin-bottom: 0.75rem; }
-.odometer span { background: var(--bg); color: var(--ink); font-size: 1.5rem; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 3px; }
-.odometer span:last-child { background: var(--accent); color: var(--on-accent); }
-.footer__fine { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid color-mix(in srgb, var(--bg) 25%, var(--ink)); font-size: 0.8rem; color: color-mix(in srgb, var(--bg) 60%, var(--ink)); }
+.site-footer { background: var(--bg-deep); border-top: 1px solid var(--line); }
+.site-footer .wrap { padding-block: 96px 40px; }
+.footer__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr); gap: 40px; padding-bottom: 80px; }
+.footer__brand { display: flex; flex-direction: column; gap: 24px; }
+.footer__brand .wordmark { align-self: flex-start; }
+.footer__motto { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 30px; line-height: 1.2; color: var(--text-2); max-width: 380px; }
+.footer__col { display: flex; flex-direction: column; gap: 16px; }
+.footer__col .eyebrow { font-size: 11px; letter-spacing: .3em; }
+.footer__links { display: grid; grid-template-columns: minmax(0, 1fr); }
+.footer__links--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; }
+.footer__links a { min-height: 44px; display: flex; align-items: center; font-size: 15px; color: var(--text-3); }
+.footer__links a:hover { color: var(--gold); }
+.footer__legal { border-top: 1px solid var(--line); padding-top: 28px; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
 
-/* ---------- responsive ---------- */
-@media (max-width: 1080px) {
-  .grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .post__layout { grid-template-columns: minmax(0, 1fr); }
-  .post__side { position: static; }
-  .post__side .spec { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+/* ---------- article ---------- */
+.post-head { padding-block: 96px 64px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px; }
+.post-head .meta-line a { color: var(--gold); }
+.post-title { font-family: var(--serif); font-weight: 500; font-size: 96px; line-height: .98; letter-spacing: -.01em; max-width: 1080px; text-wrap: balance; }
+.post-lede { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 28px; line-height: 1.4; color: var(--text-2); max-width: 800px; text-wrap: pretty; }
+.post-byline { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px; font-size: 13px; letter-spacing: .08em; color: var(--muted); }
+.post-cover { height: 640px; max-width: 1440px; margin: 0 auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.post-layout { padding-block: 80px 40px; display: grid; grid-template-columns: 260px minmax(0, 720px); justify-content: center; gap: 120px; align-items: start; }
+.toc { position: sticky; top: 32px; display: flex; flex-direction: column; gap: 16px; }
+.toc ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line-strong); }
+.toc a { display: block; padding: 10px 0 10px 18px; margin-left: -1px; border-left: 1px solid transparent; font-size: 14px; line-height: 1.4; color: var(--muted); }
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--text); border-left-color: var(--gold); }
+.toc-mobile { display: none; border-bottom: 1px solid var(--line); margin-bottom: 24px; }
+.toc-mobile summary { min-height: 52px; display: flex; align-items: center; cursor: pointer; list-style: none; }
+.toc-mobile summary::-webkit-details-marker { display: none; }
+.toc-mobile summary::after { content: "+"; margin-left: auto; color: var(--gold); font-size: 20px; }
+.toc-mobile[open] summary::after { content: "−"; }
+.toc-mobile ol { margin: 0 0 16px; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: var(--text-3); }
+
+.prose { min-width: 0; font-size: 18px; line-height: 1.8; color: var(--body); }
+.prose > * + * { margin-top: 26px; }
+.prose > p:first-child::first-letter { float: left; font-family: var(--serif); font-weight: 500; font-size: 96px; line-height: .8; padding: 10px 14px 0 0; color: var(--gold); }
+.prose h2 { font-family: var(--serif); font-weight: 500; font-size: 46px; line-height: 1.08; color: var(--text); margin-top: 56px; text-wrap: balance; }
+.prose h3 { font-size: 13px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); margin-top: 40px; line-height: 1.5; }
+.prose h3 + p { margin-top: 14px; }
+.prose strong { color: var(--text); font-weight: 600; }
+.prose em { color: var(--text-2); }
+.prose ul { list-style: none; padding: 0; }
+.prose ul li { position: relative; padding-left: 28px; }
+.prose ul li::before { content: ""; position: absolute; left: 0; top: .9em; width: 14px; height: 1px; background: var(--gold); }
+.prose ul li + li { margin-top: 12px; }
+.prose ol { list-style: none; padding: 0; counter-reset: ol; border-top: 1px solid var(--line); }
+.prose ol li { counter-increment: ol; display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 8px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.prose ol li::before { content: counter(ol, decimal-leading-zero); font-family: var(--serif); font-weight: 500; font-size: 30px; line-height: 1; color: var(--gold); }
+.prose blockquote { margin: 44px 0; padding: 36px 0; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 34px; line-height: 1.28; color: var(--text); text-align: center; }
+.callout { padding: 28px 32px; border: 1px solid var(--line-strong); background: var(--surface); display: flex; flex-direction: column; gap: 10px; }
+.callout--tip { border-color: var(--gold); }
+.callout--warn { border-color: var(--redline); }
+.callout__label { font-size: 11px; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+.callout--warn .callout__label { color: #f0785f; }
+.callout--fact .callout__label { color: var(--text-3); }
+.callout p:not(.callout__label) { font-size: 17px; line-height: 1.7; color: var(--body); }
+.table-wrap { overflow-x: auto; border-top: 1px solid var(--text); border-bottom: 1px solid var(--line-strong); }
+.prose table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; }
+.prose th { text-align: left; padding: 14px 16px 14px 0; font-size: 11px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); }
+.prose td { padding: 14px 16px 14px 0; border-top: 1px solid var(--line); color: var(--text-3); vertical-align: top; font-variant-numeric: tabular-nums; }
+.prose td:first-child { font-family: var(--serif); font-weight: 500; font-size: 22px; color: var(--text); }
+.prose .tags { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 13px; letter-spacing: .06em; color: var(--muted); }
+.pager { padding-top: 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.pager a { display: flex; flex-direction: column; gap: 12px; padding: 32px 0; border-top: 1px solid var(--text); }
+.pager a.pager__next { text-align: right; }
+.pager__title { font-family: var(--serif); font-weight: 500; font-size: 32px; line-height: 1.1; }
+.related { padding-block: 96px 120px; }
+
+/* ---------- category / archive / about / 404 ---------- */
+.banner { position: relative; height: 520px; max-width: 1440px; margin: 0 auto; overflow: hidden; border-bottom: 1px solid var(--line); }
+.banner .shot { position: absolute; inset: 0; }
+.banner__scrim { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,10,11,.94) 0%, rgba(10,10,11,.45) 45%, rgba(10,10,11,.1) 100%); }
+.banner__body { position: absolute; left: var(--gutter); right: var(--gutter); bottom: 56px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.banner__body > div { display: flex; flex-direction: column; gap: 16px; }
+.banner__title { font-family: var(--serif); font-weight: 500; font-size: 120px; line-height: .9; }
+.banner__blurb { max-width: 400px; font-size: 17px; line-height: 1.6; color: var(--text-2); }
+.toolbar { padding-block: 28px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; border-bottom: 1px solid var(--line); }
+.toolbar__group { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { min-height: 44px; padding: 0 18px; display: inline-flex; align-items: center; border: 1px solid var(--line-strong); background: transparent; color: var(--text-3); font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; cursor: pointer; transition: border-color .2s, color .2s; }
+.chip:hover { border-color: var(--gold); color: var(--gold); }
+.chip[aria-pressed="true"] { background: var(--text); border-color: var(--text); color: var(--bg); }
+.toolbar__count { font-size: 13px; letter-spacing: .06em; color: var(--muted); }
+.cat-grid { padding-block: 64px 120px; }
+
+.page-head { padding-block: 96px 48px; display: flex; flex-direction: column; gap: 20px; }
+.page-title { font-family: var(--serif); font-weight: 500; font-size: 104px; line-height: .95; text-wrap: balance; }
+.page-lede { font-size: 18px; line-height: 1.6; color: var(--text-3); max-width: 600px; }
+.finder { display: flex; flex-direction: column; gap: 20px; padding-bottom: 32px; }
+.finder__input { width: 100%; min-height: 72px; padding: 0 0 0 2px; background: transparent; border: 0; border-bottom: 1px solid var(--text); border-radius: 0; color: var(--text); font-family: var(--serif); font-weight: 500; font-size: 40px; outline: none; }
+.finder__input::placeholder { color: #6f6c66; }
+.finder__input:focus-visible { border-bottom-color: var(--gold); outline: none; }
+.rows { list-style: none; margin: 0 0 120px; padding: 0; border-top: 1px solid var(--text); }
+.row a { display: grid; grid-template-columns: 96px minmax(0, 1fr) 200px 120px; align-items: baseline; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--line); color: var(--text); }
+.row a:hover .row__title { color: var(--gold); }
+.row__no { font-size: 13px; letter-spacing: .12em; color: var(--muted); }
+.row__title { font-family: var(--serif); font-weight: 500; font-size: 26px; line-height: 1.2; transition: color .2s; }
+.row__cat { font-size: 11px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+.row__date { font-size: 13px; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+.empty { padding: 48px 0 120px; font-size: 17px; color: var(--muted); }
+
+.about-hero { padding-block: 72px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; align-items: center; }
+.about-hero__text { display: flex; flex-direction: column; gap: 24px; }
+.about-body { padding-block: 88px 120px; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 64px; }
+.about-body .prose > p:first-child::first-letter { float: none; font: inherit; padding: 0; color: inherit; }
+.notfound { position: relative; min-height: 640px; max-width: 1440px; margin: 0 auto; overflow: hidden; }
+.notfound .shot { position: absolute; inset: 0; }
+.notfound__body { position: relative; padding: 160px var(--gutter); display: flex; flex-direction: column; gap: 28px; max-width: 900px; }
+.notfound__actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* ---------- responsive (the handoff is desktop-only; these follow the brief) ---------- */
+@media (max-width: 1180px) {
+  .hero__title, .post-title { font-size: 76px; }
+  .page-title, .banner__title { font-size: 88px; }
+  .h-section, .band__title { font-size: 50px; }
+  .post-layout { grid-template-columns: minmax(0, 1fr); max-width: 760px; margin-inline: auto; gap: 0; }
   .toc { display: none; }
+  .toc-mobile { display: block; }
+  .feature { grid-template-columns: minmax(0, 1fr); }
+  .row a { grid-template-columns: 80px minmax(0, 1fr) 160px; }
+  .row__date { display: none; }
 }
-@media (max-width: 860px) {
-  .lead { grid-template-columns: minmax(0, 1fr); }
-  .grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .footer__grid { grid-template-columns: 1fr; }
-  .row { grid-template-columns: minmax(0, 1fr) auto; gap: 0.35rem 0.75rem; }
-  .row__no { grid-column: 1; grid-row: 1; }
-  .row__date { grid-column: 2; grid-row: 1; }
-  .row__title { grid-column: 1 / -1; grid-row: 2; }
-  .row__cat { grid-column: 1 / -1; grid-row: 3; }
+@media (max-width: 960px) {
+  :root { --gutter: 24px; }
+  .site-header .wrap { grid-template-columns: auto 1fr; height: 68px; gap: 16px; }
+  .site-header .nav { display: none; }
+  .menu-btn { display: flex; }
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .spec { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .spec > div { padding: 24px 20px 28px; border-bottom: 1px solid var(--line); }
+  .spec > div:nth-child(2n) { border-right: 0; padding-right: 0; }
+  .spec > div:nth-child(2n+1) { padding-left: 0; }
+  .spec > div:nth-last-child(-n+2) { border-bottom: 0; }
+  .band .wrap, .about-hero, .about-body { grid-template-columns: minmax(0, 1fr); }
+  .index__grid { grid-template-columns: minmax(0, 1fr); }
+  .footer__grid { grid-template-columns: minmax(0, 1fr); padding-bottom: 48px; }
 }
-@media (max-width: 560px) {
-  .grid--3, .grid--4 { grid-template-columns: minmax(0, 1fr); }
-  .card--compact { flex-direction: row; align-items: flex-start; }
-  .card--compact .card__media { flex: 0 0 38%; }
-  .card--compact .card__body { min-width: 0; }
-  .pager { grid-template-columns: minmax(0, 1fr); }
-  .pager__link--next { text-align: left; }
-  .post__cover svg { aspect-ratio: 16 / 10; }
-  .wordmark__rpm { display: none; }
-  .prose { font-size: 1.06rem; }
-  .post__side .spec { grid-template-columns: minmax(0, 1fr); }
-}
-@media (max-width: 560px), (max-height: 520px) {
-  .masthead { position: static; }
-  .revbar--progress { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 30; margin: 0; padding: 4px var(--gutter); height: 13px; background: var(--bg); max-width: none; }
+@media (max-width: 640px) {
+  :root { --gutter: 20px; }
+  .issue-bar .wrap { font-size: 9px; letter-spacing: .18em; }
+  .hero { height: auto; }
+  .hero .shot { position: relative; height: 300px; }
+  .hero__scrim { display: none; }
+  .hero__body { position: static; padding: 28px var(--gutter) 40px; gap: 18px; }
+  .hero__title { font-size: 46px; }
+  .hero__lede { font-size: 21px; }
+  .hero__actions .btn { width: 100%; justify-content: center; }
+  .spec dd { font-size: 24px; }
+  .section { padding-top: 72px; }
+  .h-section, .band__title { font-size: 40px; }
+  .section-head { padding-bottom: 28px; }
+  .grid-3 { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  .card__title { font-size: 28px; }
+  .feature__big { height: 420px; }
+  .feature__text { left: 20px; right: 20px; bottom: 24px; }
+  .feature__title { font-size: 34px; }
+  .feature__lead { display: none; }
+  .list-row { grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 20px 0; }
+  .list-row__title { font-size: 23px; }
+  .band { margin-top: 72px; }
+  .band .wrap { padding-block: 56px; }
+  .index { padding-block: 72px; }
+  .index__row { grid-template-columns: 32px minmax(0, 1fr); gap: 12px; padding: 22px 0; }
+  .index__count { grid-column: 2; }
+  .index__name { font-size: 28px; }
+  .site-footer .wrap { padding-block: 56px 32px; }
+  .menu .wrap { grid-template-columns: minmax(0, 1fr); }
+  .post-head { padding-block: 40px 32px; align-items: flex-start; text-align: left; gap: 18px; }
+  .post-title { font-size: 42px; }
+  .post-lede { font-size: 21px; }
+  .post-byline { justify-content: flex-start; }
+  .post-cover { height: 260px; }
+  .post-layout { padding-block: 32px 24px; }
+  .prose { font-size: 17px; line-height: 1.75; }
+  .prose > p:first-child::first-letter { font-size: 72px; padding: 8px 10px 0 0; }
+  .prose h2 { font-size: 32px; margin-top: 40px; }
+  .prose blockquote { font-size: 26px; padding: 24px 0; margin: 32px 0; text-align: left; }
+  .callout { padding: 22px; }
+  .pager { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .pager a.pager__next { text-align: left; border-top-color: var(--line); }
+  .pager__title { font-size: 24px; }
+  .related { padding-block: 56px 72px; }
+  .banner { height: 380px; }
+  .banner__body { bottom: 28px; }
+  .banner__title, .page-title { font-size: 56px; }
+  .page-head { padding-block: 48px 28px; }
+  .finder__input { font-size: 28px; min-height: 60px; }
+  .row a { grid-template-columns: 52px minmax(0, 1fr); gap: 6px 12px; padding: 18px 0; }
+  .row__title { font-size: 22px; }
+  .row__cat { grid-column: 2; }
+  .notfound__body { padding: 96px var(--gutter); }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
@@ -423,7 +502,7 @@ p { margin: 0; }
         const lab = text.match(/^\*\*([^*]+?):?\*\*:?\s*/);
         if (lab) {
           const kind = /важно/i.test(lab[1]) ? 'warn' : /факт/i.test(lab[1]) ? 'fact' : 'tip';
-          out.push(`<aside class="callout callout--${kind}"><p class="callout__label">${esc(lab[1].replace(/:$/, ''))}</p><p>${inline(text.slice(lab[0].length))}</p></aside>`);
+          out.push(`<aside class="callout callout--${kind}"><p class="callout__label">${esc(lab[1].replace(/:$/, ''))}</p><p>${inline(((t) => t.charAt(0).toUpperCase() + t.slice(1))(text.slice(lab[0].length)))}</p></aside>`);
         } else out.push(`<blockquote><p>${inline(text)}</p></blockquote>`);
       } else if (/^\|/.test(line)) {
         const rows = [];
@@ -443,7 +522,7 @@ p { margin: 0; }
           i++;
         }
         const tag = ordered ? 'ol' : 'ul';
-        out.push(`<${tag}>${items.map((t) => `<li>${inline(t)}</li>`).join('')}</${tag}>`);
+        out.push(`<${tag}>${items.map((t) => `<li><span>${inline(t)}</span></li>`).join('')}</${tag}>`);
       } else {
         const buf = [];
         while (i < lines.length && lines[i].trim() && !isBlockStart(lines[i])) { buf.push(lines[i].trim()); i++; }
@@ -454,27 +533,33 @@ p { margin: 0; }
     return { html: out.join('\n'), toc };
   }
 
-  // ---------- generative covers ----------
-  // Every cover is drawn from the article slug: same input, same picture.
-  function cover(a) {
-    const c = CAT[a.category] || CATEGORIES[0];
+  // ---------- imagery ----------
+  // Lighting tone per rubric, as in the design handoff (Shot component).
+  const TONE = { history: 'warm', tech: 'warm', electric: 'cold', service: 'warm', driving: 'dusk', buying: 'warm', motorsport: 'red', culture: 'warm' };
+  // The issue's lead story; its frame uses the detailed studio illustration.
+  const FEATURED = 'porsche-911-evolution';
+  const FEATURE_CATEGORY = { id: 'motorsport', lead: 'le-mans-24' };
+  // Set by the build: detailed hero illustration (SVG markup).
+  const ART = { hero: '' };
+
+  // Fine line-art motif per rubric, drawn from the slug so every article differs.
+  function motif(a) {
     const W = 1200, H = 750;
     const r = rng(hash(a.slug));
-    const ink = c.ink, bg = c.bg, hi = '#FFC21A';
+    const ink = '#ECEBE6', hi = '#C8B48A';
     const sw = (n) => `stroke-width="${n}"`;
     let g = '';
     switch (a.category) {
-      case 'history': { // sunburst + enamel badge rings
-        const cx = 300 + r() * 600, cy = 300 + r() * 250, n = 36;
-        for (let k = 0; k < n; k++) {
-          const t = (k / n) * Math.PI * 2, x = cx + Math.cos(t) * 1600, y = cy + Math.sin(t) * 1600;
-          g += `<line x1="${cx | 0}" y1="${cy | 0}" x2="${x | 0}" y2="${y | 0}" stroke="${ink}" opacity="${k % 2 ? 0.08 : 0.18}" ${sw(k % 2 ? 6 : 14)}/>`;
+      case 'history': {
+        const cx = 300 + r() * 600, cy = 260 + r() * 220;
+        for (let k = 0; k < 36; k++) {
+          const t = (k / 36) * Math.PI * 2;
+          g += `<line x1="${cx | 0}" y1="${cy | 0}" x2="${(cx + Math.cos(t) * 1600) | 0}" y2="${(cy + Math.sin(t) * 1600) | 0}" stroke="${ink}" opacity="${k % 2 ? 0.05 : 0.1}" ${sw(k % 2 ? 2 : 4)}/>`;
         }
-        for (let k = 0; k < 4; k++) g += `<circle cx="${cx | 0}" cy="${cy | 0}" r="${110 + k * 46}" fill="none" stroke="${k === 1 ? hi : ink}" ${sw(k === 1 ? 10 : 3)} opacity="${k === 1 ? 0.9 : 0.55}"/>`;
-        g += `<circle cx="${cx | 0}" cy="${cy | 0}" r="72" fill="${ink}" opacity="0.9"/>`;
+        for (let k = 0; k < 4; k++) g += `<circle cx="${cx | 0}" cy="${cy | 0}" r="${110 + k * 46}" fill="none" stroke="${k === 1 ? hi : ink}" ${sw(k === 1 ? 3 : 1.5)} opacity="${k === 1 ? 0.8 : 0.35}"/>`;
         break;
       }
-      case 'tech': { // meshing gears
+      case 'tech': {
         let x = 120 + r() * 200, y = 200 + r() * 300;
         for (let k = 0; k < 5; k++) {
           const R = 70 + r() * 150, teeth = 10 + ((r() * 14) | 0);
@@ -483,191 +568,268 @@ p { margin: 0; }
             const ang = (t / (teeth * 2)) * Math.PI * 2, rr = t % 2 ? R : R * 0.86;
             d += (t ? 'L' : 'M') + (x + Math.cos(ang) * rr).toFixed(1) + ' ' + (y + Math.sin(ang) * rr).toFixed(1);
           }
-          g += `<path d="${d}Z" fill="none" stroke="${k === 2 ? hi : ink}" ${sw(k === 2 ? 8 : 4)} opacity="${k === 2 ? 0.95 : 0.6}"/>`;
-          g += `<circle cx="${x | 0}" cy="${y | 0}" r="${(R * 0.25) | 0}" fill="none" stroke="${ink}" ${sw(3)} opacity="0.5"/>`;
+          g += `<path d="${d}Z" fill="none" stroke="${k === 2 ? hi : ink}" ${sw(k === 2 ? 3 : 1.5)} opacity="${k === 2 ? 0.8 : 0.35}"/>`;
+          g += `<circle cx="${x | 0}" cy="${y | 0}" r="${(R * 0.25) | 0}" fill="none" stroke="${ink}" ${sw(1.5)} opacity="0.3"/>`;
           x += R * 1.5 + 40; y = Math.max(120, Math.min(H - 120, y + (r() - 0.5) * 260));
           if (x > W + 100) break;
         }
         break;
       }
-      case 'electric': { // battery cells with charge level + bolt
-        const cols = 8, rows = 4, cw = 118, ch = 120, ox = 70, oy = 110;
-        const level = 0.25 + r() * 0.7;
+      case 'electric': {
+        const cols = 8, rows = 4, cw = 118, ch = 120, ox = 70, oy = 110, level = 0.25 + r() * 0.7;
         for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++) {
-          const filled = (x + 1) / cols <= level;
-          g += `<rect x="${ox + x * (cw + 14)}" y="${oy + y * (ch + 14)}" width="${cw}" height="${ch}" rx="10" fill="${filled ? ink : 'none'}" opacity="${filled ? (0.22 + 0.06 * y).toFixed(2) : 0.5}" stroke="${ink}" ${sw(3)}/>`;
+          const on = (x + 1) / cols <= level;
+          g += `<rect x="${ox + x * (cw + 14)}" y="${oy + y * (ch + 14)}" width="${cw}" height="${ch}" rx="6" fill="${on ? '#9fc6de' : 'none'}" fill-opacity="${on ? 0.07 : 0}" stroke="${on ? '#bfe0f0' : ink}" ${sw(1.5)} opacity="${on ? 0.6 : 0.25}"/>`;
         }
-        const bx = (520 + r() * 160) | 0;
-        g += `<path d="M${bx} 60 L${bx - 150} 420 L${bx - 20} 420 L${bx - 90} 700 L${bx + 170} 300 L${bx + 30} 300 L${bx + 110} 60 Z" fill="${hi}" opacity="0.95"/>`;
         break;
       }
-      case 'service': { // hex nuts
+      case 'service': {
         const s = 74 + r() * 30;
         for (let y = 0, row = 0; y < H + s; y += s * 1.6, row++) for (let x = row % 2 ? s : 0; x < W + s; x += s * 2) {
           let d = '';
           for (let k = 0; k < 6; k++) { const t = Math.PI / 6 + (k * Math.PI) / 3; d += (k ? 'L' : 'M') + (x + Math.cos(t) * s * 0.8).toFixed(0) + ' ' + (y + Math.sin(t) * s * 0.8).toFixed(0); }
           const lit = r() < 0.08;
-          g += `<path d="${d}Z" fill="none" stroke="${lit ? hi : ink}" ${sw(lit ? 8 : 3)} opacity="${lit ? 1 : 0.45}"/><circle cx="${x | 0}" cy="${y | 0}" r="${(s * 0.32) | 0}" fill="none" stroke="${ink}" ${sw(3)} opacity="0.35"/>`;
+          g += `<path d="${d}Z" fill="none" stroke="${lit ? hi : ink}" ${sw(lit ? 3 : 1.2)} opacity="${lit ? 0.8 : 0.22}"/>`;
         }
         break;
       }
-      case 'driving': { // perspective road with dashed centre line
-        const vx = (400 + r() * 400) | 0, vy = (210 + r() * 80) | 0;
-        g += `<path d="M${vx - 6} ${vy} L${vx + 6} ${vy} L${W + 220} ${H} L${-220} ${H} Z" fill="${ink}" opacity="0.14"/>`;
-        g += `<line x1="${vx - 6}" y1="${vy}" x2="${-220}" y2="${H}" stroke="${ink}" ${sw(8)} opacity="0.8"/><line x1="${vx + 6}" y1="${vy}" x2="${W + 220}" y2="${H}" stroke="${ink}" ${sw(8)} opacity="0.8"/>`;
+      case 'driving': {
+        const vx = (400 + r() * 400) | 0, vy = (300 + r() * 80) | 0;
+        g += `<line x1="${vx - 6}" y1="${vy}" x2="-220" y2="${H}" stroke="${ink}" ${sw(2)} opacity="0.45"/><line x1="${vx + 6}" y1="${vy}" x2="${W + 220}" y2="${H}" stroke="${ink}" ${sw(2)} opacity="0.45"/>`;
         for (let k = 0; k < 9; k++) {
           const t0 = Math.pow(k / 9, 2), t1 = Math.pow((k + 0.5) / 9, 2);
           const y0 = (vy + (H - vy) * t0).toFixed(0), y1 = (vy + (H - vy) * t1).toFixed(0);
-          const w0 = (2 + 26 * t0).toFixed(1), w1 = (2 + 26 * t1).toFixed(1);
-          g += `<path d="M${vx - w0} ${y0} L${vx + +w0} ${y0} L${vx + +w1} ${y1} L${vx - w1} ${y1} Z" fill="${hi}"/>`;
+          const w0 = (1 + 10 * t0).toFixed(1), w1 = (1 + 10 * t1).toFixed(1);
+          g += `<path d="M${vx - w0} ${y0} L${vx + +w0} ${y0} L${vx + +w1} ${y1} L${vx - w1} ${y1} Z" fill="${hi}" opacity="0.7"/>`;
         }
-        for (let k = 0; k < 5; k++) g += `<line x1="0" y1="${vy - 30 - k * 26}" x2="${W}" y2="${vy - 30 - k * 26}" stroke="${ink}" ${sw(2)} opacity="${(0.25 - k * 0.04).toFixed(2)}"/>`;
         break;
       }
-      case 'buying': { // number plates + price stripes
-        for (let k = -6; k < 14; k++) g += `<line x1="${k * 120}" y1="${H}" x2="${k * 120 + 700}" y2="0" stroke="${ink}" ${sw(26)} opacity="0.07"/>`;
+      case 'buying': {
         for (let k = 0; k < 3; k++) {
-          const x = (140 + k * 70 + r() * 40) | 0, y = 140 + k * 150;
-          g += `<rect x="${x}" y="${y}" width="760" height="170" rx="18" fill="${k === 2 ? ink : 'none'}" opacity="${k === 2 ? 0.92 : 0.6}" stroke="${ink}" ${sw(6)}/>`;
-          if (k === 2) {
-            g += `<rect x="${x + 640}" y="${y + 20}" width="3" height="130" fill="${bg}"/>`;
-            for (let j = 0; j < 6; j++) g += `<rect x="${x + 50 + j * 92}" y="${y + 45}" width="64" height="80" rx="8" fill="${bg}" opacity="${(0.85 - (j % 2) * 0.25).toFixed(2)}"/>`;
-            g += `<circle cx="${x + 700}" cy="${y + 85}" r="26" fill="${hi}"/>`;
-          }
+          const x = (180 + k * 70 + r() * 40) | 0, y = 170 + k * 140;
+          g += `<rect x="${x}" y="${y}" width="720" height="150" rx="10" fill="none" stroke="${k === 2 ? hi : ink}" ${sw(k === 2 ? 3 : 1.5)} opacity="${k === 2 ? 0.75 : 0.3}"/>`;
         }
         break;
       }
-      case 'motorsport': { // waving chequered flag + speed lines
-        const size = 70, skew = -0.35 + r() * 0.2;
-        let d = '';
+      case 'motorsport': {
+        const size = 64, skew = -0.35 + r() * 0.2;
         for (let y = 0; y < 7; y++) for (let x = 0; x < 9; x++) if ((x + y) % 2 === 0) {
-          const px = 520 + x * size + y * size * skew, py = 120 + y * size + Math.sin(x * 0.7) * 22;
-          d += `M${px.toFixed(0)} ${py.toFixed(0)}h${size}v${size}h-${size}Z`;
+          const px = 560 + x * size + y * size * skew, py = 130 + y * size + Math.sin(x * 0.7) * 20;
+          g += `<rect x="${px.toFixed(0)}" y="${py.toFixed(0)}" width="${size}" height="${size}" fill="none" stroke="${ink}" ${sw(1.2)} opacity="0.3"/>`;
         }
-        g += `<path d="${d}" fill="${ink}" opacity="0.85"/>`;
-        for (let k = 0; k < 9; k++) { const y = (120 + k * 60 + r() * 20) | 0; g += `<line x1="${(40 + r() * 80) | 0}" y1="${y}" x2="${(420 + r() * 140) | 0}" y2="${y}" stroke="${k === 4 ? hi : ink}" ${sw(k === 4 ? 12 : 5)} stroke-linecap="round" opacity="${k === 4 ? 1 : 0.5}"/>`; }
+        for (let k = 0; k < 7; k++) { const y = (160 + k * 64 + r() * 20) | 0; g += `<line x1="${(40 + r() * 80) | 0}" y1="${y}" x2="${(420 + r() * 140) | 0}" y2="${y}" stroke="${k === 3 ? '#d63a20' : ink}" ${sw(k === 3 ? 3 : 1.5)} stroke-linecap="round" opacity="${k === 3 ? 0.8 : 0.3}"/>`; }
         break;
       }
-      default: { // culture: French-curve sweeps
+      default: {
         for (let k = 0; k < 7; k++) {
           const y = 120 + k * 85 + r() * 40;
-          g += `<path d="M-50 ${y | 0} C ${(300 + r() * 200) | 0} ${(y - 260 + r() * 140) | 0}, ${(700 + r() * 200) | 0} ${(y + 260 - r() * 140) | 0}, ${W + 50} ${(y - 40) | 0}" fill="none" stroke="${k === 3 ? hi : ink}" ${sw(k === 3 ? 12 : 4)} opacity="${k === 3 ? 1 : 0.55}"/>`;
+          g += `<path d="M-50 ${y | 0} C ${(300 + r() * 200) | 0} ${(y - 260 + r() * 140) | 0}, ${(700 + r() * 200) | 0} ${(y + 260 - r() * 140) | 0}, ${W + 50} ${(y - 40) | 0}" fill="none" stroke="${k === 3 ? hi : ink}" ${sw(k === 3 ? 3 : 1.2)} opacity="${k === 3 ? 0.8 : 0.3}"/>`;
         }
-        g += `<circle cx="${(820 + r() * 200) | 0}" cy="${(180 + r() * 100) | 0}" r="${(70 + r() * 40) | 0}" fill="${ink}" opacity="0.85"/>`;
       }
     }
-    const no = a.no ? `<text x="${W - 48}" y="${H - 44}" text-anchor="end" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="40" font-weight="600" fill="${ink}">№ ${pad3(a.no)}</text>` : '';
-    return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${esc('Обложка статьи, рубрика «' + c.name + '»')}" xmlns="http://www.w3.org/2000/svg"><rect width="${W}" height="${H}" fill="${bg}"/>${g}${no}</svg>`;
+    return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">${g}</svg>`;
+  }
+  // Kept for the build (cover files, JSON-LD): a standalone, dark cover image.
+  function cover(a) {
+    return motif(a).replace('<svg ', '<svg width="1200" height="750" ').replace('>', '><rect width="1200" height="750" fill="#0C0B0D"/>');
+  }
+
+  // The image frame from the handoff: tone glow, horizon line, art (or a photo), film grain.
+  function shot(L, a, o) {
+    const opt = o || {};
+    const tone = opt.tone || TONE[a.category] || 'warm';
+    let art;
+    if (a.image && L && L.asset) art = `<img class="shot__photo" src="${esc(L.asset(a.image))}" alt="${esc(a.imageAlt || '')}" loading="${opt.eager ? 'eager' : 'lazy'}" decoding="async">`;
+    else if (opt.art) art = `<div class="shot__art">${opt.art}</div>`;
+    else art = `<div class="shot__art">${a.slug === FEATURED && ART.hero ? ART.hero : motif(a)}</div>`;
+    return `<div class="shot shot--${tone}"${a.image ? '' : ' aria-hidden="true"'}><div class="shot__glow"></div><div class="shot__horizon"></div>${art}<div class="shot__grain"></div></div>`;
+  }
+
+  // Tachometer from the handoff: 0–8 ×1000 rpm, red zone 7–8, needle animated by client.js.
+  function tacho(value) {
+    const v0 = value == null ? 7.35 : value;
+    const ang = (v) => 135 + v * 33.75;
+    const p = (rad, v) => { const t = (ang(v) * Math.PI) / 180; return [(200 + rad * Math.cos(t)).toFixed(2), (200 + rad * Math.sin(t)).toFixed(2)]; };
+    let s = '<defs><radialGradient id="tfFace" cx="50%" cy="30%" r="75%"><stop offset="0" stop-color="#1A191C"/><stop offset="1" stop-color="#09090A"/></radialGradient><radialGradient id="tfHub" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#3A3833"/><stop offset="1" stop-color="#121114"/></radialGradient></defs>';
+    s += '<circle cx="200" cy="200" r="196" fill="#0E0E10" stroke="#2E2E33" stroke-width="1"/><circle cx="200" cy="200" r="188" fill="url(#tfFace)" stroke="#1C1C20" stroke-width="2"/>';
+    s += '<path d="M 70 110 A 160 160 0 0 1 330 110" fill="none" stroke="rgba(200,180,138,.16)" stroke-width="1.5"/>';
+    const r7 = p(176, 7), r8 = p(176, 8);
+    s += `<path d="M ${r7.join(' ')} A 176 176 0 0 1 ${r8.join(' ')}" fill="none" stroke="#D63A20" stroke-width="7"/>`;
+    for (let i = 0; i <= 32; i++) {
+      const v = i / 4, major = i % 4 === 0, half = i % 2 === 0;
+      const q = p(major ? 146 : half ? 156 : 161, v), o = p(168, v);
+      s += `<line x1="${q[0]}" y1="${q[1]}" x2="${o[0]}" y2="${o[1]}" stroke="${v >= 7 ? '#D63A20' : major ? '#ECEBE6' : half ? '#B4B1A9' : '#8D8A84'}" stroke-width="${major ? 3 : half ? 1.6 : 1}"/>`;
+    }
+    for (let n = 0; n <= 8; n++) {
+      const c = p(122, n);
+      s += `<text x="${c[0]}" y="${(+c[1] + 12).toFixed(2)}" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="500" font-size="36" fill="${n >= 7 ? '#D63A20' : '#ECEBE6'}">${n}</text>`;
+    }
+    s += '<text x="200" y="288" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="600" font-size="11" letter-spacing="3.4" fill="#8D8A84">×1000 ОБ/МИН</text>';
+    s += '<text x="200" y="138" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="600" font-size="10" letter-spacing="5" fill="#C8B48A">ОТСЕЧКА</text>';
+    s += `<g class="tacho__needle" transform="rotate(${ang(v0).toFixed(2)} 200 200)"><polygon points="172,196.5 352,199.2 352,200.8 172,203.5" fill="#ECEBE6"/></g>`;
+    s += '<circle cx="200" cy="200" r="16" fill="url(#tfHub)" stroke="#2E2E33"/><circle cx="200" cy="200" r="4" fill="#C8B48A"/>';
+    return `<div class="tacho" data-tacho="${v0}"><svg viewBox="0 0 400 400" role="img" aria-label="Тахометр: стрелка у красной зоны, ×1000 об/мин">${s}</svg></div>`;
   }
 
   // ---------- templates ----------
-  // `L` resolves links: {home, archive, about, article(slug), category(id), themeToggle}
-  function revbar(progress) {
-    let s = '';
-    for (let k = 0; k < 24; k++) s += `<i class="${k >= 20 ? 'red' : k >= 16 ? 'amber' : ''}"></i>`;
-    return `<div class="revbar${progress ? ' revbar--progress' : ''}" aria-hidden="true">${s}</div>`;
+  // `L` resolves links: {home, archive, about, article(slug), category(id), asset(path)}
+  const MONTHS_NOM = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
+  function issue(articles) {
+    const [y, m] = articles[0].date.split('-').map(Number);
+    return `Выпуск № ${articles.length} · ${MONTHS_NOM[m - 1]} ${y}`;
   }
+  const HEADER_NAV = ['history', 'tech', 'electric', 'motorsport'];
+  const ICON_SEARCH = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>';
+  const ICON_MENU = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>';
 
-  function header(L, active) {
-    const nav = CATEGORIES.map((c) => `<a href="${L.category(c.id)}"${active === c.id ? ' aria-current="page"' : ''}>${esc(c.name)}</a>`).join('');
+  function header(L, active, articles) {
+    const cur = (on) => (on ? ' aria-current="page"' : '');
+    const nav = HEADER_NAV.map((id) => `<a href="${L.category(id)}"${cur(active === id)}>${esc(CAT[id].name)}</a>`).join('');
+    const menu = CATEGORIES.map((c) => `<a href="${L.category(c.id)}"${cur(active === c.id)}>${esc(c.name)}</a>`).join('');
     return `<a class="skip" href="#main">Перейти к содержанию</a>
-<header class="masthead">
-  <div class="masthead__row wrap">
-    <a class="wordmark" href="${L.home}" aria-label="${SITE.name}: на главную">ОТСЕЧКА<span class="wordmark__rpm" aria-hidden="true">×1000 об/мин</span></a>
-    <div class="masthead__tools">
-      <a class="tool" href="${L.archive}"${active === 'archive' ? ' aria-current="page"' : ''}>Все статьи</a>
-      <a class="tool" href="${L.about}"${active === 'about' ? ' aria-current="page"' : ''}>О журнале</a>
-      ${L.themeToggle ? '<button class="tool tool--theme" type="button" id="theme-toggle">Тема</button>' : ''}
+${active === 'article' ? '<div class="read-progress" aria-hidden="true"><i></i></div>' : ''}
+<div class="issue-bar"><div class="wrap">Журнал об автомобилях · ${esc(issue(articles))}</div></div>
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Рубрики">${nav}</nav>
+    <a class="wordmark" href="${L.home}" aria-label="${SITE.name} — на главную">ОТСЕЧКА</a>
+    <div class="header-tools">
+      <nav class="nav nav--right" aria-label="Журнал">
+        <a class="icon-btn" href="${L.archive}" aria-label="Поиск по журналу">${ICON_SEARCH}</a>
+        <a href="${L.about}"${cur(active === 'about')}>О журнале</a>
+        <a href="${L.archive}"${cur(active === 'archive')}>Архив</a>
+      </nav>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Открыть меню">${ICON_MENU}</button>
     </div>
   </div>
-  <nav class="catnav wrap" aria-label="Рубрики">${nav}</nav>
-  ${revbar(active === 'article')}
-</header>`;
+</header>
+<nav class="menu" id="site-menu" aria-label="Меню" hidden><div class="wrap">${menu}<a class="menu__small" href="${L.archive}">Архив · все ${articles.length} статей</a><a class="menu__small" href="${L.about}">О журнале</a></div></nav>`;
   }
 
   function footer(L, articles) {
-    const counts = CATEGORIES.map((c) => `<li><a href="${L.category(c.id)}">${esc(c.name)}</a> <span class="mono">${articles.filter((a) => a.category === c.id).length}</span></li>`).join('');
-    const words = articles.reduce((s, a) => s + a.words, 0);
-    return `<footer class="footer">
-  <div class="wrap footer__grid">
-    <div>
-      <p class="wordmark wordmark--small">ОТСЕЧКА</p>
-      <p class="footer__text">${esc(SITE.tagline)}. Пишем о машинах так, чтобы было понятно с первого раза и интересно до последнего абзаца.</p>
+    const cats = CATEGORIES.map((c) => `<a href="${L.category(c.id)}">${esc(c.name)}</a>`).join('');
+    return `<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="wordmark" href="${L.home}">ОТСЕЧКА</a>
+        <p class="footer__motto">Всё, что может мотор. Но не больше.</p>
+      </div>
+      <div class="footer__col">
+        <p class="eyebrow">Рубрики</p>
+        <div class="footer__links footer__links--2">${cats}</div>
+      </div>
+      <div class="footer__col">
+        <p class="eyebrow">Журнал</p>
+        <div class="footer__links">
+          <a href="${L.archive}">Архив · все ${articles.length} статей</a>
+          <a href="${L.about}">О журнале</a>
+          ${L.rss ? `<a href="${L.rss}">RSS</a>` : ''}
+        </div>
+      </div>
     </div>
-    <div>
-      <p class="label">Рубрики</p>
-      <ul class="footer__list">${counts}</ul>
-    </div>
-    <div>
-      <p class="label">Одометр журнала</p>
-      <p class="odometer mono" role="img" aria-label="${articles.length} статей">${String(articles.length).padStart(6, '0').split('').map((d) => `<span>${d}</span>`).join('')}</p>
-      <p class="footer__text">${articles.length} ${plural(articles.length, 'статья', 'статьи', 'статей')} · ${CATEGORIES.length} рубрик · ≈${Math.round(words / 1000)} тыс. слов</p>
+    <div class="footer__legal">
+      <span>© 2026 «${SITE.name}». Журнал об автомобилях</span>
+      <span>${esc(issue(articles))}</span>
     </div>
   </div>
-  <p class="wrap footer__fine">© 2026 «Отсечка». Тексты носят информационный характер: при ремонте и обслуживании сверяйтесь с руководством по эксплуатации своего автомобиля.</p>
 </footer>`;
   }
 
-  function chip(L, a) {
-    const c = CAT[a.category];
-    return `<a class="chip chip--${c.id}" href="${L.category(c.id)}">${esc(c.name)}</a>`;
+  function metaLine(a, withCat) {
+    const rest = ` · № ${pad3(a.no)} · ${a.minutes}&nbsp;мин`;
+    return `<p class="meta-line">${withCat === false ? '' : `<span class="cat">${esc(CAT[a.category].name)}</span>`}${withCat === false ? rest.slice(3) : rest}</p>`;
   }
 
-  // Static build links cover files (L.cover); the single-file build draws them inline.
-  function media(L, a, eager) {
-    return L.cover ? `<img src="${L.cover(a.slug)}" width="1200" height="750" alt="" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">` : cover(a);
-  }
-
-  function card(L, a, compact, level) {
-    const h = level || 3;
-    return `<article class="card${compact ? ' card--compact' : ''}">
-  <a class="card__media" href="${L.article(a.slug)}" tabindex="-1" aria-hidden="true">${media(L, a)}</a>
+  function card(L, a, opts) {
+    const o = opts || {};
+    const h = o.level || 3;
+    return `<a class="card" href="${L.article(a.slug)}">
+  <div class="card__media">${shot(L, a)}</div>
   <div class="card__body">
-    <p class="meta">${chip(L, a)}<span class="mono">${a.minutes} мин</span></p>
-    <h${h} class="card__title"><a href="${L.article(a.slug)}">${esc(a.title)}</a></h${h}>
-    ${compact ? '' : `<p class="card__excerpt">${esc(a.excerpt)}</p>`}
+    ${metaLine(a, o.cat)}
+    <h${h} class="card__title">${esc(a.title)}</h${h}>
+    ${o.lead === false ? '' : `<p class="card__lead">${esc(a.excerpt)}</p>`}
   </div>
-</article>`;
+</a>`;
   }
 
-  function specSheet(a, small) {
-    if (!a.facts || !a.facts.length) return '';
-    return `<dl class="spec${small ? ' spec--small' : ''}">${a.facts.slice(0, 4).map((f) => `<div><dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`).join('')}</dl>`;
+  function specStrip(facts, cls) {
+    if (!facts || !facts.length) return '';
+    return `<dl class="spec${cls ? ' ' + cls : ''}">${facts.slice(0, 4).map((f) => `<div><dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`).join('')}</dl>`;
   }
+
+  function countLabel(n) { return `${n}&nbsp;${plural(n, 'статья', 'статьи', 'статей')}`; }
 
   function home(L, articles) {
-    const [lead, ...rest] = articles;
-    const fresh = rest.slice(0, 6);
-    const shown = new Set([lead, ...fresh].map((a) => a.slug));
-    const sections = CATEGORIES.map((c) => {
-      const list = articles.filter((a) => a.category === c.id);
-      const pick = list.filter((a) => !shown.has(a.slug)).slice(0, 4);
-      return `<section class="shelf" aria-labelledby="shelf-${c.id}">
-  <div class="shelf__head">
-    <h2 id="shelf-${c.id}" class="shelf__title"><span class="swatch swatch--${c.id}" aria-hidden="true"></span>${esc(c.name)}</h2>
-    <p class="shelf__blurb">${esc(c.blurb)}</p>
-    <a class="more" href="${L.category(c.id)}">Все ${list.length} ${plural(list.length, 'статья', 'статьи', 'статей')} →</a>
-  </div>
-  <div class="grid grid--4">${pick.map((a) => card(L, a, true)).join('')}</div>
-</section>`;
-    }).join('');
-    return `<main id="main" class="wrap">
-  <h1 class="visually-hidden">${SITE.name} — журнал об автомобилях</h1>
-  <section class="lead" aria-label="Главная статья">
-    <a class="lead__media" href="${L.article(lead.slug)}" tabindex="-1" aria-hidden="true">${media(L, lead, true)}</a>
-    <div class="lead__body">
-      <p class="eyebrow">Свежий выпуск · ${fmtDate(lead.date)}</p>
-      <h2 class="lead__title"><a href="${L.article(lead.slug)}">${esc(lead.title)}</a></h2>
-      <p class="lead__excerpt">${esc(lead.excerpt)}</p>
-      <p class="meta">${chip(L, lead)}<span class="mono">${lead.minutes} мин чтения</span></p>
-      ${specSheet(lead, true)}
+    const lead = articles.find((a) => a.slug === FEATURED) || articles[0];
+    const fresh = articles.filter((a) => a !== lead).slice(0, 3);
+    const fc = CAT[FEATURE_CATEGORY.id];
+    const inCat = articles.filter((a) => a.category === fc.id);
+    const big = inCat.find((a) => a.slug === FEATURE_CATEGORY.lead) || inCat[0];
+    const list = inCat.filter((a) => a !== big).slice(0, 4);
+    const index = CATEGORIES.map((c, i) => `<a class="index__row" href="${L.category(c.id)}">
+        <span class="index__no">${String(i + 1).padStart(2, '0')}</span>
+        <span class="index__body"><span class="index__name">${esc(c.name)}</span><span class="index__desc">${esc(c.blurb)}</span></span>
+        <span class="index__count">${countLabel(articles.filter((a) => a.category === c.id).length)}</span>
+      </a>`).join('');
+    return `<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    ${shot(L, lead, { eager: true })}
+    <div class="hero__scrim"></div>
+    <div class="hero__body">
+      <p class="eyebrow">Тема выпуска · ${esc(CAT[lead.category].name)} · № ${pad3(lead.no)}</p>
+      <h1 class="hero__title" id="hero-title">${esc(lead.title)}</h1>
+      <p class="hero__lede">${esc(lead.excerpt)}</p>
+      <div class="hero__actions">
+        <a class="btn btn--solid" href="${L.article(lead.slug)}">Читать <span aria-hidden="true">→</span></a>
+        <span class="hero__note">${lead.minutes} мин · ${fmtDate(lead.date)}</span>
+      </div>
     </div>
   </section>
-  <section aria-labelledby="fresh-title">
-    <h2 id="fresh-title" class="section-title">Свежее</h2>
-    <div class="grid grid--3">${fresh.map((a) => card(L, a)).join('')}</div>
+  <div class="wrap">
+    ${specStrip(lead.facts)}
+    <section class="section" aria-labelledby="fresh-title">
+      <div class="section-head">
+        <div><p class="eyebrow">${esc(issue(articles).split(' · ')[0])}</p><h2 class="h-section" id="fresh-title">Свежее</h2></div>
+        <a class="more" href="${L.archive}">Все ${articles.length} статей →</a>
+      </div>
+      <div class="grid-3">${fresh.map((a) => card(L, a)).join('')}</div>
+    </section>
+    <section class="section" aria-labelledby="feature-title">
+      <div class="section-head section-head--ruled">
+        <div><p class="eyebrow">Рубрика</p><h2 class="h-section" id="feature-title">${esc(fc.name)}</h2></div>
+        <a class="more" href="${L.category(fc.id)}">Вся рубрика · ${countLabel(inCat.length)} →</a>
+      </div>
+      <div class="feature">
+        <a class="feature__big" href="${L.article(big.slug)}">
+          ${shot(L, big)}
+          <div class="feature__scrim"></div>
+          <div class="feature__text">
+            <p class="meta-line"><span class="cat">${esc(fc.name)}</span><span class="rest"> · № ${pad3(big.no)} · ${big.minutes}&nbsp;мин</span></p>
+            <h3 class="feature__title">${esc(big.title)}</h3>
+            <p class="feature__lead">${esc(big.excerpt)}</p>
+          </div>
+        </a>
+        <div>${list.map((a) => `<a class="list-row" href="${L.article(a.slug)}"><span class="list-row__no">${pad3(a.no)}</span><span class="list-row__body"><span class="list-row__title">${esc(a.title)}</span><span class="list-row__date">${fmtDate(a.date)} · ${a.minutes} мин</span></span></a>`).join('')}</div>
+      </div>
+    </section>
+  </div>
+  <section class="band" aria-labelledby="band-title">
+    <div class="wrap">
+      <div class="band__tacho">${tacho()}</div>
+      <div class="band__text">
+        <p class="eyebrow">О названии</p>
+        <h2 class="band__title" id="band-title">Всё, что может мотор. Но не больше</h2>
+        <p>Отсечка — момент, когда электроника ограничивает обороты, чтобы двигатель не вышел за безопасный предел: стрелка тахометра упирается в красную зону.</p>
+        <a class="btn btn--ghost" href="${L.about}">О журнале</a>
+      </div>
+    </div>
   </section>
-  ${sections}
+  <section class="wrap index" aria-labelledby="index-title">
+    <div class="section-head"><div><p class="eyebrow">Индекс</p><h2 class="h-section" id="index-title">Восемь рубрик</h2></div></div>
+    <div class="index__grid">${index}</div>
+  </section>
 </main>`;
   }
 
@@ -679,67 +841,82 @@ p { margin: 0; }
     const older = same[idx + 1], newer = same[idx - 1];
     const related = same.filter((x) => x.slug !== a.slug)
       .sort((x, y) => (hash(a.slug + x.slug) % 97) - (hash(a.slug + y.slug) % 97)).slice(0, 3);
-    const toc = r.toc.length > 2 ? `<nav class="toc" aria-label="Содержание"><p class="label">Содержание</p><ol>${r.toc.map((t) => `<li><a href="#${t.id}" data-toc="${t.id}">${inline(t.text)}</a></li>`).join('')}</ol></nav>` : '';
+    const tocItems = r.toc.map((t) => `<li><a href="#${t.id}" data-toc="${t.id}">${inline(t.text)}</a></li>`).join('');
+    const hasToc = r.toc.length > 2;
     return `<main id="main">
-  <article class="post">
-    <header class="post__head wrap">
-      <p class="meta">${chip(L, a)}<span class="mono">№ ${pad3(a.no)}</span></p>
-      <h1 class="post__title">${esc(a.title)}</h1>
-      <p class="post__lede">${esc(a.excerpt)}</p>
-      <p class="post__byline mono"><time datetime="${a.date}">${fmtDate(a.date)}</time><span>${a.minutes} мин чтения</span><span>${a.words.toLocaleString('ru-RU')} слов</span></p>
+  <article>
+    <header class="wrap post-head">
+      <p class="meta-line"><a href="${L.category(c.id)}">${esc(c.name)}</a> · № ${pad3(a.no)}</p>
+      <h1 class="post-title">${esc(a.title)}</h1>
+      <p class="post-lede">${esc(a.excerpt)}</p>
+      <p class="post-byline"><time datetime="${a.date}">${fmtDate(a.date)}</time><span>${a.minutes} мин чтения</span><span>≈ ${(Math.round(a.words / 50) * 50).toLocaleString('ru-RU')} слов</span></p>
     </header>
-    <figure class="post__cover wrap" aria-hidden="true">${cover(a)}</figure>
-    <div class="post__layout wrap">
-      <aside class="post__side">${a.facts.length ? '<p class="label">Паспорт темы</p>' : ''}${specSheet(a)}${toc}</aside>
+    <figure class="post-cover">${shot(L, a, { eager: true })}</figure>
+    <div class="wrap">${specStrip(a.facts)}</div>
+    <div class="wrap post-layout">
+      ${hasToc ? `<nav class="toc" aria-label="Содержание"><p class="label">Содержание</p><ol>${tocItems}</ol></nav>` : '<div></div>'}
       <div class="prose">
+        ${hasToc ? `<details class="toc-mobile"><summary class="label">Содержание · ${r.toc.length} ${plural(r.toc.length, 'раздел', 'раздела', 'разделов')}</summary><ol>${r.toc.map((t) => `<li><a href="#${t.id}">${inline(t.text)}</a></li>`).join('')}</ol></details>` : ''}
 ${r.html}
-        <p class="tags">${a.tags.map((t) => `<span class="tag">#${esc(t)}</span>`).join('')}</p>
+        <p class="tags">${a.tags.map((t) => `<span>#${esc(t)}</span>`).join('')}</p>
       </div>
     </div>
-    <nav class="pager wrap" aria-label="Соседние статьи рубрики">
-      ${older ? `<a class="pager__link" href="${L.article(older.slug)}"><span class="label">← Раньше в рубрике</span><span class="pager__title">${esc(older.title)}</span></a>` : '<span></span>'}
-      ${newer ? `<a class="pager__link pager__link--next" href="${L.article(newer.slug)}"><span class="label">Новее в рубрике →</span><span class="pager__title">${esc(newer.title)}</span></a>` : '<span></span>'}
+    <nav class="wrap pager" aria-label="Соседние статьи рубрики">
+      ${older ? `<a href="${L.article(older.slug)}"><span class="label">← Раньше в рубрике</span><span class="pager__title">${esc(older.title)}</span></a>` : '<span></span>'}
+      ${newer ? `<a class="pager__next" href="${L.article(newer.slug)}"><span class="label">Новее в рубрике →</span><span class="pager__title">${esc(newer.title)}</span></a>` : '<span></span>'}
     </nav>
   </article>
   <section class="wrap related" aria-labelledby="related-title">
-    <h2 id="related-title" class="section-title">Ещё из рубрики «${esc(c.name)}»</h2>
-    <div class="grid grid--3">${related.map((x) => card(L, x)).join('')}</div>
+    <div class="section-head"><div><p class="eyebrow">Рубрика</p><h2 class="h-section" id="related-title">Ещё из рубрики «${esc(c.name)}»</h2></div><a class="more" href="${L.category(c.id)}">Вся рубрика →</a></div>
+    <div class="grid-3">${related.map((x) => card(L, x)).join('')}</div>
   </section>
 </main>`;
   }
 
   function categoryPage(L, c, articles) {
     const list = articles.filter((a) => a.category === c.id);
-    return `<main id="main" class="wrap">
-  <header class="pagehead">
-    <p class="eyebrow"><span class="swatch swatch--${c.id}" aria-hidden="true"></span>Рубрика · ${list.length} ${plural(list.length, 'статья', 'статьи', 'статей')}</p>
-    <h1 class="pagehead__title">${esc(c.name)}</h1>
-    <p class="pagehead__blurb">${esc(c.blurb)}</p>
-  </header>
-  <div class="grid grid--3">${list.map((a) => card(L, a, false, 2)).join('')}</div>
+    return `<main id="main">
+  <section class="banner" aria-labelledby="cat-title">
+    ${shot(L, list[0] || { slug: c.id, category: c.id }, { tone: TONE[c.id], eager: true })}
+    <div class="banner__scrim"></div>
+    <div class="banner__body">
+      <div><p class="eyebrow">Рубрика · ${countLabel(list.length)}</p><h1 class="banner__title" id="cat-title">${esc(c.name)}</h1></div>
+      <p class="banner__blurb">${esc(c.blurb)}</p>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="toolbar">
+      <div class="toolbar__group" role="group" aria-label="Сортировка">
+        <button class="chip" type="button" data-sort="new" aria-pressed="true">Сначала новые</button>
+        <button class="chip" type="button" data-sort="old" aria-pressed="false">Сначала старые</button>
+      </div>
+      <span class="toolbar__count">${countLabel(list.length)} в рубрике</span>
+    </div>
+    <div class="grid-3 grid-3--loose cat-grid" id="cat-grid">${list.map((a) => card(L, a, { level: 2, cat: false })).join('')}</div>
+  </div>
 </main>`;
   }
 
   function archivePage(L, articles) {
-    const rows = articles.map((a) => `<li class="row" data-cat="${a.category}" data-q="${esc((a.title + ' ' + a.excerpt + ' ' + a.tags.join(' ')).toLowerCase())}">
-  <span class="row__no mono">№ ${pad3(a.no)}</span>
-  <a class="row__title" href="${L.article(a.slug)}">${esc(a.title)}</a>
-  <span class="row__cat">${chip(L, a)}</span>
-  <time class="row__date mono" datetime="${a.date}">${a.date.split('-').reverse().join('.')}</time>
-</li>`).join('');
-    const filters = ['<button type="button" class="filter" data-filter="" aria-pressed="true">Все</button>']
-      .concat(CATEGORIES.map((c) => `<button type="button" class="filter" data-filter="${c.id}" aria-pressed="false">${esc(c.name)}</button>`)).join('');
+    const rows = articles.map((a) => `<li class="row" data-cat="${a.category}" data-q="${esc((a.title + ' ' + a.excerpt + ' ' + a.tags.join(' ')).toLowerCase())}"><a href="${L.article(a.slug)}">
+  <span class="row__no">№ ${pad3(a.no)}</span>
+  <span class="row__title">${esc(a.title)}</span>
+  <span class="row__cat">${esc(CAT[a.category].name)}</span>
+  <time class="row__date" datetime="${a.date}">${a.date.split('-').reverse().join('.')}</time>
+</a></li>`).join('');
+    const filters = ['<button type="button" class="chip filter" data-filter="" aria-pressed="true">Все</button>']
+      .concat(CATEGORIES.map((c) => `<button type="button" class="chip filter" data-filter="${c.id}" aria-pressed="false">${esc(c.name)}</button>`)).join('');
     return `<main id="main" class="wrap">
-  <header class="pagehead">
+  <header class="page-head">
     <p class="eyebrow">Архив</p>
-    <h1 class="pagehead__title">Все ${articles.length} статей</h1>
-    <p class="pagehead__blurb">Ищите по названию, описанию или тегу. Номер у каждой статьи постоянный, по нему её легко найти снова.</p>
+    <h1 class="page-title">Все ${articles.length} статей</h1>
+    <p class="page-lede">Ищите по названию, описанию или тегу. Номер у каждой статьи постоянный.</p>
   </header>
   <div class="finder" role="search">
     <label class="label" for="q">Поиск по журналу</label>
     <input id="q" class="finder__input" type="search" placeholder="Например: турбина, зима, Нива" autocomplete="off">
-    <div class="filters" role="group" aria-label="Фильтр по рубрике">${filters}</div>
-    <p class="finder__count mono" id="count" aria-live="polite">Найдено: ${articles.length}</p>
+    <div class="toolbar__group" role="group" aria-label="Фильтр по рубрике">${filters}</div>
+    <p class="toolbar__count" id="count" aria-live="polite">Найдено: ${articles.length}</p>
   </div>
   <ol class="rows" id="rows">${rows}</ol>
   <p class="empty" id="empty" hidden>Ничего не нашлось. Попробуйте другое слово или выберите «Все».</p>
@@ -747,37 +924,49 @@ ${r.html}
   }
 
   function aboutPage(L, articles) {
-    const total = articles.reduce((s, a) => s + a.words, 0);
-    return `<main id="main" class="wrap narrow">
-  <header class="pagehead">
-    <p class="eyebrow">О журнале</p>
-    <h1 class="pagehead__title">Почему «Отсечка»</h1>
-  </header>
-  <div class="prose">
-    <p>Отсечка — момент, когда электроника ограничивает обороты, чтобы двигатель не вышел за безопасный предел. Стрелка тахометра упирается в красную зону, и мотор отдаёт всё, что может, но не больше. Нам нравится эта идея: говорить о машинах увлечённо, но по делу.</p>
-    <p>Здесь собраны ${articles.length} статей в восьми рубриках: от первого автомобиля Карла Бенца до электромобилей, от замены масла до «Дакара». Тексты рассчитаны на тех, кто любит машины, но не обязан быть инженером: каждое понятие объясняется, каждый совет можно применить.</p>
-    <h2>Как читать журнал</h2>
-    <ul>
-      <li>На странице статьи полоса тахометра под шапкой показывает, сколько прочитано. Дошла до красной зоны — текст закончился.</li>
-      <li>«Паспорт темы» рядом с текстом собирает главные цифры, чтобы их можно было найти за секунду.</li>
-      <li>У каждой статьи постоянный номер, а в архиве работает поиск по названиям, описаниям и тегам.</li>
-    </ul>
-    <h2>Журнал в цифрах</h2>
-    ${specSheet({ facts: [
-      { label: 'Статей', value: String(articles.length) },
-      { label: 'Рубрик', value: String(CATEGORIES.length) },
-      { label: 'Слов всего', value: '≈' + Math.round(total / 1000) + ' тыс.' },
-      { label: 'Время чтения', value: '≈' + Math.round(articles.reduce((s, a) => s + a.minutes, 0) / 60) + ' ч' },
-    ] })}
-    <aside class="callout callout--warn"><p class="callout__label">Важно</p><p>Статьи об обслуживании и ремонте дают общее понимание. Конкретные интервалы, допуски и моменты затяжки всегда сверяйте с руководством по эксплуатации своей машины.</p></aside>
-  </div>
+    const words = articles.reduce((s, a) => s + a.words, 0);
+    const hours = articles.reduce((s, a) => s + a.minutes, 0) / 60;
+    return `<main id="main">
+  <section class="wrap about-hero">
+    <div class="about-hero__text">
+      <p class="eyebrow">О журнале</p>
+      <h1 class="page-title">Почему «${SITE.name}»</h1>
+      <p class="post-lede" style="text-align:left">Отсечка — момент, когда электроника ограничивает обороты, чтобы двигатель не вышел за безопасный предел.</p>
+    </div>
+    <div class="band__tacho">${tacho()}</div>
+  </section>
+  <div class="wrap">${specStrip([
+    { label: 'Статей', value: String(articles.length) },
+    { label: 'Рубрик', value: String(CATEGORIES.length) },
+    { label: 'Слов всего', value: '≈' + Math.round(words / 1000) + ' тыс.' },
+    { label: 'Время чтения', value: '≈' + hours.toFixed(1).replace('.', ',').replace(',0', '') + ' ч' },
+  ], 'spec--top')}</div>
+  <section class="wrap about-body">
+    <h2 class="h-section">Увлечённо, но по делу</h2>
+    <div class="prose">
+      <p>Стрелка тахометра упирается в красную зону, и мотор отдаёт всё, что может, но не больше. Нам нравится эта идея: говорить о машинах увлечённо, но без лишнего.</p>
+      <p>Здесь собраны ${articles.length} статей в восьми рубриках: от первого автомобиля Карла Бенца до электромобилей, от замены масла до «Дакара». Тексты рассчитаны на тех, кто любит машины, но не обязан быть инженером: каждое понятие объясняется, каждый совет можно применить.</p>
+      <ol>
+        <li>Золотая линия у верхнего края экрана в статье показывает, сколько прочитано.</li>
+        <li>«Паспорт темы» собирает главные цифры, чтобы их можно было найти за секунду.</li>
+        <li>У каждой статьи постоянный номер, а в архиве работает поиск.</li>
+      </ol>
+      <aside class="callout callout--warn"><p class="callout__label">Важно</p><p>Статьи об обслуживании и ремонте дают общее понимание. Интервалы, допуски и моменты затяжки сверяйте с руководством по эксплуатации своей машины.</p></aside>
+      <p><a class="btn btn--solid" href="${L.archive}">Открыть архив</a></p>
+    </div>
+  </section>
 </main>`;
   }
 
   function notFound(L) {
-    return `<main id="main" class="wrap narrow">
-  <header class="pagehead"><p class="eyebrow mono">Ошибка 404</p><h1 class="pagehead__title">Здесь дорога заканчивается</h1>
-  <p class="pagehead__blurb">Такой страницы нет. Вернитесь на <a href="${L.home}">главную</a> или откройте <a href="${L.archive}">архив всех статей</a>.</p></header>
+    return `<main id="main" class="notfound">
+  ${shot(L, { slug: '404', category: 'driving' }, { tone: 'dusk' })}
+  <div class="notfound__body">
+    <p class="eyebrow">Ошибка 404</p>
+    <h1 class="page-title">Здесь дорога заканчивается</h1>
+    <p class="page-lede">Такой страницы нет. Вернитесь на главную или откройте архив всех статей.</p>
+    <div class="notfound__actions"><a class="btn btn--solid" href="${L.home}">На главную</a><a class="btn btn--ghost" href="${L.archive}">Архив</a></div>
+  </div>
 </main>`;
   }
 
@@ -788,58 +977,84 @@ ${r.html}
     return byDate.reverse();
   }
 
-  const api = { SITE, CATEGORIES, CAT, esc, fmtDate, parseArticle, renderMarkdown, cover, header, footer, home, articlePage, categoryPage, archivePage, aboutPage, notFound, prepare, plural };
+  const api = { SITE, CATEGORIES, CAT, ART, FEATURED, esc, fmtDate, parseArticle, renderMarkdown, cover, tacho, issue, header, footer, home, articlePage, categoryPage, archivePage, aboutPage, notFound, prepare, plural };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.Site = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);
 
+Site.ART.hero = "\u003csvg preserveAspectRatio=\"xMidYMid slice\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1600 760\">\n  \u003cdefs>\n    \u003cradialGradient id=\"spot\" cx=\"50%\" cy=\"34%\" r=\"62%\">\n      \u003cstop offset=\"0\" stop-color=\"#34322d\"/>\n      \u003cstop offset=\"0.45\" stop-color=\"#18171a\"/>\n      \u003cstop offset=\"1\" stop-color=\"#0a0a0b\"/>\n    \u003c/radialGradient>\n    \u003clinearGradient id=\"floor\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      \u003cstop offset=\"0\" stop-color=\"#151416\"/>\n      \u003cstop offset=\"1\" stop-color=\"#0a0a0b\"/>\n    \u003c/linearGradient>\n    \u003clinearGradient id=\"body\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      \u003cstop offset=\"0\" stop-color=\"#5a5852\"/>\n      \u003cstop offset=\"0.28\" stop-color=\"#2e2d2c\"/>\n      \u003cstop offset=\"0.62\" stop-color=\"#18181a\"/>\n      \u003cstop offset=\"1\" stop-color=\"#0c0c0d\"/>\n    \u003c/linearGradient>\n    \u003clinearGradient id=\"sheen\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n      \u003cstop offset=\"0\" stop-color=\"#ffffff\" stop-opacity=\"0\"/>\n      \u003cstop offset=\"0.38\" stop-color=\"#ffffff\" stop-opacity=\"0.16\"/>\n      \u003cstop offset=\"0.5\" stop-color=\"#ffffff\" stop-opacity=\"0.32\"/>\n      \u003cstop offset=\"0.62\" stop-color=\"#ffffff\" stop-opacity=\"0.12\"/>\n      \u003cstop offset=\"1\" stop-color=\"#ffffff\" stop-opacity=\"0\"/>\n    \u003c/linearGradient>\n    \u003clinearGradient id=\"glass\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n      \u003cstop offset=\"0\" stop-color=\"#3b3d42\"/>\n      \u003cstop offset=\"0.5\" stop-color=\"#121316\"/>\n      \u003cstop offset=\"1\" stop-color=\"#050506\"/>\n    \u003c/linearGradient>\n    \u003cradialGradient id=\"rim\" cx=\"45%\" cy=\"40%\" r=\"60%\">\n      \u003cstop offset=\"0\" stop-color=\"#e9e6de\"/>\n      \u003cstop offset=\"0.55\" stop-color=\"#8f8c85\"/>\n      \u003cstop offset=\"1\" stop-color=\"#3c3b39\"/>\n    \u003c/radialGradient>\n    \u003cradialGradient id=\"shadow\" cx=\"50%\" cy=\"50%\" r=\"50%\">\n      \u003cstop offset=\"0\" stop-color=\"#000000\" stop-opacity=\"0.9\"/>\n      \u003cstop offset=\"1\" stop-color=\"#000000\" stop-opacity=\"0\"/>\n    \u003c/radialGradient>\n    \u003cradialGradient id=\"lamp\" cx=\"50%\" cy=\"50%\" r=\"50%\">\n      \u003cstop offset=\"0\" stop-color=\"#fff6dc\" stop-opacity=\"0.95\"/>\n      \u003cstop offset=\"1\" stop-color=\"#fff6dc\" stop-opacity=\"0\"/>\n    \u003c/radialGradient>\n    \u003cradialGradient id=\"tail\" cx=\"50%\" cy=\"50%\" r=\"50%\">\n      \u003cstop offset=\"0\" stop-color=\"#ff3b2a\" stop-opacity=\"0.8\"/>\n      \u003cstop offset=\"1\" stop-color=\"#ff3b2a\" stop-opacity=\"0\"/>\n    \u003c/radialGradient>\n  \u003c/defs>\n\n  \u003crect width=\"1600\" height=\"760\" fill=\"url(#spot)\"/>\n  \u003crect y=\"612\" width=\"1600\" height=\"148\" fill=\"url(#floor)\"/>\n  \u003cline x1=\"0\" y1=\"612\" x2=\"1600\" y2=\"612\" stroke=\"#2c2b2e\" stroke-width=\"1\"/>\n  \u003cellipse cx=\"800\" cy=\"618\" rx=\"720\" ry=\"34\" fill=\"url(#shadow)\"/>\n\n  \u003c!-- floor reflection -->\n  \u003cg opacity=\"0.12\" transform=\"translate(0 1236) scale(1 -1)\">\n    \u003cpath d=\"M210 470 C205 430 222 404 262 395 L600 344 C680 300 740 262 810 252 L1000 256 C1150 270 1300 330 1382 380 C1422 396 1432 430 1426 470 L1340 488 L1070 488 L530 492 L210 470 Z\" fill=\"#8f8c85\"/>\n  \u003c/g>\n\n  \u003c!-- body -->\n  \u003cpath d=\"M210 470 C205 430 222 404 262 395 L600 344 C680 300 740 262 810 252 L1000 256 C1150 270 1300 330 1382 380 C1422 396 1432 430 1426 470 L1340 488 L1290 488 A110 110 0 0 0 1070 488 L530 492 A110 110 0 0 0 310 492 Z\" fill=\"url(#body)\"/>\n  \u003cpath d=\"M210 470 C205 430 222 404 262 395 L600 344 C680 300 740 262 810 252 L1000 256 C1150 270 1300 330 1382 380 C1422 396 1432 430 1426 470 L1340 488 L1290 488 A110 110 0 0 0 1070 488 L530 492 A110 110 0 0 0 310 492 Z\" fill=\"url(#sheen)\"/>\n  \u003cpath d=\"M210 470 C205 430 222 404 262 395 L600 344 C680 300 740 262 810 252 L1000 256 C1150 270 1300 330 1382 380 C1422 396 1432 430 1426 470\" fill=\"none\" stroke=\"#bdb9b0\" stroke-opacity=\"0.55\" stroke-width=\"2\"/>\n\n  \u003c!-- greenhouse -->\n  \u003cpath d=\"M640 346 C700 302 760 270 812 262 L992 266 C1080 276 1168 308 1232 348 C1100 342 800 340 640 346 Z\" fill=\"url(#glass)\"/>\n  \u003cpath d=\"M640 346 C700 302 760 270 812 262 L992 266 C1080 276 1168 308 1232 348\" fill=\"none\" stroke=\"#c9c5bb\" stroke-opacity=\"0.5\" stroke-width=\"2\"/>\n  \u003cpath d=\"M935 264 L945 345\" stroke=\"#0a0a0b\" stroke-width=\"10\"/>\n  \u003cpath d=\"M700 312 C760 286 820 276 880 272\" stroke=\"#ffffff\" stroke-opacity=\"0.18\" stroke-width=\"6\" fill=\"none\"/>\n\n  \u003c!-- shoulder highlight and lines -->\n  \u003cpath d=\"M290 404 C620 356 1010 338 1392 400\" fill=\"none\" stroke=\"#f2efe7\" stroke-opacity=\"0.5\" stroke-width=\"2.5\"/>\n  \u003cpath d=\"M560 470 C800 462 1000 462 1068 466\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\"0.55\" stroke-width=\"3\"/>\n  \u003cpath d=\"M652 362 L662 478\" stroke=\"#000000\" stroke-opacity=\"0.6\" stroke-width=\"2\"/>\n  \u003cpath d=\"M1004 352 L1012 474\" stroke=\"#000000\" stroke-opacity=\"0.6\" stroke-width=\"2\"/>\n  \u003crect x=\"930\" y=\"378\" width=\"34\" height=\"6\" rx=\"3\" fill=\"#8f8c85\"/>\n  \u003cpath d=\"M1170 330 C1210 320 1250 322 1270 330\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\"0.5\" stroke-width=\"3\"/>\n\n  \u003c!-- lamps -->\n  \u003cellipse cx=\"262\" cy=\"410\" rx=\"120\" ry=\"60\" fill=\"url(#lamp)\" opacity=\"0.5\"/>\n  \u003cpath d=\"M232 404 C246 392 286 388 312 394 C300 406 262 414 232 404 Z\" fill=\"#fbf4e2\"/>\n  \u003cellipse cx=\"1410\" cy=\"402\" rx=\"90\" ry=\"40\" fill=\"url(#tail)\"/>\n  \u003cpath d=\"M1352 386 L1424 404\" stroke=\"#ff4433\" stroke-width=\"7\" stroke-linecap=\"round\"/>\n\n  \u003c!-- wheels -->\n  \u003cg transform=\"translate(420 520)\">\n    \u003ccircle r=\"94\" fill=\"#0d0d0e\"/>\n    \u003ccircle r=\"92\" fill=\"none\" stroke=\"#2a2a2d\" stroke-width=\"3\"/>\n    \u003ccircle r=\"66\" fill=\"url(#rim)\"/>\n    \u003ccircle r=\"54\" fill=\"#2b2b2e\"/>\n    \u003crect x=\"-34\" y=\"-40\" width=\"30\" height=\"40\" rx=\"6\" fill=\"#c8b48a\" transform=\"rotate(-40)\"/>\n    \u003cg fill=\"#d8d5cd\">\n      \u003crect x=\"-7\" y=\"-62\" width=\"14\" height=\"50\" rx=\"5\"/>\n      \u003crect x=\"-7\" y=\"-62\" width=\"14\" height=\"50\" rx=\"5\" transform=\"rotate(72)\"/>\n      \u003crect x=\"-7\" y=\"-62\" width=\"14\" height=\"50\" rx=\"5\" transform=\"rotate(144)\"/>\n      \u003crect x=\"-7\" y=\"-62\" width=\"14\" height=\"50\" rx=\"5\" transform=\"rotate(216)\"/>\n      \u003crect x=\"-7\" y=\"-62\" width=\"14\" height=\"50\" rx=\"5\" transform=\"rotate(288)\"/>\n    \u003c/g>\n    \u003ccircle r=\"15\" fill=\"#1a1a1c\" stroke=\"#c8b48a\" stroke-width=\"3\"/>\n  \u003c/g>\n  \u003cg transform=\"translate(1180 520)\">\n    \u003ccircle r=\"94\" fill=\"#0d0d0e\"/>\n    \u003ccircle r=\"92\" fill=\"none\" stroke=\"#2a2a2d\" stroke-width=\"3\"/>\n    \u003ccircle r=\"66\" fill=\"url(#rim)\"/>\n    \u003ccircle r=\"54\" fill=\"#2b2b2e\"/>\n    \u003crect x=\"-34\" y=\"-40\" width=\"30\" height=\"40\" rx=\"6\" fill=\"#c8b48a\" transform=\"rotate(-40)\"/>\n    \u003cg fill=\"#d8d5cd\">\n      \u003crect x=\"-7\" y=\"-62\" width=\"14\" height=\"50\" rx=\"5\" transform=\"rotate(20)\"/>\n      \u003crect x=\"-7\" y=\"-62\" width=\"14\" height=\"50\" rx=\"5\" transform=\"rotate(92)\"/>\n      \u003crect x=\"-7\" y=\"-62\" width=\"14\" height=\"50\" rx=\"5\" transform=\"rotate(164)\"/>\n      \u003crect x=\"-7\" y=\"-62\" width=\"14\" height=\"50\" rx=\"5\" transform=\"rotate(236)\"/>\n      \u003crect x=\"-7\" y=\"-62\" width=\"14\" height=\"50\" rx=\"5\" transform=\"rotate(308)\"/>\n    \u003c/g>\n    \u003ccircle r=\"15\" fill=\"#1a1a1c\" stroke=\"#c8b48a\" stroke-width=\"3\"/>\n  \u003c/g>\n\u003c/svg>\n";
 </script>
 <script>
 /* «Отсечка» — browser behaviour shared by the static site and the single-file build. */
 (function () {
   'use strict';
 
-  function store(key, value) {
-    try {
-      if (value === undefined) return localStorage.getItem(key);
-      if (value === null) localStorage.removeItem(key); else localStorage.setItem(key, value);
-    } catch (e) { /* storage blocked: the page works without it */ }
-    return null;
-  }
+  const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ---- theme toggle (static site only; the artifact follows the viewer's theme) ----
-  function isDark() {
-    const t = document.documentElement.dataset.theme;
-    return t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-  function initTheme() {
-    const btn = document.getElementById('theme-toggle');
-    if (!btn || btn.dataset.bound) return;
+  // ---- mobile menu ----
+  function initMenu() {
+    const btn = document.querySelector('.menu-btn');
+    const menu = document.getElementById('site-menu');
+    if (!btn || !menu || btn.dataset.bound) return;
     btn.dataset.bound = '1';
-    const label = () => { btn.textContent = isDark() ? 'Светлая тема' : 'Тёмная тема'; };
-    label();
     btn.addEventListener('click', () => {
-      document.documentElement.dataset.theme = isDark() ? 'light' : 'dark';
-      store('otsechka-theme', document.documentElement.dataset.theme);
-      label();
+      const open = menu.hidden;
+      menu.hidden = !open;
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
     });
   }
 
-  // ---- rev bar reading progress + active TOC entry ----
+  // ---- tachometer: the needle sweeps to the red zone, bounces off the limiter, settles ----
+  const angle = (v) => 135 + v * 33.75;
+  function sweep(el) {
+    const needle = el.querySelector('.tacho__needle');
+    const target = parseFloat(el.dataset.tacho) || 7.35;
+    if (!needle) return;
+    const set = (v) => needle.setAttribute('transform', 'rotate(' + angle(v).toFixed(2) + ' 200 200)');
+    cancelAnimationFrame(el._raf);
+    if (reduceMotion() || document.hidden) { set(target); return; }
+    const t0 = performance.now();
+    const step = (now) => {
+      const t = (now - t0) / 1000;
+      let v;
+      if (t < 1.3) v = 7.8 * (1 - Math.pow(1 - t / 1.3, 3));
+      else if (t < 2.5) { const u = (t - 1.3) / 1.2; v = 7.8 - 0.32 * Math.abs(Math.sin(u * Math.PI * 4)) * (1 - u * 0.6); }
+      else if (t < 3.2) { const u = (t - 2.5) / 0.7, e = u * u * (3 - 2 * u); v = 7.75 + (target - 7.75) * e; }
+      else { set(target); return; }
+      set(v);
+      el._raf = requestAnimationFrame(step);
+    };
+    el._raf = requestAnimationFrame(step);
+  }
+  function initTacho() {
+    document.querySelectorAll('[data-tacho]').forEach((el) => {
+      if (el.dataset.bound) return;
+      el.dataset.bound = '1';
+      el.addEventListener('mouseenter', () => sweep(el));
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => { if (e.isIntersecting) { sweep(el); io.disconnect(); } });
+        }, { threshold: 0.4 });
+        io.observe(el);
+      } else sweep(el);
+    });
+  }
+
+  // ---- reading progress (gold line) + active TOC entry ----
   let ticking = false;
   function onScroll() {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => {
       ticking = false;
-      const bar = document.querySelector('.revbar--progress');
-      const prose = document.querySelector('.post .prose');
+      const bar = document.querySelector('.read-progress i');
+      const prose = document.querySelector('.post-layout .prose');
       if (!bar || !prose) return;
       const rect = prose.getBoundingClientRect();
       const total = rect.height - window.innerHeight * 0.6;
       const p = Math.min(1, Math.max(0, (-rect.top + window.innerHeight * 0.25) / Math.max(1, total)));
-      const segs = bar.children, lit = Math.round(p * segs.length);
-      for (let i = 0; i < segs.length; i++) segs[i].classList.toggle('on', i < lit);
+      bar.style.width = (p * 100).toFixed(2) + '%';
       const links = document.querySelectorAll('.toc a[data-toc]');
       let current = null;
       links.forEach((a) => {
@@ -848,6 +1063,20 @@ ${r.html}
       });
       links.forEach((a) => a.classList.toggle('active', a === current));
     });
+  }
+
+  // ---- category sort ----
+  function initSort() {
+    const grid = document.getElementById('cat-grid');
+    const buttons = document.querySelectorAll('[data-sort]');
+    if (!grid || !buttons.length) return;
+    let order = 'new';
+    buttons.forEach((b) => b.addEventListener('click', () => {
+      if (b.dataset.sort === order) return;
+      order = b.dataset.sort;
+      Array.from(grid.children).reverse().forEach((c) => grid.appendChild(c));
+      buttons.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    }));
   }
 
   // ---- archive search + category filter ----
@@ -882,7 +1111,9 @@ ${r.html}
   }
 
   function init() {
-    initTheme();
+    initMenu();
+    initTacho();
+    initSort();
     initArchive();
     onScroll();
   }
@@ -895,7 +1126,7 @@ ${r.html}
       const el = document.getElementById(a.getAttribute('href').slice(1));
       if (!el) return;
       e.preventDefault();
-      el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      el.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth' });
       if (a.getAttribute('href') === '#main') { el.setAttribute('tabindex', '-1'); el.focus({ preventScroll: true }); }
     });
   }
@@ -918,7 +1149,7 @@ ${r.html}
     home: '#home', archive: '#archive', about: '#about',
     article: function (s) { return '#a-' + s; },
     category: function (id) { return '#c-' + id; },
-    themeToggle: false,
+    asset: function (p) { return p; },
   };
   var app = document.getElementById('app');
   var ROUTE = /^(home|archive|about|a-[a-z0-9-]+|c-[a-z]+)?$/;
@@ -930,7 +1161,7 @@ ${r.html}
     else if (route.indexOf('a-') === 0 && BY_SLUG[route.slice(2)]) { var a = BY_SLUG[route.slice(2)]; main = Site.articlePage(L, a, ARTICLES); active = 'article'; title = a.title; }
     else if (route.indexOf('c-') === 0 && Site.CAT[route.slice(2)]) { var c = Site.CAT[route.slice(2)]; main = Site.categoryPage(L, c, ARTICLES); active = c.id; title = c.name; }
     else { main = Site.notFound(L); title = 'Страница не найдена'; }
-    app.innerHTML = Site.header(L, active) + main + Site.footer(L, ARTICLES);
+    app.innerHTML = Site.header(L, active, ARTICLES) + main + Site.footer(L, ARTICLES);
     document.title = title ? title + ' — Отсечка' : 'Отсечка';
     window.scrollTo(0, 0);
     window.Otsechka.init();

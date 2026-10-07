@@ -2,47 +2,72 @@
 (function () {
   'use strict';
 
-  function store(key, value) {
-    try {
-      if (value === undefined) return localStorage.getItem(key);
-      if (value === null) localStorage.removeItem(key); else localStorage.setItem(key, value);
-    } catch (e) { /* storage blocked: the page works without it */ }
-    return null;
-  }
+  const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ---- theme toggle (static site only; the artifact follows the viewer's theme) ----
-  function isDark() {
-    const t = document.documentElement.dataset.theme;
-    return t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-  function initTheme() {
-    const btn = document.getElementById('theme-toggle');
-    if (!btn || btn.dataset.bound) return;
+  // ---- mobile menu ----
+  function initMenu() {
+    const btn = document.querySelector('.menu-btn');
+    const menu = document.getElementById('site-menu');
+    if (!btn || !menu || btn.dataset.bound) return;
     btn.dataset.bound = '1';
-    const label = () => { btn.textContent = isDark() ? 'Светлая тема' : 'Тёмная тема'; };
-    label();
     btn.addEventListener('click', () => {
-      document.documentElement.dataset.theme = isDark() ? 'light' : 'dark';
-      store('otsechka-theme', document.documentElement.dataset.theme);
-      label();
+      const open = menu.hidden;
+      menu.hidden = !open;
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
     });
   }
 
-  // ---- rev bar reading progress + active TOC entry ----
+  // ---- tachometer: the needle sweeps to the red zone, bounces off the limiter, settles ----
+  const angle = (v) => 135 + v * 33.75;
+  function sweep(el) {
+    const needle = el.querySelector('.tacho__needle');
+    const target = parseFloat(el.dataset.tacho) || 7.35;
+    if (!needle) return;
+    const set = (v) => needle.setAttribute('transform', 'rotate(' + angle(v).toFixed(2) + ' 200 200)');
+    cancelAnimationFrame(el._raf);
+    if (reduceMotion() || document.hidden) { set(target); return; }
+    const t0 = performance.now();
+    const step = (now) => {
+      const t = (now - t0) / 1000;
+      let v;
+      if (t < 1.3) v = 7.8 * (1 - Math.pow(1 - t / 1.3, 3));
+      else if (t < 2.5) { const u = (t - 1.3) / 1.2; v = 7.8 - 0.32 * Math.abs(Math.sin(u * Math.PI * 4)) * (1 - u * 0.6); }
+      else if (t < 3.2) { const u = (t - 2.5) / 0.7, e = u * u * (3 - 2 * u); v = 7.75 + (target - 7.75) * e; }
+      else { set(target); return; }
+      set(v);
+      el._raf = requestAnimationFrame(step);
+    };
+    el._raf = requestAnimationFrame(step);
+  }
+  function initTacho() {
+    document.querySelectorAll('[data-tacho]').forEach((el) => {
+      if (el.dataset.bound) return;
+      el.dataset.bound = '1';
+      el.addEventListener('mouseenter', () => sweep(el));
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => { if (e.isIntersecting) { sweep(el); io.disconnect(); } });
+        }, { threshold: 0.4 });
+        io.observe(el);
+      } else sweep(el);
+    });
+  }
+
+  // ---- reading progress (gold line) + active TOC entry ----
   let ticking = false;
   function onScroll() {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => {
       ticking = false;
-      const bar = document.querySelector('.revbar--progress');
-      const prose = document.querySelector('.post .prose');
+      const bar = document.querySelector('.read-progress i');
+      const prose = document.querySelector('.post-layout .prose');
       if (!bar || !prose) return;
       const rect = prose.getBoundingClientRect();
       const total = rect.height - window.innerHeight * 0.6;
       const p = Math.min(1, Math.max(0, (-rect.top + window.innerHeight * 0.25) / Math.max(1, total)));
-      const segs = bar.children, lit = Math.round(p * segs.length);
-      for (let i = 0; i < segs.length; i++) segs[i].classList.toggle('on', i < lit);
+      bar.style.width = (p * 100).toFixed(2) + '%';
       const links = document.querySelectorAll('.toc a[data-toc]');
       let current = null;
       links.forEach((a) => {
@@ -51,6 +76,20 @@
       });
       links.forEach((a) => a.classList.toggle('active', a === current));
     });
+  }
+
+  // ---- category sort ----
+  function initSort() {
+    const grid = document.getElementById('cat-grid');
+    const buttons = document.querySelectorAll('[data-sort]');
+    if (!grid || !buttons.length) return;
+    let order = 'new';
+    buttons.forEach((b) => b.addEventListener('click', () => {
+      if (b.dataset.sort === order) return;
+      order = b.dataset.sort;
+      Array.from(grid.children).reverse().forEach((c) => grid.appendChild(c));
+      buttons.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    }));
   }
 
   // ---- archive search + category filter ----
@@ -85,7 +124,9 @@
   }
 
   function init() {
-    initTheme();
+    initMenu();
+    initTacho();
+    initSort();
     initArchive();
     onScroll();
   }
@@ -98,7 +139,7 @@
       const el = document.getElementById(a.getAttribute('href').slice(1));
       if (!el) return;
       e.preventDefault();
-      el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      el.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth' });
       if (a.getAttribute('href') === '#main') { el.setAttribute('tabindex', '-1'); el.focus({ preventScroll: true }); }
     });
   }

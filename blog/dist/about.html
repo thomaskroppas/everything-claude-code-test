@@ -13,67 +13,85 @@
 <meta property="og:url" content="https://otsechka.example/about.html">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#14171c">
+<meta name="theme-color" content="#0a0a0b">
 <link rel="alternate" type="application/rss+xml" title="Отсечка" href="rss.xml">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Unbounded:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Unbounded:wght@500;600;700;800&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Manrope:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Manrope:wght@400;500;600&display=swap"></noscript>
 <link rel="stylesheet" href="assets/style.css">
-<script>try{var t=localStorage.getItem('otsechka-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 
 </head>
 <body>
 <a class="skip" href="#main">Перейти к содержанию</a>
-<header class="masthead">
-  <div class="masthead__row wrap">
-    <a class="wordmark" href="index.html" aria-label="Отсечка: на главную">ОТСЕЧКА<span class="wordmark__rpm" aria-hidden="true">×1000 об/мин</span></a>
-    <div class="masthead__tools">
-      <a class="tool" href="archive.html">Все статьи</a>
-      <a class="tool" href="about.html" aria-current="page">О журнале</a>
-      <button class="tool tool--theme" type="button" id="theme-toggle">Тема</button>
+
+<div class="issue-bar"><div class="wrap">Журнал об автомобилях · Выпуск № 100 · октябрь 2026</div></div>
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Рубрики"><a href="category/history.html">История</a><a href="category/tech.html">Устройство</a><a href="category/electric.html">Электро</a><a href="category/motorsport.html">Автоспорт</a></nav>
+    <a class="wordmark" href="index.html" aria-label="Отсечка — на главную">ОТСЕЧКА</a>
+    <div class="header-tools">
+      <nav class="nav nav--right" aria-label="Журнал">
+        <a class="icon-btn" href="archive.html" aria-label="Поиск по журналу"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></a>
+        <a href="about.html" aria-current="page">О журнале</a>
+        <a href="archive.html">Архив</a>
+      </nav>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Открыть меню"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
     </div>
   </div>
-  <nav class="catnav wrap" aria-label="Рубрики"><a href="category/history.html">История</a><a href="category/tech.html">Устройство</a><a href="category/electric.html">Электро</a><a href="category/service.html">Обслуживание</a><a href="category/driving.html">Вождение</a><a href="category/buying.html">Покупка</a><a href="category/motorsport.html">Автоспорт</a><a href="category/culture.html">Культура</a></nav>
-  <div class="revbar" aria-hidden="true"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="amber"></i><i class="amber"></i><i class="amber"></i><i class="amber"></i><i class="red"></i><i class="red"></i><i class="red"></i><i class="red"></i></div>
 </header>
-<main id="main" class="wrap narrow">
-  <header class="pagehead">
-    <p class="eyebrow">О журнале</p>
-    <h1 class="pagehead__title">Почему «Отсечка»</h1>
-  </header>
-  <div class="prose">
-    <p>Отсечка — момент, когда электроника ограничивает обороты, чтобы двигатель не вышел за безопасный предел. Стрелка тахометра упирается в красную зону, и мотор отдаёт всё, что может, но не больше. Нам нравится эта идея: говорить о машинах увлечённо, но по делу.</p>
-    <p>Здесь собраны 100 статей в восьми рубриках: от первого автомобиля Карла Бенца до электромобилей, от замены масла до «Дакара». Тексты рассчитаны на тех, кто любит машины, но не обязан быть инженером: каждое понятие объясняется, каждый совет можно применить.</p>
-    <h2>Как читать журнал</h2>
-    <ul>
-      <li>На странице статьи полоса тахометра под шапкой показывает, сколько прочитано. Дошла до красной зоны — текст закончился.</li>
-      <li>«Паспорт темы» рядом с текстом собирает главные цифры, чтобы их можно было найти за секунду.</li>
-      <li>У каждой статьи постоянный номер, а в архиве работает поиск по названиям, описаниям и тегам.</li>
-    </ul>
-    <h2>Журнал в цифрах</h2>
-    <dl class="spec"><div><dt>Статей</dt><dd>100</dd></div><div><dt>Рубрик</dt><dd>8</dd></div><div><dt>Слов всего</dt><dd>≈94 тыс.</dd></div><div><dt>Время чтения</dt><dd>≈8 ч</dd></div></dl>
-    <aside class="callout callout--warn"><p class="callout__label">Важно</p><p>Статьи об обслуживании и ремонте дают общее понимание. Конкретные интервалы, допуски и моменты затяжки всегда сверяйте с руководством по эксплуатации своей машины.</p></aside>
-  </div>
+<nav class="menu" id="site-menu" aria-label="Меню" hidden><div class="wrap"><a href="category/history.html">История</a><a href="category/tech.html">Устройство</a><a href="category/electric.html">Электро</a><a href="category/service.html">Обслуживание</a><a href="category/driving.html">Вождение</a><a href="category/buying.html">Покупка</a><a href="category/motorsport.html">Автоспорт</a><a href="category/culture.html">Культура</a><a class="menu__small" href="archive.html">Архив · все 100 статей</a><a class="menu__small" href="about.html">О журнале</a></div></nav>
+<main id="main">
+  <section class="wrap about-hero">
+    <div class="about-hero__text">
+      <p class="eyebrow">О журнале</p>
+      <h1 class="page-title">Почему «Отсечка»</h1>
+      <p class="post-lede" style="text-align:left">Отсечка — момент, когда электроника ограничивает обороты, чтобы двигатель не вышел за безопасный предел.</p>
+    </div>
+    <div class="band__tacho"><div class="tacho" data-tacho="7.35"><svg viewBox="0 0 400 400" role="img" aria-label="Тахометр: стрелка у красной зоны, ×1000 об/мин"><defs><radialGradient id="tfFace" cx="50%" cy="30%" r="75%"><stop offset="0" stop-color="#1A191C"/><stop offset="1" stop-color="#09090A"/></radialGradient><radialGradient id="tfHub" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#3A3833"/><stop offset="1" stop-color="#121114"/></radialGradient></defs><circle cx="200" cy="200" r="196" fill="#0E0E10" stroke="#2E2E33" stroke-width="1"/><circle cx="200" cy="200" r="188" fill="url(#tfFace)" stroke="#1C1C20" stroke-width="2"/><path d="M 70 110 A 160 160 0 0 1 330 110" fill="none" stroke="rgba(200,180,138,.16)" stroke-width="1.5"/><path d="M 372.62 234.34 A 176 176 0 0 1 324.45 324.45" fill="none" stroke="#D63A20" stroke-width="7"/><line x1="96.76" y1="303.24" x2="81.21" y2="318.79" stroke="#ECEBE6" stroke-width="3"/><line x1="70.68" y1="295.91" x2="65.06" y2="300.08" stroke="#8D8A84" stroke-width="1"/><line x1="62.42" y1="273.54" x2="51.84" y2="279.19" stroke="#B4B1A9" stroke-width="1.6"/><line x1="48.41" y1="254.24" x2="41.82" y2="256.60" stroke="#8D8A84" stroke-width="1"/><line x1="56.81" y1="228.48" x2="35.23" y2="232.78" stroke="#ECEBE6" stroke-width="3"/><line x1="39.19" y1="207.90" x2="32.20" y2="208.24" stroke="#8D8A84" stroke-width="1"/><line x1="44.75" y1="184.71" x2="32.81" y2="183.53" stroke="#B4B1A9" stroke-width="1.6"/><line x1="43.82" y1="160.88" x2="37.03" y2="159.18" stroke="#8D8A84" stroke-width="1"/><line x1="65.11" y1="144.13" x2="44.79" y2="135.71" stroke="#ECEBE6" stroke-width="3"/><line x1="61.91" y1="117.23" x2="55.90" y2="113.63" stroke="#8D8A84" stroke-width="1"/><line x1="79.41" y1="101.03" x2="70.13" y2="93.42" stroke="#B4B1A9" stroke-width="1.6"/><line x1="91.88" y1="80.71" x2="87.18" y2="75.52" stroke="#8D8A84" stroke-width="1"/><line x1="118.89" y1="78.61" x2="106.66" y2="60.31" stroke="#ECEBE6" stroke-width="3"/><line x1="131.16" y1="54.46" x2="128.17" y2="48.13" stroke="#8D8A84" stroke-width="1"/><line x1="154.72" y1="50.72" x2="151.23" y2="39.23" stroke="#B4B1A9" stroke-width="1.6"/><line x1="176.38" y1="40.74" x2="175.35" y2="33.82" stroke="#8D8A84" stroke-width="1"/><line x1="200.00" y1="54.00" x2="200.00" y2="32.00" stroke="#ECEBE6" stroke-width="3"/><line x1="223.62" y1="40.74" x2="224.65" y2="33.82" stroke="#8D8A84" stroke-width="1"/><line x1="245.28" y1="50.72" x2="248.77" y2="39.23" stroke="#B4B1A9" stroke-width="1.6"/><line x1="268.84" y1="54.46" x2="271.83" y2="48.13" stroke="#8D8A84" stroke-width="1"/><line x1="281.11" y1="78.61" x2="293.34" y2="60.31" stroke="#ECEBE6" stroke-width="3"/><line x1="308.12" y1="80.71" x2="312.82" y2="75.52" stroke="#8D8A84" stroke-width="1"/><line x1="320.59" y1="101.03" x2="329.87" y2="93.42" stroke="#B4B1A9" stroke-width="1.6"/><line x1="338.09" y1="117.23" x2="344.10" y2="113.63" stroke="#8D8A84" stroke-width="1"/><line x1="334.89" y1="144.13" x2="355.21" y2="135.71" stroke="#ECEBE6" stroke-width="3"/><line x1="356.18" y1="160.88" x2="362.97" y2="159.18" stroke="#8D8A84" stroke-width="1"/><line x1="355.25" y1="184.71" x2="367.19" y2="183.53" stroke="#B4B1A9" stroke-width="1.6"/><line x1="360.81" y1="207.90" x2="367.80" y2="208.24" stroke="#8D8A84" stroke-width="1"/><line x1="343.19" y1="228.48" x2="364.77" y2="232.78" stroke="#D63A20" stroke-width="3"/><line x1="351.59" y1="254.24" x2="358.18" y2="256.60" stroke="#D63A20" stroke-width="1"/><line x1="337.58" y1="273.54" x2="348.16" y2="279.19" stroke="#D63A20" stroke-width="1.6"/><line x1="329.32" y1="295.91" x2="334.94" y2="300.08" stroke="#D63A20" stroke-width="1"/><line x1="303.24" y1="303.24" x2="318.79" y2="318.79" stroke="#D63A20" stroke-width="3"/><text x="113.73" y="298.27" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="500" font-size="36" fill="#ECEBE6">0</text><text x="80.34" y="235.80" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="500" font-size="36" fill="#ECEBE6">1</text><text x="87.29" y="165.31" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="500" font-size="36" fill="#ECEBE6">2</text><text x="132.22" y="110.56" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="500" font-size="36" fill="#ECEBE6">3</text><text x="200.00" y="90.00" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="500" font-size="36" fill="#ECEBE6">4</text><text x="267.78" y="110.56" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="500" font-size="36" fill="#ECEBE6">5</text><text x="312.71" y="165.31" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="500" font-size="36" fill="#ECEBE6">6</text><text x="319.66" y="235.80" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="500" font-size="36" fill="#D63A20">7</text><text x="286.27" y="298.27" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="500" font-size="36" fill="#D63A20">8</text><text x="200" y="288" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="600" font-size="11" letter-spacing="3.4" fill="#8D8A84">×1000 ОБ/МИН</text><text x="200" y="138" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="600" font-size="10" letter-spacing="5" fill="#C8B48A">ОТСЕЧКА</text><g class="tacho__needle" transform="rotate(383.06 200 200)"><polygon points="172,196.5 352,199.2 352,200.8 172,203.5" fill="#ECEBE6"/></g><circle cx="200" cy="200" r="16" fill="url(#tfHub)" stroke="#2E2E33"/><circle cx="200" cy="200" r="4" fill="#C8B48A"/></svg></div></div>
+  </section>
+  <div class="wrap"><dl class="spec spec--top"><div><dt>Статей</dt><dd>100</dd></div><div><dt>Рубрик</dt><dd>8</dd></div><div><dt>Слов всего</dt><dd>≈94 тыс.</dd></div><div><dt>Время чтения</dt><dd>≈8,5 ч</dd></div></dl></div>
+  <section class="wrap about-body">
+    <h2 class="h-section">Увлечённо, но по делу</h2>
+    <div class="prose">
+      <p>Стрелка тахометра упирается в красную зону, и мотор отдаёт всё, что может, но не больше. Нам нравится эта идея: говорить о машинах увлечённо, но без лишнего.</p>
+      <p>Здесь собраны 100 статей в восьми рубриках: от первого автомобиля Карла Бенца до электромобилей, от замены масла до «Дакара». Тексты рассчитаны на тех, кто любит машины, но не обязан быть инженером: каждое понятие объясняется, каждый совет можно применить.</p>
+      <ol>
+        <li>Золотая линия у верхнего края экрана в статье показывает, сколько прочитано.</li>
+        <li>«Паспорт темы» собирает главные цифры, чтобы их можно было найти за секунду.</li>
+        <li>У каждой статьи постоянный номер, а в архиве работает поиск.</li>
+      </ol>
+      <aside class="callout callout--warn"><p class="callout__label">Важно</p><p>Статьи об обслуживании и ремонте дают общее понимание. Интервалы, допуски и моменты затяжки сверяйте с руководством по эксплуатации своей машины.</p></aside>
+      <p><a class="btn btn--solid" href="archive.html">Открыть архив</a></p>
+    </div>
+  </section>
 </main>
-<footer class="footer">
-  <div class="wrap footer__grid">
-    <div>
-      <p class="wordmark wordmark--small">ОТСЕЧКА</p>
-      <p class="footer__text">Журнал об автомобилях: история, устройство, вождение и культура. Пишем о машинах так, чтобы было понятно с первого раза и интересно до последнего абзаца.</p>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="wordmark" href="index.html">ОТСЕЧКА</a>
+        <p class="footer__motto">Всё, что может мотор. Но не больше.</p>
+      </div>
+      <div class="footer__col">
+        <p class="eyebrow">Рубрики</p>
+        <div class="footer__links footer__links--2"><a href="category/history.html">История</a><a href="category/tech.html">Устройство</a><a href="category/electric.html">Электро</a><a href="category/service.html">Обслуживание</a><a href="category/driving.html">Вождение</a><a href="category/buying.html">Покупка</a><a href="category/motorsport.html">Автоспорт</a><a href="category/culture.html">Культура</a></div>
+      </div>
+      <div class="footer__col">
+        <p class="eyebrow">Журнал</p>
+        <div class="footer__links">
+          <a href="archive.html">Архив · все 100 статей</a>
+          <a href="about.html">О журнале</a>
+          <a href="rss.xml">RSS</a>
+        </div>
+      </div>
     </div>
-    <div>
-      <p class="label">Рубрики</p>
-      <ul class="footer__list"><li><a href="category/history.html">История</a> <span class="mono">13</span></li><li><a href="category/tech.html">Устройство</a> <span class="mono">13</span></li><li><a href="category/electric.html">Электро</a> <span class="mono">12</span></li><li><a href="category/service.html">Обслуживание</a> <span class="mono">13</span></li><li><a href="category/driving.html">Вождение</a> <span class="mono">13</span></li><li><a href="category/buying.html">Покупка</a> <span class="mono">12</span></li><li><a href="category/motorsport.html">Автоспорт</a> <span class="mono">12</span></li><li><a href="category/culture.html">Культура</a> <span class="mono">12</span></li></ul>
-    </div>
-    <div>
-      <p class="label">Одометр журнала</p>
-      <p class="odometer mono" role="img" aria-label="100 статей"><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span></p>
-      <p class="footer__text">100 статей · 8 рубрик · ≈94 тыс. слов</p>
+    <div class="footer__legal">
+      <span>© 2026 «Отсечка». Журнал об автомобилях</span>
+      <span>Выпуск № 100 · октябрь 2026</span>
     </div>
   </div>
-  <p class="wrap footer__fine">© 2026 «Отсечка». Тексты носят информационный характер: при ремонте и обслуживании сверяйтесь с руководством по эксплуатации своего автомобиля.</p>
 </footer>
 <script src="assets/client.js" defer></script>
 </body>
